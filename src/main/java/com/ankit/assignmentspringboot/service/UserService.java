@@ -7,7 +7,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,7 +23,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Optional<UserModel> getUserById(int id) {
+    public Optional<UserModel> getUserById(Integer id) {
         Optional<UserModel> user = userRepository.findById(id);
         System.out.println("got user: " + user);
         return user;

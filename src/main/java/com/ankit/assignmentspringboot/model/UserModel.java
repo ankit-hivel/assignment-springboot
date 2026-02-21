@@ -1,16 +1,10 @@
 package com.ankit.assignmentspringboot.model;
 
 import com.ankit.assignmentspringboot.utility.DateSerializer;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnTransformer;
 import tools.jackson.databind.annotation.JsonDeserialize;
-import tools.jackson.databind.annotation.JsonSerialize;
 
-import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
@@ -18,7 +12,7 @@ import java.time.LocalDate;
 public class UserModel {
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -33,10 +27,12 @@ public class UserModel {
 
     private String gender;
 
+    @Column(unique = true)
     private String email;
 
     private String phone;
 
+    @Column(unique = true)
     private String username;
 
     private String password;
@@ -51,16 +47,19 @@ public class UserModel {
     @Column(name = "blood_group")
     private String bloodGroup;
 
-    private int height;     // centimeters
-    private int weight;     // centimeters
+    private float height;     // centimeters
+    private float weight;     // centimeters
 
     @Column(name = "eye_color")
+    @ColumnTransformer(write = "lower(?)")
     private String eyeColor;
 
     @Column(name = "hair_color")
+    @ColumnTransformer(write = "lower(?)")
     private String haircolor;
 
     @Column(name = "hair_type")
+    @ColumnTransformer(write = "lower(?)")
     private String hairtype;
 
     @Column(name = "ip_address")
@@ -68,6 +67,8 @@ public class UserModel {
 
     @Column(name = "mac_address")
     private String macAddress;
+
+    private String university;
 
     private String ein;
     private String ssn;
@@ -77,19 +78,19 @@ public class UserModel {
 
     private String role;
 
-    @CreationTimestamp
-    @Column(name = "created_at")
-    private Instant createdAt;
+//    @CreationTimestamp
+//    @Column(name = "created_at", updatable = false, insertable = false)
+//    private Instant createdAt;
+//
+//    @UpdateTimestamp
+//    @Column(name = "updated_at", insertable = false)
+//    private Instant updatedAt;
 
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private Instant updatedAt;
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -189,19 +190,19 @@ public class UserModel {
         this.bloodGroup = bloodGroup;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
-    public int getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
@@ -245,6 +246,14 @@ public class UserModel {
         this.macAddress = macAddress;
     }
 
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
     public String getEin() {
         return ein;
     }
@@ -276,22 +285,22 @@ public class UserModel {
     public void setRole(String role) {
         this.role = role;
     }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+//
+//    public Instant getCreatedAt() {
+//        return createdAt;
+//    }
+//
+//    public void setCreatedAt(Instant createdAt) {
+//        this.createdAt = createdAt;
+//    }
+//
+//    public Instant getUpdatedAt() {
+//        return updatedAt;
+//    }
+//
+//    public void setUpdatedAt(Instant updatedAt) {
+//        this.updatedAt = updatedAt;
+//    }
 
     @Override
     public String toString() {
@@ -319,8 +328,8 @@ public class UserModel {
                 ", ssn='" + ssn + '\'' +
                 ", userAgent='" + userAgent + '\'' +
                 ", role='" + role + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
+//                ", createdAt=" + createdAt +
+//                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

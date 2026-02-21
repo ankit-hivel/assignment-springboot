@@ -9,7 +9,7 @@ public class RestExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse> handleGlobalException(Exception e) {
-        System.out.println(e);
+        System.out.println("Got Exception ❌❌❌:" + e);
         ApiResponse resp = new ApiResponse();
         resp.setStatus(false);
         resp.setMessage("Internal Server Error");
