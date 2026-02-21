@@ -1,6 +1,7 @@
 package com.ankit.assignmentspringboot.service;
 
 import com.ankit.assignmentspringboot.model.UserModel;
+import com.ankit.assignmentspringboot.repository.UserAddressRepository;
 import com.ankit.assignmentspringboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -13,13 +14,16 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserAddressRepository userAddressRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, UserAddressRepository userAddressRepository){
         this.userRepository = userRepository;
+        this.userAddressRepository = userAddressRepository;
     }
 
     public void saveUserData(UserModel user){
+        userAddressRepository.save(user.getAddress());
         userRepository.save(user);
     }
 

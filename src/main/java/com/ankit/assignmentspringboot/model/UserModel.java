@@ -3,8 +3,11 @@ package com.ankit.assignmentspringboot.model;
 import com.ankit.assignmentspringboot.utility.DateSerializer;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import tools.jackson.databind.annotation.JsonDeserialize;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
@@ -12,7 +15,7 @@ import java.time.LocalDate;
 public class UserModel {
     @Id
     @Column(name = "id")
-    private Integer id;
+    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -78,19 +81,22 @@ public class UserModel {
 
     private String role;
 
-//    @CreationTimestamp
-//    @Column(name = "created_at", updatable = false, insertable = false)
-//    private Instant createdAt;
-//
-//    @UpdateTimestamp
-//    @Column(name = "updated_at", insertable = false)
-//    private Instant updatedAt;
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private UserAddressModel address;
 
-    public Integer getId() {
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Instant updatedAt;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -285,51 +291,29 @@ public class UserModel {
     public void setRole(String role) {
         this.role = role;
     }
-//
-//    public Instant getCreatedAt() {
-//        return createdAt;
-//    }
-//
-//    public void setCreatedAt(Instant createdAt) {
-//        this.createdAt = createdAt;
-//    }
-//
-//    public Instant getUpdatedAt() {
-//        return updatedAt;
-//    }
-//
-//    public void setUpdatedAt(Instant updatedAt) {
-//        this.updatedAt = updatedAt;
-//    }
 
-    @Override
-    public String toString() {
-        return "UserModel{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", maidenName='" + maidenName + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", birthDate=" + birthDate +
-                ", image='" + image + '\'' +
-                ", bloodGroup='" + bloodGroup + '\'' +
-                ", height=" + height +
-                ", weight=" + weight +
-                ", eyeColor='" + eyeColor + '\'' +
-                ", haircolor='" + haircolor + '\'' +
-                ", hairtype='" + hairtype + '\'' +
-                ", ipaddress='" + ip + '\'' +
-                ", ein='" + ein + '\'' +
-                ", ssn='" + ssn + '\'' +
-                ", userAgent='" + userAgent + '\'' +
-                ", role='" + role + '\'' +
-//                ", createdAt=" + createdAt +
-//                ", updatedAt=" + updatedAt +
-                '}';
+    public UserAddressModel getAddress() {
+        return address;
     }
+
+    public void setAddress(UserAddressModel address) {
+        this.address = address;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Instant updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }
