@@ -5,11 +5,10 @@ import com.ankit.assignmentspringboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/")
 public class UserController {
 
     private final UserService userService;
@@ -19,11 +18,23 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<HttpStatus> saveUser(@RequestBody UserModel user) {
         System.out.println(user);
         userService.saveUserData(user);
-        userService.getUserById(1);
         return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<HttpStatus> getUserById(@RequestParam int id) {
+        userService.getUserById(id);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<HttpStatus> getUserByEmail(@RequestParam String email){
+        System.out.println("email: " + email);
+        userService.getUserByEmail(email);
+        return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
 }
