@@ -15,14 +15,28 @@ public class UserAddressModel {
     private int id;
 
     @Column(name = "area")
-    private String address;
+    private String area;
     private String city;
     private String state;
     private String stateCode;
-    private int postalCode;
+    private String postalCode;
     private String country;
-    private float lattitude;
+    private float latitude;
     private float longitude;
+
+    @OneToOne(
+            fetch = FetchType.LAZY,
+            optional = false
+    )
+    private UserModel user;
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
 
     @CreationTimestamp
     private Instant createdAt;
@@ -38,12 +52,12 @@ public class UserAddressModel {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public String getArea() {
+        return area;
     }
 
-    public void setAddress(String area) {
-        this.address = area;
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getCity() {
@@ -70,11 +84,11 @@ public class UserAddressModel {
         this.stateCode = stateCode;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -86,12 +100,12 @@ public class UserAddressModel {
         this.country = country;
     }
 
-    public float getLattitude() {
-        return lattitude;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setLattitude(float lattitude) {
-        this.lattitude = lattitude;
+    public void setLatitude(float lattitude) {
+        this.latitude = lattitude;
     }
 
     public float getLongitude() {

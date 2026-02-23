@@ -2,8 +2,8 @@ package com.ankit.assignmentspringboot.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "company_address")
+//@Entity
+//@Table(name = "company_address")
 public class CompanyAddressModel {
 
     @Id

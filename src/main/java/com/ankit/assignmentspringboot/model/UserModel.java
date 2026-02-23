@@ -1,5 +1,6 @@
 package com.ankit.assignmentspringboot.model;
 
+import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.utility.DateSerializer;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnTransformer;
@@ -41,7 +42,6 @@ public class UserModel {
     private String password;
 
     @Column(name = "birth_date")
-    @JsonDeserialize(converter = DateSerializer.class)
     private LocalDate birthDate;
 
     @Column(name = "image_url")
@@ -81,15 +81,6 @@ public class UserModel {
 
     private String role;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
-    private UserAddressModel address;
-
-    @OneToOne(cascade = CascadeType.REMOVE)
-    private CryptoModel crypto;
-
-    @OneToOne(cascade = CascadeType.REMOVE)
-    private CompanyModel company;
-
     @CreationTimestamp
     @Column(name = "created_at")
     private Instant createdAt;
@@ -97,6 +88,9 @@ public class UserModel {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Instant updatedAt;
+
+    @OneToOne(mappedBy = "user")
+    private UserAddressModel userAddress;
 
     public int getId() {
         return id;
@@ -298,22 +292,6 @@ public class UserModel {
         this.role = role;
     }
 
-    public UserAddressModel getAddress() {
-        return address;
-    }
-
-    public void setAddress(UserAddressModel address) {
-        this.address = address;
-    }
-
-    public CryptoModel getCrypto() {
-        return crypto;
-    }
-
-    public void setCrypto(CryptoModel crypto) {
-        this.crypto = crypto;
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -328,5 +306,35 @@ public class UserModel {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public UserModel(){}
+
+    public UserModel(SaveUserRequestDto dto) {
+        this.id = dto.getId();
+        this.firstName = dto.getFirstName();
+        this.lastName = dto.getLastName();
+        this.maidenName = dto.getMaidenName();
+        this.age = dto.getAge();
+        this.gender = dto.getGender();
+        this.email = dto.getEmail();
+        this.phone = dto.getPhone();
+        this.username = dto.getUsername();
+        this.password = dto.getPassword();   // ⚠ hash before saving in service
+        this.birthDate = dto.getBirthDate();
+        this.image = dto.getImage();
+        this.bloodGroup = dto.getBloodGroup();
+        this.height = dto.getHeight();
+        this.weight = dto.getWeight();
+        this.eyeColor = dto.getEyeColor();
+        this.haircolor = dto.getHaircolor();
+        this.hairtype = dto.getHairtype();
+        this.ip = dto.getIp();
+        this.macAddress = dto.getMacAddress();
+        this.university = dto.getUniversity();
+        this.ein = dto.getEin();
+        this.ssn = dto.getSsn();
+        this.userAgent = dto.getUserAgent();
+        this.role = dto.getRole();
     }
 }

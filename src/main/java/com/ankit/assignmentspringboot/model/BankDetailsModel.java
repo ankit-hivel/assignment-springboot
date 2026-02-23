@@ -6,8 +6,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 
-@Entity
-@Table(name = "bank_details")
+//@Entity
+//@Table(name = "bank_details")
 public class BankDetailsModel {
 
     @Id
@@ -18,6 +18,9 @@ public class BankDetailsModel {
     private String cardType;
     private String currency;
     private String iban;
+
+    @OneToOne
+    private UserModel user;
 
     @CreationTimestamp
     private Instant createdAt;
@@ -71,6 +74,14 @@ public class BankDetailsModel {
 
     public void setIban(String iban) {
         this.iban = iban;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
     }
 
     public Instant getCreatedAt() {

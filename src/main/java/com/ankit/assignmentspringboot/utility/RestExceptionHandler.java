@@ -1,5 +1,6 @@
 package com.ankit.assignmentspringboot.utility;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,6 @@ public class RestExceptionHandler {
         ApiResponse resp = new ApiResponse();
         resp.setStatus(false);
         resp.setMessage("Internal Server Error");
-        return ResponseEntity.ok(resp);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resp);
     }
 }

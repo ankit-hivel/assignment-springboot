@@ -1,0 +1,72 @@
+package com.ankit.assignmentspringboot.controller;
+
+import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
+import com.ankit.assignmentspringboot.requestDto.UpdateUserAddressRequestDto;
+import com.ankit.assignmentspringboot.responseDto.GetUserAddressResponseDto;
+import com.ankit.assignmentspringboot.service.UserAddressService;
+import com.ankit.assignmentspringboot.utility.ApiResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/address")
+public class UserAddressController {
+
+    private UserAddressService userAddressService;
+
+    @Autowired
+    public UserAddressController(UserAddressService userAddressService) {
+        this.userAddressService = userAddressService;
+    }
+
+    @PostMapping
+    public ResponseEntity<ApiResponse> saveUserAddress(@RequestBody SaveUserAddressRequestDto userAddress){
+        try {
+            userAddressService.saveUserAddress(userAddress);
+            ApiResponse resp = new ApiResponse(true, "saved user address");
+            return ResponseEntity.status(HttpStatus.CREATED).body(resp);
+        } catch(Exception ex) {
+            ApiResponse resp = new ApiResponse(false, "failed to saved user address", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<ApiResponse> getUserAddressById(@RequestParam int id){
+        try {
+            GetUserAddressResponseDto existingUserAddress = userAddressService.getUserAddressById(id);
+            ApiResponse resp = new ApiResponse(true, "user address for id: " + id, existingUserAddress);
+            return ResponseEntity.ok(resp);
+        } catch(Exception ex) {
+            ApiResponse resp = new ApiResponse(false, "failed to get user address", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+
+    @PutMapping
+    public ResponseEntity<ApiResponse> updateUserAddress(@RequestBody UpdateUserAddressRequestDto userAddressRequestDto){
+        try {
+            userAddressService.updateUserAddressData(userAddressRequestDto);
+            ApiResponse resp = new ApiResponse(true, "updated user address");
+            return ResponseEntity.ok(resp);
+        } catch(Exception ex) {
+            ApiResponse resp = new ApiResponse(false, "failed to update user address", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+
+    @DeleteMapping
+    public ResponseEntity<ApiResponse> deleteUserAddress(@RequestParam Integer id){
+        try {
+            if (id == null) throw new NullPointerException();
+            userAddressService.deleteUserAddress(id);
+            ApiResponse resp = new ApiResponse(true, "user address deleted");
+            return ResponseEntity.ok(resp);
+        } catch(Exception ex) {
+            ApiResponse resp = new ApiResponse(false, "failed to delete user address", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+}

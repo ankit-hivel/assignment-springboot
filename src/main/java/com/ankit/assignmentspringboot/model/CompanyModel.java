@@ -6,8 +6,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 
-@Entity
-@Table(name = "company")
+//@Entity
+//@Table(name = "company")
 public class CompanyModel {
 
     @Id
@@ -20,6 +20,9 @@ public class CompanyModel {
 
     @OneToOne(cascade = CascadeType.REMOVE)
     private CompanyAddressModel address;
+
+    @OneToOne
+    private UserModel user;
 
     @CreationTimestamp
     private Instant createdAt;
@@ -65,6 +68,14 @@ public class CompanyModel {
 
     public void setAddress(CompanyAddressModel address) {
         this.address = address;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
     }
 
     public Instant getCreatedAt() {

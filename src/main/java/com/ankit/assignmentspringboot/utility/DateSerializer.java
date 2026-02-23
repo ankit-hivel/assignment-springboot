@@ -13,12 +13,10 @@ public class DateSerializer extends StdConverter<String, LocalDate> {
     public LocalDate convert(String value) {
         String date = stream(value.split("-")).map(val -> {
             if (val.length() == 1){
-                System.out.println(val);
                 return "0" + val;
             }
             return val;
         }).collect(Collectors.joining("-")).toString();
-        System.out.println("converted..." + date);
 
         return LocalDate.parse(date);
     }
