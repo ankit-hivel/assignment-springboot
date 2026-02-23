@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -47,6 +48,13 @@ public class UserController extends Exception{
     public ResponseEntity<ApiResponse> getUserByIdOrEmail(@RequestParam String email) {
         Optional<UserModel> user = userService.getUserByEmail(email);
         ApiResponse resp = new ApiResponse(true, "user found", user);
+        return ResponseEntity.ok(resp);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<ApiResponse> getAllUsers() {
+        List<UserModel> allUsers = userService.getAllUsers();
+        ApiResponse resp = new ApiResponse(true, "all user", allUsers);
         return ResponseEntity.ok(resp);
     }
 }

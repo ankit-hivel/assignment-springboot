@@ -84,6 +84,12 @@ public class UserModel {
     @OneToOne(cascade = CascadeType.REMOVE)
     private UserAddressModel address;
 
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private CryptoModel crypto;
+
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private CompanyModel company;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private Instant createdAt;
@@ -300,6 +306,14 @@ public class UserModel {
         this.address = address;
     }
 
+    public CryptoModel getCrypto() {
+        return crypto;
+    }
+
+    public void setCrypto(CryptoModel crypto) {
+        this.crypto = crypto;
+    }
+
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -315,5 +329,4 @@ public class UserModel {
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
-
 }

@@ -1,14 +1,10 @@
 package com.ankit.assignmentspringboot.model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.Instant;
 
 @Entity
-@Table(name = "user_address")
-public class UserAddressModel {
+@Table(name = "company_address")
+public class CompanyAddressModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +19,6 @@ public class UserAddressModel {
     private String country;
     private float lattitude;
     private float longitude;
-
-    @CreationTimestamp
-    private Instant createdAt;
-
-    @UpdateTimestamp
-    private Instant updatedAt;
 
     public int getId() {
         return id;
@@ -102,19 +92,4 @@ public class UserAddressModel {
         this.longitude = longitude;
     }
 
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
