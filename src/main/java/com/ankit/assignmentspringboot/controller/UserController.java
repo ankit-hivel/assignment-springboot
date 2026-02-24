@@ -44,6 +44,7 @@ public class UserController {
     @GetMapping(params = "id")
     public ResponseEntity<ApiResponse<?>> getUserByIdOrEmail(@RequestParam Integer id) {
         try{
+            if (id == null) throw new NullPointerException();
             UserModel user = userService.getUserById(id);
             ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", new GetUserResponseDto(user));
             return ResponseEntity.status(HttpStatus.OK).body(resp);
@@ -58,6 +59,7 @@ public class UserController {
     @GetMapping(params = "email")
     public ResponseEntity<ApiResponse<?>> getUserByIdOrEmail(@RequestParam String email) {
         try {
+            if (email == null || email.isEmpty()) throw new NullPointerException();
             UserModel user = userService.getUserByEmail(email);
             ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", new GetUserResponseDto(user));
             System.out.println(resp.getData());
@@ -97,8 +99,9 @@ public class UserController {
     }
 
     @DeleteMapping
-    public ResponseEntity<ApiResponse<Void>> deleteUser(@RequestParam int id) {
+    public ResponseEntity<ApiResponse<Void>> deleteUser(@RequestParam Integer id) {
         try{
+            if (id == null) throw new NullPointerException();
             userService.deleteUser(id);
             ApiResponse<Void> resp = new ApiResponse<>(true, "user data deleted");
             return ResponseEntity.status(HttpStatus.OK).body(resp);

@@ -19,10 +19,12 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final CompanyService companyService;
 
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, CompanyService companyService){
         this.userRepository = userRepository;
+        this.companyService = companyService;
     }
 
     public void saveUserData(SaveUserRequestDto userPayload){
@@ -142,7 +144,10 @@ public class UserService {
     }
 
     public void deleteUser(Integer id) {
-        // TODO: delete related tables data too
+        UserModel user = userRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("user not found")
+        );
+        companyService.deleteCompanyById(user.getCompany().getId());
         userRepository.deleteById(id);
     }
 }

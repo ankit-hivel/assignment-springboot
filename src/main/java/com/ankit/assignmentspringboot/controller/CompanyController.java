@@ -22,34 +22,56 @@ public class CompanyController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<Void>> saveCompany(@RequestBody SaveCompanyRequestDto dto){
-        System.out.println(dto.getAddress());
-        companyService.saveCompany(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(
-                new ApiResponse<Void>(true, "company saved")
-        );
+        try {
+            System.out.println(dto.getAddress());
+            companyService.saveCompany(dto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(
+                    new ApiResponse<Void>(true, "company saved")
+            );
+        } catch(Exception ex) {
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save company details", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<GetCompanyResponseDto>> getCompanyById(@RequestParam int id) {
-        GetCompanyResponseDto company = companyService.getCompanyById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(
-                new ApiResponse<GetCompanyResponseDto>(true, "company found", company)
-        );
+    public ResponseEntity<ApiResponse<?>> getCompanyById(@RequestParam Integer id) {
+        try {
+            if (id == null) throw new NullPointerException();
+            GetCompanyResponseDto company = companyService.getCompanyById(id);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ApiResponse<GetCompanyResponseDto>(true, "company found", company)
+            );
+        } catch(Exception ex) {
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get company details", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
     }
 
     @PutMapping
     public ResponseEntity<ApiResponse<Void>> updateCompanyById(@RequestBody UpdateCompanyRequestDto dto) {
-        companyService.updateCompanyById(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(
-                new ApiResponse<Void>(true, "company updated")
-        );
+        try {
+            companyService.updateCompanyById(dto);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ApiResponse<Void>(true, "company updated")
+            );
+        } catch(Exception ex) {
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update company details", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
     }
 
     @DeleteMapping
     public ResponseEntity<ApiResponse<Void>> deleteCompanyById(@RequestParam Integer id) {
-        companyService.deleteCompanyById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(
-                new ApiResponse<Void>(true, "company deleted successfully")
-        );
+        try{
+            if (id == null) throw new NullPointerException();
+            companyService.deleteCompanyById(id);
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ApiResponse<Void>(true, "company deleted successfully")
+            );
+        } catch(Exception ex) {
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete company details", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
     }
 }
