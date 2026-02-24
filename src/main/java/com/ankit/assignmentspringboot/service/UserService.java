@@ -4,16 +4,13 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.ankit.assignmentspringboot.model.UserModel;
 import com.ankit.assignmentspringboot.repository.UserRepository;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
-import com.ankit.assignmentspringboot.responseDto.GetUserResponseDto;
-import com.ankit.assignmentspringboot.utility.DateSerializer;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -39,8 +36,7 @@ public class UserService {
     }
 
     public UserModel getUserById(Integer id) {
-        UserModel user = userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
-        return user;
+        return userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
     }
 
     public UserModel getUserByEmail(String email){
@@ -61,6 +57,7 @@ public class UserService {
     public List<UserModel> getAllUsers() {
         return userRepository.findAll();
     }
+
     public void updateExistingUserData(SaveUserRequestDto user) {
 
         UserModel userToUpdate = getUserByEmail(user.getEmail());
@@ -143,11 +140,14 @@ public class UserService {
         userRepository.save(userToUpdate);
     }
 
+    @Transactional
     public void deleteUser(Integer id) {
-        UserModel user = userRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("user not found")
-        );
-        companyService.deleteCompanyById(user.getCompany().getId());
+        UserModel user = userRepository.findById(id).orElseThrow();
+        System.out.println(user);
+        System.out.println(user.getCompany());
+        System.out.println(user.getUserAddress());
+//        companyService.deleteCompanyById(user.getCompany().getId());
+//        userAddressService.deleteUserAddress(user.getUserAddress().getId());
         userRepository.deleteById(id);
     }
 }

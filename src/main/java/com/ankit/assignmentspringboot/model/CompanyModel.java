@@ -28,12 +28,16 @@ public class CompanyModel {
             fetch = FetchType.LAZY,
             optional = false
     )
+    @JoinColumn(name = "user_id")
     private UserModel user;
 
     @OneToOne(
             fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
             optional = false
     )
+    @JoinColumn(name = "company_address_id")
     private CompanyAddressModel companyAddress;
 
 

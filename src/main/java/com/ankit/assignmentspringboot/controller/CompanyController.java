@@ -23,7 +23,6 @@ public class CompanyController {
     @PostMapping
     public ResponseEntity<ApiResponse<Void>> saveCompany(@RequestBody SaveCompanyRequestDto dto){
         try {
-            System.out.println(dto.getAddress());
             companyService.saveCompany(dto);
             return ResponseEntity.status(HttpStatus.CREATED).body(
                     new ApiResponse<Void>(true, "company saved")
@@ -70,6 +69,7 @@ public class CompanyController {
                     new ApiResponse<Void>(true, "company deleted successfully")
             );
         } catch(Exception ex) {
+            System.out.println(ex);
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete company details", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }

@@ -10,6 +10,7 @@ import com.ankit.assignmentspringboot.requestDto.SaveCompanyRequestDto;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateCompanyRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetCompanyResponseDto;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,25 +40,22 @@ public class CompanyService {
         cAddress.setState(dto.getAddress().getState());
         cAddress.setStateCode(dto.getAddress().getStateCode());
 
-        companyAddressRepository.save(cAddress);
-        System.out.println("addr id: " + cAddress.getId());
+//        companyAddressRepository.save(cAddress);
 
-        // company data
         CompanyModel company = new CompanyModel();
-        System.out.println("created object");
+
         company.setDepartment(dto.getDepartment());
         company.setName(dto.getName());
         company.setTitle(dto.getTitle());
 
-        System.out.println("userid: " + dto.getDepartment());
         UserModel userToRefer = userRepository.findById(dto.getUserid()).orElseThrow(
                 ()-> new RuntimeException("user not found")
         );
-        System.out.println("found user" + userToRefer);
+
         company.setUser(userToRefer);
         company.setCompanyAddress(cAddress);
+        cAddress.setCompany(company);
         companyRepository.save(company);
-        System.out.println("addr id: " + company.getId());
     }
 
     public GetCompanyResponseDto getCompanyById (int id){
@@ -65,42 +63,33 @@ public class CompanyService {
                 ()-> new RuntimeException("company doesn't exist")
         );
         System.out.println(company);
-        GetCompanyResponseDto companyResponse = new GetCompanyResponseDto(company);
-        return companyResponse;
+        return new GetCompanyResponseDto(company);
     }
-
+    @Transactional
     public void updateCompanyById(UpdateCompanyRequestDto dto) {
-        CompanyModel companyToUpdate = companyRepository.findById(dto.getId()).orElseThrow(
-                () -> new RuntimeException("company not found")
-        );
-        System.out.println("company found" + companyToUpdate);
+        CompanyModel company = companyRepository.findById(dto.getId())
+                .orElseThrow(() -> new RuntimeException("company not found"));
 
-        CompanyAddressModel cAddressToUpdate = companyToUpdate.getCompanyAddress();
-        System.out.println(cAddressToUpdate.getArea());
-        cAddressToUpdate.setStateCode(dto.getAddress().getStateCode());
-        cAddressToUpdate.setState(dto.getAddress().getState());
-        cAddressToUpdate.setLongitude(dto.getAddress().getLng());
-        cAddressToUpdate.setLattitude(dto.getAddress().getLat());
-        cAddressToUpdate.setCity(dto.getAddress().getCity());
-        cAddressToUpdate.setCountry(dto.getAddress().getCountry());
-        cAddressToUpdate.setArea(dto.getAddress().getArea());
-        cAddressToUpdate.setPostalCode(dto.getAddress().getPostalCode());
-        System.out.println(cAddressToUpdate.getId());
-        System.out.println(cAddressToUpdate.getArea());
-        companyAddressRepository.save(cAddressToUpdate);
+        company.setTitle(dto.getTitle());
+        company.setName(dto.getName());
+        company.setDepartment(dto.getDepartment());
 
-        companyToUpdate.setCompanyAddress(cAddressToUpdate);
-        companyToUpdate.setTitle(dto.getTitle());
-        companyToUpdate.setName(dto.getName());
-        companyToUpdate.setDepartment(dto.getDepartment());
-        companyRepository.save(companyToUpdate);
+        CompanyAddressModel address = company.getCompanyAddress();
+
+        address.setStateCode(dto.getAddress().getStateCode());
+        address.setState(dto.getAddress().getState());
+        address.setLongitude(dto.getAddress().getLng());
+        address.setLattitude(dto.getAddress().getLat());
+        address.setCity(dto.getAddress().getCity());
+        address.setCountry(dto.getAddress().getCountry());
+        address.setArea(dto.getAddress().getArea());
+        address.setPostalCode(dto.getAddress().getPostalCode());
     }
 
     public void deleteCompanyById(int id) {
-        CompanyModel company = companyRepository.findById(id).orElseThrow(
+        companyRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("company not found")
         );
-        companyAddressRepository.deleteById(company.getCompanyAddress().getId());
         companyRepository.deleteById(id);
     }
 }
