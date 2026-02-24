@@ -14,58 +14,59 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/address")
 public class UserAddressController {
 
-    private UserAddressService userAddressService;
+    private final UserAddressService userAddressService;
 
     @Autowired
     public UserAddressController(UserAddressService userAddressService) {
+        System.out.println("inside user address controller constructor");
         this.userAddressService = userAddressService;
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse> saveUserAddress(@RequestBody SaveUserAddressRequestDto userAddress){
+    public ResponseEntity<ApiResponse<Void>> saveUserAddress(@RequestBody SaveUserAddressRequestDto userAddress){
         try {
             userAddressService.saveUserAddress(userAddress);
-            ApiResponse resp = new ApiResponse(true, "saved user address");
+            ApiResponse<Void> resp = new ApiResponse<>(true, "saved user address");
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
         } catch(Exception ex) {
-            ApiResponse resp = new ApiResponse(false, "failed to saved user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to saved user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse> getUserAddressById(@RequestParam int id){
+    public ResponseEntity<ApiResponse<?>> getUserAddressById(@RequestParam int id){
         try {
             GetUserAddressResponseDto existingUserAddress = userAddressService.getUserAddressById(id);
-            ApiResponse resp = new ApiResponse(true, "user address for id: " + id, existingUserAddress);
-            return ResponseEntity.ok(resp);
+            ApiResponse<GetUserAddressResponseDto> resp = new ApiResponse<>(true, "user address for id: " + id, existingUserAddress);
+            return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch(Exception ex) {
-            ApiResponse resp = new ApiResponse(false, "failed to get user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
 
     @PutMapping
-    public ResponseEntity<ApiResponse> updateUserAddress(@RequestBody UpdateUserAddressRequestDto userAddressRequestDto){
+    public ResponseEntity<ApiResponse<Void>> updateUserAddress(@RequestBody UpdateUserAddressRequestDto userAddressRequestDto){
         try {
             userAddressService.updateUserAddressData(userAddressRequestDto);
-            ApiResponse resp = new ApiResponse(true, "updated user address");
+            ApiResponse<Void> resp = new ApiResponse<>(true, "updated user address");
             return ResponseEntity.ok(resp);
         } catch(Exception ex) {
-            ApiResponse resp = new ApiResponse(false, "failed to update user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
 
     @DeleteMapping
-    public ResponseEntity<ApiResponse> deleteUserAddress(@RequestParam Integer id){
+    public ResponseEntity<ApiResponse<Void>> deleteUserAddress(@RequestParam Integer id){
         try {
             if (id == null) throw new NullPointerException();
             userAddressService.deleteUserAddress(id);
-            ApiResponse resp = new ApiResponse(true, "user address deleted");
+            ApiResponse<Void> resp = new ApiResponse<>(true, "user address deleted");
             return ResponseEntity.ok(resp);
         } catch(Exception ex) {
-            ApiResponse resp = new ApiResponse(false, "failed to delete user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }

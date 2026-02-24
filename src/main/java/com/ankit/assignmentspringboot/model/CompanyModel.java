@@ -6,23 +6,17 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 
-//@Entity
-//@Table(name = "company")
+@Entity
+@Table(name = "company")
 public class CompanyModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String department;
     private String name;
     private String title;
-
-    @OneToOne(cascade = CascadeType.REMOVE)
-    private CompanyAddressModel address;
-
-    @OneToOne
-    private UserModel user;
 
     @CreationTimestamp
     private Instant createdAt;
@@ -30,11 +24,24 @@ public class CompanyModel {
     @UpdateTimestamp
     private Instant updatedAt;
 
-    public int getId() {
+    @OneToOne(
+            fetch = FetchType.LAZY,
+            optional = false
+    )
+    private UserModel user;
+
+    @OneToOne(
+            fetch = FetchType.EAGER,
+            optional = false
+    )
+    private CompanyAddressModel companyAddress;
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -62,22 +69,6 @@ public class CompanyModel {
         this.title = title;
     }
 
-    public CompanyAddressModel getAddress() {
-        return address;
-    }
-
-    public void setAddress(CompanyAddressModel address) {
-        this.address = address;
-    }
-
-    public UserModel getUser() {
-        return user;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -92,5 +83,21 @@ public class CompanyModel {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
+
+    public CompanyAddressModel getCompanyAddress() {
+        return companyAddress;
+    }
+
+    public void setCompanyAddress(CompanyAddressModel companyAddress) {
+        this.companyAddress = companyAddress;
     }
 }

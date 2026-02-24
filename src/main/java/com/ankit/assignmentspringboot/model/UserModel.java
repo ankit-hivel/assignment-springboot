@@ -92,6 +92,25 @@ public class UserModel {
     @OneToOne(mappedBy = "user")
     private UserAddressModel userAddress;
 
+    @OneToOne(mappedBy = "user")
+    private CompanyModel company;
+
+    public UserAddressModel getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(UserAddressModel userAddress) {
+        this.userAddress = userAddress;
+    }
+
+    public CompanyModel getCompany() {
+        return company;
+    }
+
+    public void setCompany(CompanyModel company) {
+        this.company = company;
+    }
+
     public int getId() {
         return id;
     }

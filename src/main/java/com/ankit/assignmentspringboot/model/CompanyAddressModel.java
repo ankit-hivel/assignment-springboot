@@ -2,8 +2,8 @@ package com.ankit.assignmentspringboot.model;
 
 import jakarta.persistence.*;
 
-//@Entity
-//@Table(name = "company_address")
+@Entity
+@Table(name = "company_address")
 public class CompanyAddressModel {
 
     @Id
@@ -11,14 +11,25 @@ public class CompanyAddressModel {
     private int id;
 
     @Column(name = "area")
-    private String address;
+    private String area;
     private String city;
     private String state;
     private String stateCode;
-    private int postalCode;
+    private String postalCode;
     private String country;
     private float lattitude;
     private float longitude;
+
+    @OneToOne(mappedBy = "companyAddress")
+    private CompanyModel company;
+
+    public CompanyModel getCompany() {
+        return company;
+    }
+
+    public void setCompany(CompanyModel company) {
+        this.company = company;
+    }
 
     public int getId() {
         return id;
@@ -28,12 +39,12 @@ public class CompanyAddressModel {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public String getArea() {
+        return area;
     }
 
-    public void setAddress(String area) {
-        this.address = area;
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getCity() {
@@ -60,11 +71,11 @@ public class CompanyAddressModel {
         this.stateCode = stateCode;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -91,5 +102,4 @@ public class CompanyAddressModel {
     public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
-
 }
