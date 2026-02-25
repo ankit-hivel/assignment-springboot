@@ -45,12 +45,12 @@ public class UserController {
     public ResponseEntity<ApiResponse<?>> getUserByIdOrEmail(@RequestParam Integer id) {
         try{
             if (id == null) throw new NullPointerException();
-            UserModel user = userService.getUserById(id);
-            ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", new GetUserResponseDto(user));
+            GetUserResponseDto user = new GetUserResponseDto(userService.getUserById(id));
+            ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", user);
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         }catch (Exception e) {
             System.out.println("❌" + e);
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -60,13 +60,13 @@ public class UserController {
     public ResponseEntity<ApiResponse<?>> getUserByIdOrEmail(@RequestParam String email) {
         try {
             if (email == null || email.isEmpty()) throw new NullPointerException();
-            UserModel user = userService.getUserByEmail(email);
-            ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", new GetUserResponseDto(user));
+            GetUserResponseDto user = new GetUserResponseDto(userService.getUserByEmail(email));
+            ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", user);
             System.out.println(resp.getData());
             return ResponseEntity.ok(resp);
         }catch (Exception e) {
             System.out.println("❌" + e);
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -80,7 +80,7 @@ public class UserController {
             return ResponseEntity.ok(resp);
         }catch (Exception e) {
             System.out.println("❌" + e);
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get users");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }

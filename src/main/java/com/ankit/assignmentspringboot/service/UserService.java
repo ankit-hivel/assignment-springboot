@@ -4,11 +4,18 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.ankit.assignmentspringboot.model.UserModel;
 import com.ankit.assignmentspringboot.repository.UserRepository;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
+import com.ankit.assignmentspringboot.responseDto.GetUserResponseDto;
+import com.ankit.assignmentspringboot.utility.CONSTANTS;
+import com.ankit.assignmentspringboot.utility.RedisClient;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.params.SetParams;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
@@ -34,10 +41,35 @@ public class UserService {
     }
 
     public UserModel getUserById(Integer id) {
-        return userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
+        Jedis redis = RedisClient.getInstance();
+        ObjectMapper objectMapper = new ObjectMapper();
+        if (redis != null){
+            String user = redis.get(id.toString());
+            System.out.println("user from redis" + user);
+            if (user != null) {
+                System.out.println("cache hit");
+                return objectMapper.readValue(user, UserModel.class);
+            }
+        }
+        System.out.println("cache miss");
+        UserModel user1 = userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
+        if (redis != null) {
+            String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(user1));
+            redis.set(id.toString(), userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
+        }
+        return user1;
     }
 
     public UserModel getUserByEmail(String email){
+        ObjectMapper objectMapper = new ObjectMapper();
+        Jedis redis = RedisClient.getInstance();
+        if (redis != null) {
+            String user = redis.get(email);
+            if (user != null) {
+                System.out.println("cache hit");
+                return objectMapper.readValue(user, UserModel.class);
+            }
+        }
         UserModel user = new UserModel();
         user.setEmail(email);
         UserModel existingUser = userRepository.findOne(
@@ -49,11 +81,32 @@ public class UserService {
                 )
         ).orElseThrow(()-> new RuntimeException("user not found"));
         System.out.println("existing user: " + existingUser);
+        if (redis != null) {
+        String userJsonToStore = objectMapper.writeValueAsString(existingUser);
+        redis.set(email, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
+        }
         return existingUser;
     }
 
     public List<UserModel> getAllUsers() {
-        return userRepository.findAll();
+        ObjectMapper objectMapper = new ObjectMapper();
+        Jedis redis = RedisClient.getInstance();
+        if (redis != null) {
+            String allUsers = redis.get(CONSTANTS.GetAllUsersKey);
+            if(allUsers != null) {
+                System.out.println("cache hit");
+                return objectMapper.readValue(allUsers, new TypeReference<List<UserModel>>() {
+                });
+            }
+        }
+        System.out.println("cache miss");
+        List<UserModel> allUsers = userRepository.findAll();
+        List<GetUserResponseDto> users = allUsers.stream().map(GetUserResponseDto::new).toList();
+        String allUsersJsonToWrite = objectMapper.writeValueAsString(users);
+        if (redis != null) {
+            redis.set(CONSTANTS.GetAllUsersKey, allUsersJsonToWrite, new SetParams().ex(CONSTANTS.RedisValueExpiry));
+        }
+        return allUsers;
     }
 
     public void updateExistingUserData(SaveUserRequestDto user) {
@@ -136,16 +189,25 @@ public class UserService {
             userToUpdate.setRole(user.getRole());
 
         userRepository.save(userToUpdate);
+
+        // invalidate cache
+        Jedis redis = RedisClient.getInstance();
+        if (redis != null) {
+            redis.del(String.valueOf(userToUpdate.getId()));
+            redis.del(userToUpdate.getEmail());
+        }
     }
 
     @Transactional
     public void deleteUser(Integer id) {
         UserModel user = userRepository.findById(id).orElseThrow();
-        System.out.println(user);
-        System.out.println(user.getCompany());
-        System.out.println(user.getUserAddress());
-//        companyService.deleteCompanyById(user.getCompany().getId());
-//        userAddressService.deleteUserAddress(user.getUserAddress().getId());
+
+        // invalidate cache
+        Jedis redis = RedisClient.getInstance();
+        if (redis != null) {
+            redis.del(String.valueOf(user.getId()));
+            redis.del(user.getEmail());
+        }
         userRepository.deleteById(id);
     }
 }

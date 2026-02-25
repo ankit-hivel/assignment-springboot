@@ -14,6 +14,6 @@ public class StartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        restApiService.getAllUsers();
+//        restApiService.getAllUsers();
     }
 }

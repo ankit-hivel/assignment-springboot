@@ -1,6 +1,5 @@
 package com.ankit.assignmentspringboot.service;
 
-import com.ankit.assignmentspringboot.model.UserAddressModel;
 import com.ankit.assignmentspringboot.model.UserModel;
 import com.ankit.assignmentspringboot.requestDto.CompanyAddressDto;
 import com.ankit.assignmentspringboot.requestDto.SaveCompanyRequestDto;

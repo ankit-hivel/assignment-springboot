@@ -222,6 +222,8 @@ public class GetUserResponseDto {
         this.role = role;
     }
 
+    public GetUserResponseDto(){}
+
     public GetUserResponseDto(UserModel user) {
         this.id = user.getId();
         this.firstName = user.getFirstName();
