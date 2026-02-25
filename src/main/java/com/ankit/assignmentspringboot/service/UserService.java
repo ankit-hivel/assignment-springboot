@@ -16,15 +16,13 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final CompanyService companyService;
 
     @Autowired
-    public UserService(UserRepository userRepository, CompanyService companyService){
+    public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
-        this.companyService = companyService;
     }
 
-    public void saveUserData(SaveUserRequestDto userPayload){
+    public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
 
         // hash password
@@ -32,7 +30,7 @@ public class UserService {
         user.setPassword(hashedPassword);
 
         // save user
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
     public UserModel getUserById(Integer id) {
