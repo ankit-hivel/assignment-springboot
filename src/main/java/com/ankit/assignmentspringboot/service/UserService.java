@@ -82,8 +82,8 @@ public class UserService {
         ).orElseThrow(()-> new RuntimeException("user not found"));
         System.out.println("existing user: " + existingUser);
         if (redis != null) {
-        String userJsonToStore = objectMapper.writeValueAsString(existingUser);
-        redis.set(email, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
+            String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(existingUser));
+            redis.set(email, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
         }
         return existingUser;
     }

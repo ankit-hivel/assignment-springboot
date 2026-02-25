@@ -25,9 +25,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<ApiResponse<Void>> saveUser(@RequestBody SaveUserRequestDto user) {
         try {
+            System.out.println("got user");
             userService.saveUserData(user);
             ApiResponse<Void> resp = new ApiResponse<>(true, "saved user");
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
