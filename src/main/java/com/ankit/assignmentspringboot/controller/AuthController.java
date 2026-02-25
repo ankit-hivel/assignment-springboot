@@ -27,7 +27,7 @@ public class AuthController {
             String token = authService.login(dto.getEmail(), dto.getPassword());
             ResponseCookie cookie = ResponseCookie.from("token").value(token)
                     .httpOnly(true)
-                    .maxAge(60).build();
+                    .maxAge(3600).build();
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .header(HttpHeaders.SET_COOKIE, cookie.toString())
