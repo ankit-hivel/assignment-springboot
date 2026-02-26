@@ -1,6 +1,6 @@
 package com.ankit.assignmentspringboot.config;
 
-import com.ankit.assignmentspringboot.utility.security.JwtAuthenticationFilter;
+import com.ankit.assignmentspringboot.component.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,6 +25,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/login").permitAll()
                         .requestMatchers("/user/save").permitAll()
+                        .requestMatchers("/health").permitAll()
+                        .requestMatchers("/csv").permitAll()
+                        .requestMatchers("/metrics").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter,

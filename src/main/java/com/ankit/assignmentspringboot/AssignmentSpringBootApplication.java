@@ -10,5 +10,6 @@ public class AssignmentSpringBootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AssignmentSpringBootApplication.class, args);
+
     }
 }

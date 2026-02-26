@@ -6007,3 +6007,594 @@ This generated password is for development use only. Your security configuration
 2026-02-26 16:22:02 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
 2026-02-26 16:22:02 - WARN - org.hibernate.orm.core - HHH000502: The [createdAt] property of the [com.ankit.assignmentspringboot.model.UserModel] entity was modified, but it won't be updated because the property is immutable.
 2026-02-26 16:22:02 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?
+2026-02-26 16:32:48 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:32:48 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:32:48 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:32:48 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:32:48 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:32:50 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50589 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:32:50 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:32:50 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:32:50 - WARN - o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'rateLimitingFilter' defined in com.ankit.assignmentspringboot.AssignmentSpringBootApplication: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=assignmentSpringBootApplication; factoryMethodName=rateLimitingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in com.ankit.assignmentspringboot.AssignmentSpringBootApplication] for bean 'rateLimitingFilter' since there is already [Generic bean: class=com.ankit.assignmentspringboot.component.RateLimitingFilter; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes/com/ankit/assignmentspringboot/component/RateLimitingFilter.class]] bound.
+2026-02-26 16:32:50 - INFO - o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-26 16:32:50 - ERROR - o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'rateLimitingFilter', defined in com.ankit.assignmentspringboot.AssignmentSpringBootApplication, could not be registered. A bean with that name has already been defined in file [/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes/com/ankit/assignmentspringboot/component/RateLimitingFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2026-02-26 16:33:23 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50606 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:33:23 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:33:23 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:33:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:33:23 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:33:23 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:33:23 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:33:23 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 558 ms
+2026-02-26 16:33:23 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:33:23 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:33:24 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:33:24 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:33:24 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:33:24 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69944a90
+2026-02-26 16:33:24 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:33:24 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:33:24 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:33:24 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:33:24 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:33:24 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:33:25 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:33:25 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:33:25 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:33:25 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6299e4fc-8bac-48a5-9599-a7910c1a1444
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:33:25 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:33:25 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:33:25 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.127 seconds (process running for 2.398)
+2026-02-26 16:33:25 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:33:25 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:33:25 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:33:38 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:33:38 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:33:38 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:33:38 - INFO - c.a.a.c.JwtAuthenticationFilter - token: null
+2026-02-26 16:34:13 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:34:13 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:34:13 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:34:13 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:34:13 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:34:15 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50627 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:34:15 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:34:15 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:34:15 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:34:15 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:34:15 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:16 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:34:16 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:34:16 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:34:16 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:34:16 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 589 ms
+2026-02-26 16:34:16 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:34:16 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:34:16 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:34:16 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:34:16 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:34:16 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7816454d
+2026-02-26 16:34:16 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:34:16 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:34:17 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:34:17 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:34:17 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:34:17 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:34:17 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:34:17 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:34:17 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:34:17 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9eac7537-4617-4df5-8209-0038c01f7b2d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:34:17 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:34:17 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:34:17 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.141 seconds (process running for 2.379)
+2026-02-26 16:34:17 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:34:17 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:34:17 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:34:18 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:34:18 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:34:18 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:34:34 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:34:34 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:34:34 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:34:34 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:34:34 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:34:35 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50636 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:34:35 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:34:35 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:34:36 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:34:36 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:34:36 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:34:36 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:34:36 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 546 ms
+2026-02-26 16:34:36 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:34:36 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:34:36 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:34:36 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:34:36 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:34:36 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66456506
+2026-02-26 16:34:36 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:34:36 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:34:37 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:34:37 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:34:37 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:34:37 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:34:37 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:34:37 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:34:37 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:34:37 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 15d4f8bf-9776-4ee2-9be9-e7832073cfcc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:34:37 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:34:37 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:34:37 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.089 seconds (process running for 2.356)
+2026-02-26 16:34:37 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:34:37 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:34:37 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:34:39 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:34:39 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:34:39 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:37:31 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:37:31 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:37:31 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:37:31 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:37:31 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:37:33 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50657 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:37:33 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:37:33 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:37:33 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:37:33 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:37:33 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:37:33 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:37:33 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 569 ms
+2026-02-26 16:37:33 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:37:33 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:37:33 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:37:33 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:37:33 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:37:33 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@667dd150
+2026-02-26 16:37:33 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:37:34 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:37:34 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:37:34 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:37:34 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:37:34 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:37:34 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:37:34 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:37:34 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:37:34 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f5ef91ce-afbf-4456-94c9-79715fe3c858
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:37:34 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:37:35 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:37:35 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.22 seconds (process running for 2.482)
+2026-02-26 16:37:35 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:37:35 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:37:35 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:37:35 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:37:35 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:37:35 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:38:21 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:38:21 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:38:21 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:38:21 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:38:21 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:38:23 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50681 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:38:23 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:38:23 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:38:23 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:38:23 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:38:23 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:38:23 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:38:23 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 525 ms
+2026-02-26 16:38:23 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:38:23 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:38:23 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:38:24 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:38:24 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:38:24 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7816454d
+2026-02-26 16:38:24 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:38:24 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:38:24 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:38:24 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:38:24 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:38:24 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:38:24 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:38:24 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:38:24 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:38:24 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 84bd7207-d869-4089-8959-9a7083f9c99b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:38:24 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:38:25 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:38:25 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.068 seconds (process running for 2.322)
+2026-02-26 16:38:25 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:38:25 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:38:25 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:38:28 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:38:28 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:38:28 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:39:49 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:39:49 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:39:49 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:39:49 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:39:49 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:39:52 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50706 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:39:52 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:39:52 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:39:52 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:39:52 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:39:52 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:39:52 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:39:52 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 563 ms
+2026-02-26 16:39:52 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:39:53 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:39:53 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:39:53 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:39:53 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:39:53 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@758d4aa9
+2026-02-26 16:39:53 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:39:53 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:39:53 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:39:53 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:39:53 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:39:53 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:39:54 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:39:54 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:39:54 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:39:54 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a700ae22-2bf0-41b4-840f-1139231a879e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:39:54 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:39:54 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:39:54 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.212 seconds (process running for 2.446)
+2026-02-26 16:39:54 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:39:54 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:39:54 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:39:55 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:39:55 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:39:55 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:40:06 - INFO - c.a.a.c.JwtAuthenticationFilter - token: null
+2026-02-26 16:41:02 - INFO - c.a.a.c.JwtAuthenticationFilter - token: null
+2026-02-26 16:42:31 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:42:31 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:42:31 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:42:31 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:42:31 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:43:06 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50757 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:43:06 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:43:06 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:43:06 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:43:06 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:43:06 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:43:06 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:43:06 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 553 ms
+2026-02-26 16:43:06 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:43:06 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:43:06 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:43:07 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:43:07 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:43:07 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58e5fbe5
+2026-02-26 16:43:07 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:43:07 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:43:07 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:43:07 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:43:07 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:43:07 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:43:08 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:43:08 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:43:08 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:43:08 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 31922a86-4a83-4482-9dc8-ca8ff0c2646a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:43:08 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:43:08 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:43:08 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.177 seconds (process running for 2.439)
+2026-02-26 16:43:08 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:43:08 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:43:08 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:43:10 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:43:10 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:43:10 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 16:44:02 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:44:02 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:44:02 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:44:02 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:44:02 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:44:03 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50776 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:44:03 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:44:03 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:44:04 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:44:04 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:44:04 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:44:04 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:44:04 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 559 ms
+2026-02-26 16:44:04 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:44:04 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:44:04 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:44:04 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:44:04 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:44:04 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7d90764a
+2026-02-26 16:44:04 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:44:04 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:44:05 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:44:05 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:44:05 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:44:05 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:44:05 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:44:05 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:44:05 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:44:05 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: cad373b3-f2e4-40e3-a9e5-182dd21fd6b2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:44:05 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:44:05 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:44:05 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.108 seconds (process running for 2.374)
+2026-02-26 16:44:05 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:44:06 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:44:06 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:44:08 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:44:08 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:44:08 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-02-26 16:44:20 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 16:44:20 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 16:44:20 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:44:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 16:44:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 16:53:28 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 50882 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 16:53:28 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 16:53:28 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 16:53:28 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-02-26 16:53:29 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 16:53:29 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 16:53:29 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 16:53:29 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 610 ms
+2026-02-26 16:53:29 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 16:53:29 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 16:53:29 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 16:53:29 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 16:53:29 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 16:53:29 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@147375b3
+2026-02-26 16:53:29 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 16:53:29 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 16:53:30 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 16:53:30 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 16:53:30 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 16:53:30 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 16:53:30 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 16:53:30 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 16:53:30 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 16:53:30 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4b6efacd-2043-41f4-91f6-aa8bbf98a21a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 16:53:30 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 16:53:30 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 16:53:30 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.216 seconds (process running for 2.498)
+2026-02-26 16:53:30 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 16:53:30 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 16:53:30 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 16:53:33 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 16:53:33 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 16:53:33 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
