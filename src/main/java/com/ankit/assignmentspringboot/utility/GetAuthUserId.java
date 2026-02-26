@@ -5,9 +5,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.Objects;
 
 public class GetAuthUserId {
-    public static String getUserId(){
-        return Objects.requireNonNull(SecurityContextHolder.getContext()
+    public static Integer getUserId(){
+        return Integer.parseInt(Objects.requireNonNull(SecurityContextHolder.getContext()
                         .getAuthentication())
-                .getName();
+                .getName());
     }
 }

@@ -12,7 +12,7 @@ public class UserAddressModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "area")
     private String area;
@@ -44,11 +44,11 @@ public class UserAddressModel {
     @UpdateTimestamp
     private Instant updatedAt;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

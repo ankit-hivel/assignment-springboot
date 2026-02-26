@@ -22,7 +22,7 @@ public class UserAddressService {
         this.userRepository = userRepository;
     }
 
-    public UserAddressModel saveUserAddress(SaveUserAddressRequestDto userAddressPayload){
+    public UserAddressModel saveUserAddress(SaveUserAddressRequestDto userAddressPayload) {
         UserAddressModel userAddressToSave = new UserAddressModel();
         userAddressToSave.setArea(userAddressPayload.getArea());
         userAddressToSave.setCity(userAddressPayload.getCity());

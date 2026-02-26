@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, Integer> {
+public interface UserRepository extends JpaRepository<UserModel, String> {
     @EntityGraph(attributePaths = {"company", "userAddress"})
     @NonNull Optional<UserModel> findById(Integer id);
 }

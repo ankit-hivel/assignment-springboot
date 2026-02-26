@@ -1,6 +1,7 @@
 package com.ankit.assignmentspringboot.responseDto;
 
 import com.ankit.assignmentspringboot.utility.DateSerializer;
+import com.ankit.assignmentspringboot.utility.UserRole;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import tools.jackson.databind.annotation.JsonDeserialize;
 
@@ -23,15 +24,17 @@ public class User {
     private Float height;
     private Float weight;
     private String eyeColor;
-    private String haircolor;
-    private String hairtype;
+//    private String haircolor;
+//    private String hairtype;
     private String ip;
     private String macAddress;
     private String university;
     private String ein;
     private String ssn;
     private String userAgent;
-    private String role;
+    private UserRole role;
+
+    private Hair hair;
 
     // address
     private UserAddressApiResponse address;
@@ -159,22 +162,6 @@ public class User {
         this.eyeColor = eyeColor;
     }
 
-    public String getHaircolor() {
-        return haircolor;
-    }
-
-    public void setHaircolor(String haircolor) {
-        this.haircolor = haircolor;
-    }
-
-    public String getHairtype() {
-        return hairtype;
-    }
-
-    public void setHairtype(String hairtype) {
-        this.hairtype = hairtype;
-    }
-
     public String getIp() {
         return ip;
     }
@@ -223,11 +210,11 @@ public class User {
         this.userAgent = userAgent;
     }
 
-    public String getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 
@@ -284,6 +271,35 @@ public class User {
 
         public void setAddress(UserAddressApiResponse address) {
             this.address = address;
+        }
+    }
+
+    public Hair getHair() {
+        return hair;
+    }
+
+    public void setHair(Hair hair) {
+        this.hair = hair;
+    }
+
+    public static class Hair {
+        private String color;
+        private String type;
+
+        public String getColor() {
+            return color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
         }
     }
 

@@ -6,7 +6,10 @@ import com.ankit.assignmentspringboot.repository.UserRepository;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetUserResponseDto;
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
+import com.ankit.assignmentspringboot.utility.GetAuthUserId;
 import com.ankit.assignmentspringboot.utility.RedisClient;
+import com.ankit.assignmentspringboot.utility.UserRole;
+import com.ankit.assignmentspringboot.utility.security.GetAuthUserRole;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -18,19 +21,24 @@ import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
 
+    private final GetAuthUserRole getAuthUserRole;
+
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, GetAuthUserRole getAuthUserRole){
         this.userRepository = userRepository;
+        this.getAuthUserRole = getAuthUserRole;
     }
 
     public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
+        user.setRole(UserRole.USER);
 
         // hash password
         String hashedPassword = BCrypt.withDefaults().hashToString(12, userPayload.getPassword().toCharArray());
@@ -41,10 +49,14 @@ public class UserService {
     }
 
     public UserModel getUserById(Integer id) {
+        // only allow for ADMIN and MODERATOR Role
+        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
+            throw new RuntimeException("user is not admin or moderator");
+        }
         Jedis redis = RedisClient.getInstance();
         ObjectMapper objectMapper = new ObjectMapper();
         if (redis != null){
-            String user = redis.get(id.toString());
+            String user = redis.get(String.valueOf(id));
             System.out.println("user from redis" + user);
             if (user != null) {
                 System.out.println("cache hit");
@@ -61,6 +73,9 @@ public class UserService {
     }
 
     public UserModel getUserByEmail(String email){
+        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
+            throw new RuntimeException("user is not admin or moderator");
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         Jedis redis = RedisClient.getInstance();
         if (redis != null) {
@@ -89,6 +104,9 @@ public class UserService {
     }
 
     public List<UserModel> getAllUsers() {
+        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))) {
+            throw new RuntimeException("user is not admin or moderator");
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         Jedis redis = RedisClient.getInstance();
         if (redis != null) {
@@ -110,6 +128,12 @@ public class UserService {
     }
 
     public void updateExistingUserData(SaveUserRequestDto user) {
+        if (
+                !Objects.equals(user.getId(), GetAuthUserId.getUserId())
+                || (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())))
+        ) {
+            throw new RuntimeException("unauthorized user");
+        }
 
         UserModel userToUpdate = getUserByEmail(user.getEmail());
 
@@ -199,7 +223,10 @@ public class UserService {
     }
 
     @Transactional
-    public void deleteUser(Integer id) {
+    public void deleteUser(String id) {
+        if (!(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))) {
+            throw new RuntimeException("user should be admin to perform deletion");
+        }
         UserModel user = userRepository.findById(id).orElseThrow();
 
         // invalidate cache

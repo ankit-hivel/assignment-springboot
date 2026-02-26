@@ -1,12 +1,11 @@
 package com.ankit.assignmentspringboot.model;
 
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
-import com.ankit.assignmentspringboot.utility.DateSerializer;
+import com.ankit.assignmentspringboot.utility.UserRole;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import tools.jackson.databind.annotation.JsonDeserialize;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -16,7 +15,7 @@ import java.time.LocalDate;
 public class UserModel {
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -79,7 +78,8 @@ public class UserModel {
     @Column(name = "user_agent")
     private String userAgent;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -111,11 +111,11 @@ public class UserModel {
         this.company = company;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -303,11 +303,11 @@ public class UserModel {
         this.userAgent = userAgent;
     }
 
-    public String getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 

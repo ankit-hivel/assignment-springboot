@@ -1,12 +1,13 @@
 package com.ankit.assignmentspringboot.requestDto;
 
 import com.ankit.assignmentspringboot.utility.DateSerializer;
+import com.ankit.assignmentspringboot.utility.UserRole;
 import tools.jackson.databind.annotation.JsonDeserialize;
 
 import java.time.LocalDate;
 
 public class SaveUserRequestDto {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -32,13 +33,13 @@ public class SaveUserRequestDto {
     private String ein;
     private String ssn;
     private String userAgent;
-    private String role;
+    private UserRole role;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -226,11 +227,11 @@ public class SaveUserRequestDto {
         this.userAgent = userAgent;
     }
 
-    public String getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserRole role) {
         this.role = role;
     }
 }

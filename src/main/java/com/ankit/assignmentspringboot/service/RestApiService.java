@@ -42,8 +42,8 @@ public class RestApiService {
                 userToSave.setEyeColor(user.getEyeColor());
                 userToSave.setFirstName(user.getFirstName());
                 userToSave.setLastName(user.getLastName());
-                userToSave.setHaircolor(user.getHaircolor());
-                userToSave.setHairtype(user.getHairtype());
+                userToSave.setHaircolor(user.getHair().getColor());
+                userToSave.setHairtype(user.getHair().getType());
                 userToSave.setHeight(user.getHeight());
                 userToSave.setId(user.getId());
                 userToSave.setImage(user.getImage());

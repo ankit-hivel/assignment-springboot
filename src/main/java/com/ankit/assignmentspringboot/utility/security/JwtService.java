@@ -33,12 +33,12 @@ public class JwtService {
                 .compact();
     }
     // Get user id from JWT token
-    public String getUserIdFromToken(String token) {
-        return Jwts.parserBuilder()
+    public Integer getUserIdFromToken(String token) {
+        return Integer.parseInt(Jwts.parserBuilder()
                 .setSigningKey(key).build()
                 .parseClaimsJws(token)
                 .getBody()
-                .getSubject();
+                .getSubject());
     }
     // Validate JWT token
     public boolean validateJwtToken(String token) {
