@@ -5,6 +5,8 @@ import com.ankit.assignmentspringboot.requestDto.UpdateCompanyRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetCompanyResponseDto;
 import com.ankit.assignmentspringboot.service.CompanyService;
 import com.ankit.assignmentspringboot.utility.ApiResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +15,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/company")
 public class CompanyController {
 
+    private static final Logger log = LoggerFactory.getLogger(CompanyController.class);
     private final CompanyService companyService;
 
     public CompanyController(CompanyService companyService) {
-        System.out.println("inside company controller constructor");
+        log.info("inside company controller constructor");
         this.companyService = companyService;
     }
 

@@ -7,6 +7,9 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetAllUsersDummyApiResponse;
 import com.ankit.assignmentspringboot.responseDto.User;
+import org.jspecify.annotations.NonNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,7 @@ import java.util.List;
 @Service
 public class RestApiService {
 
+    private static final Logger log = LoggerFactory.getLogger(RestApiService.class);
     @Autowired
     private UserService userService;
 
@@ -31,33 +35,7 @@ public class RestApiService {
         try {
             for (User user : users) {
                 // create SaveUserRequestDto object
-                SaveUserRequestDto userToSave = new SaveUserRequestDto();
-                userToSave.setId(user.getId());
-                userToSave.setAge(user.getAge());
-                userToSave.setEin(user.getEin());
-                userToSave.setEmail(user.getEmail());
-                userToSave.setGender(user.getGender());
-                userToSave.setBirthDate(user.getBirthDate());
-                userToSave.setBloodGroup(user.getBloodGroup());
-                userToSave.setEyeColor(user.getEyeColor());
-                userToSave.setFirstName(user.getFirstName());
-                userToSave.setLastName(user.getLastName());
-                userToSave.setHaircolor(user.getHair().getColor());
-                userToSave.setHairtype(user.getHair().getType());
-                userToSave.setHeight(user.getHeight());
-                userToSave.setId(user.getId());
-                userToSave.setImage(user.getImage());
-                userToSave.setIp(user.getIp());
-                userToSave.setMacAddress(user.getMacAddress());
-                userToSave.setMaidenName(user.getMaidenName());
-                userToSave.setPassword(user.getBloodGroup());
-                userToSave.setPhone(user.getPhone());
-                userToSave.setRole(user.getRole());
-                userToSave.setSsn(user.getSsn());
-                userToSave.setUniversity(user.getUniversity());
-                userToSave.setUserAgent(user.getUserAgent());
-                userToSave.setUsername(user.getUsername());
-                userToSave.setWeight(user.getWeight());
+                SaveUserRequestDto userToSave = getSaveUserRequestDto(user);
 
                 // save user
                 UserModel savedUser = this.userService.saveUserData(userToSave);
@@ -99,26 +77,60 @@ public class RestApiService {
 
                 companyService.saveCompany(companyToSave);
             }
-            System.out.println("users saved...");
+            log.info("users saved...");
         }catch(Exception e){
             throw new RuntimeException("failed to save data" + e);
         }
     }
 
+    private static @NonNull SaveUserRequestDto getSaveUserRequestDto(User user) {
+        SaveUserRequestDto userToSave = new SaveUserRequestDto();
+        userToSave.setId(user.getId());
+        userToSave.setAge(user.getAge());
+        userToSave.setEin(user.getEin());
+        userToSave.setEmail(user.getEmail());
+        userToSave.setGender(user.getGender());
+        userToSave.setBirthDate(user.getBirthDate());
+        userToSave.setBloodGroup(user.getBloodGroup());
+        userToSave.setEyeColor(user.getEyeColor());
+        userToSave.setFirstName(user.getFirstName());
+        userToSave.setLastName(user.getLastName());
+        userToSave.setHaircolor(user.getHair().getColor());
+        userToSave.setHairtype(user.getHair().getType());
+        userToSave.setHeight(user.getHeight());
+        userToSave.setId(user.getId());
+        userToSave.setImage(user.getImage());
+        userToSave.setIp(user.getIp());
+        userToSave.setMacAddress(user.getMacAddress());
+        userToSave.setMaidenName(user.getMaidenName());
+        userToSave.setPassword(user.getBloodGroup());
+        userToSave.setPhone(user.getPhone());
+        userToSave.setRole(user.getRole());
+        userToSave.setSsn(user.getSsn());
+        userToSave.setUniversity(user.getUniversity());
+        userToSave.setUserAgent(user.getUserAgent());
+        userToSave.setUsername(user.getUsername());
+        userToSave.setWeight(user.getWeight());
+        return userToSave;
+    }
+
     @Async
     public void getAllUsers() {
         try {
-            System.out.println("getting users");
+            log.info("getting users");
             String url = "https://dummyjson.com/users";
             RestTemplate restTemplate = new RestTemplate();
             GetAllUsersDummyApiResponse resp = restTemplate.getForObject(
                     url, GetAllUsersDummyApiResponse.class
             );
-            System.out.println("got response:");
-            if (resp == null) throw new RuntimeException("no data");
+            log.info("got response");
+            if (resp == null) {
+                log.error("no data in response");
+                throw new RuntimeException("no data");
+            };
             this.saveToDb(resp.getUsers());
         } catch (RuntimeException rx) {
-            System.out.println(rx);
+            log.error("error in get dummy users: {}", rx.getMessage());
         }
     }
 }

@@ -11,6 +11,8 @@ import com.ankit.assignmentspringboot.utility.RedisClient;
 import com.ankit.assignmentspringboot.utility.UserRole;
 import com.ankit.assignmentspringboot.utility.security.GetAuthUserRole;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -26,6 +28,7 @@ import java.util.Objects;
 @Service
 public class UserService {
 
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
 
     private final GetAuthUserRole getAuthUserRole;
@@ -38,8 +41,6 @@ public class UserService {
 
     public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
-        user.setRole(UserRole.USER);
-
         // hash password
         String hashedPassword = BCrypt.withDefaults().hashToString(12, userPayload.getPassword().toCharArray());
         user.setPassword(hashedPassword);
@@ -48,40 +49,33 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public UserModel getUserById(Integer id) {
-        // only allow for ADMIN and MODERATOR Role
-        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
-            throw new RuntimeException("user is not admin or moderator");
-        }
+    public UserModel getUserById(String id) {
         Jedis redis = RedisClient.getInstance();
         ObjectMapper objectMapper = new ObjectMapper();
         if (redis != null){
-            String user = redis.get(String.valueOf(id));
-            System.out.println("user from redis" + user);
+            String user = redis.get(id);
+            log.info("user from redis{}", user);
             if (user != null) {
-                System.out.println("cache hit");
+                log.info("cache hit");
                 return objectMapper.readValue(user, UserModel.class);
             }
         }
-        System.out.println("cache miss");
+        log.info("cache miss");
         UserModel user1 = userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
         if (redis != null) {
             String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(user1));
-            redis.set(id.toString(), userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
+            redis.set(id, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
         }
         return user1;
     }
 
     public UserModel getUserByEmail(String email){
-        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
-            throw new RuntimeException("user is not admin or moderator");
-        }
         ObjectMapper objectMapper = new ObjectMapper();
         Jedis redis = RedisClient.getInstance();
         if (redis != null) {
             String user = redis.get(email);
             if (user != null) {
-                System.out.println("cache hit");
+                log.info("cache hit");
                 return objectMapper.readValue(user, UserModel.class);
             }
         }
@@ -95,7 +89,7 @@ public class UserService {
                         )
                 )
         ).orElseThrow(()-> new RuntimeException("user not found"));
-        System.out.println("existing user: " + existingUser);
+        log.info("existing user: {}", existingUser);
         if (redis != null) {
             String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(existingUser));
             redis.set(email, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
@@ -104,20 +98,17 @@ public class UserService {
     }
 
     public List<UserModel> getAllUsers() {
-        if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))) {
-            throw new RuntimeException("user is not admin or moderator");
-        }
         ObjectMapper objectMapper = new ObjectMapper();
         Jedis redis = RedisClient.getInstance();
         if (redis != null) {
             String allUsers = redis.get(CONSTANTS.GetAllUsersKey);
             if(allUsers != null) {
-                System.out.println("cache hit");
+                log.info("cache hit");
                 return objectMapper.readValue(allUsers, new TypeReference<List<UserModel>>() {
                 });
             }
         }
-        System.out.println("cache miss");
+        log.info("cache miss");
         List<UserModel> allUsers = userRepository.findAll();
         List<GetUserResponseDto> users = allUsers.stream().map(GetUserResponseDto::new).toList();
         String allUsersJsonToWrite = objectMapper.writeValueAsString(users);
@@ -224,9 +215,6 @@ public class UserService {
 
     @Transactional
     public void deleteUser(String id) {
-        if (!(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))) {
-            throw new RuntimeException("user should be admin to perform deletion");
-        }
         UserModel user = userRepository.findById(id).orElseThrow();
 
         // invalidate cache

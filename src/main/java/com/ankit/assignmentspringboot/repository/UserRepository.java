@@ -11,5 +11,5 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, String> {
     @EntityGraph(attributePaths = {"company", "userAddress"})
-    @NonNull Optional<UserModel> findById(Integer id);
+    @NonNull Optional<UserModel> findById(String id);
 }

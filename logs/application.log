@@ -1,0 +1,121 @@
+2026-02-26 11:22:48 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 43798 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 11:22:48 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 11:22:48 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 11:22:48 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 11:22:48 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2026-02-26 11:22:49 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 11:22:49 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 11:22:49 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 11:22:49 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 451 ms
+2026-02-26 11:22:49 - DEBUG - c.a.a.u.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 11:22:49 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 11:22:49 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 11:22:49 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 11:22:49 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 11:22:49 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14ca88bc
+2026-02-26 11:22:49 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 11:22:49 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 11:22:49 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 11:22:50 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 11:22:50 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 11:22:50 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 61745ee3-3ed5-4c75-ab5c-8668a0ee2012
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 11:22:50 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 11:22:50 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 11:22:50 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 1.813 seconds (process running for 2.06)
+2026-02-26 11:22:53 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 11:22:53 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 11:22:53 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 11:22:53 - INFO - c.a.a.controller.AuthController - trying login with creds -> ankit@hivel.ai -> ankit
+2026-02-26 11:22:53 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.age=? or lower(um1_0.email) like ? escape '\' or um1_0.height=? or um1_0.weight=? fetch first ? rows only
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [%ankit@hivel.ai%]
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (3:FLOAT) <- [0.0]
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (4:FLOAT) <- [0.0]
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [2]
+2026-02-26 11:22:53 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1011]
+2026-02-26 11:22:53 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 11:22:53 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1011]
+2026-02-26 11:22:54 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.age=? or lower(um1_0.email) like ? escape '\' or um1_0.height=? or um1_0.weight=? fetch first ? rows only
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [%ankit@hivel.ai%]
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (3:FLOAT) <- [0.0]
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (4:FLOAT) <- [0.0]
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [2]
+2026-02-26 11:22:54 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1011]
+2026-02-26 11:22:54 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 11:22:54 - TRACE - org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1011]
+2026-02-26 11:22:54 - INFO - c.a.a.controller.AuthController - login success, setting cookies
+2026-02-26 11:23:15 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 11:23:15 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 11:23:15 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 11:23:15 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 11:23:15 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 11:23:16 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 43808 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 11:23:16 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 11:23:16 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 11:23:17 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 11:23:17 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2026-02-26 11:23:17 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 11:23:17 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 11:23:17 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 11:23:17 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 429 ms
+2026-02-26 11:23:17 - DEBUG - c.a.a.u.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 11:23:17 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 11:23:17 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 11:23:17 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 11:23:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 11:23:17 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@433ae0b0
+2026-02-26 11:23:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 11:23:17 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 11:23:18 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 11:23:18 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 11:23:18 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 11:23:18 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d63e22b7-4b08-4f97-9e1d-da4d2fd22bd0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 11:23:18 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 11:23:18 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 11:23:18 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 1.75 seconds (process running for 2.009)
+2026-02-26 11:23:22 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 11:23:22 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 11:23:22 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-02-26 11:23:22 - INFO - c.a.a.controller.AuthController - trying login with creds -> ankit@hivel.ai -> ankit
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.height=? or lower(um1_0.email) like ? escape '\' or um1_0.age=? or um1_0.weight=? fetch first ? rows only
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.height=? or lower(um1_0.email) like ? escape '\' or um1_0.age=? or um1_0.weight=? fetch first ? rows only
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 11:23:23 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 11:23:23 - INFO - c.a.a.controller.AuthController - login success, setting cookies

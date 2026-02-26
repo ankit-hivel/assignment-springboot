@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class UserModel {
     @Id
     @Column(name = "id")
-    private Integer id;
+    private String id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -111,11 +111,11 @@ public class UserModel {
         this.company = company;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

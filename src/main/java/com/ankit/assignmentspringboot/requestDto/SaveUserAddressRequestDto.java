@@ -9,7 +9,7 @@ public class SaveUserAddressRequestDto {
     private String country;
     private float latitude;
     private float longitude;
-    private Integer user_id;
+    private String user_id;
 
     public String getArea() {
         return area;
@@ -75,11 +75,11 @@ public class SaveUserAddressRequestDto {
         this.longitude = longitude;
     }
 
-    public Integer getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Integer user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 }

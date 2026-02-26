@@ -6,7 +6,7 @@ import com.ankit.assignmentspringboot.utility.UserRole;
 import java.time.LocalDate;
 
 public class GetUserResponseDto {
-    private Integer id;
+    private String id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -31,11 +31,11 @@ public class GetUserResponseDto {
     private String userAgent;
     private UserRole role;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

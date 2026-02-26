@@ -8,11 +8,14 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateUserAddressRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetUserAddressResponseDto;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserAddressService {
+    private static final Logger log = LoggerFactory.getLogger(UserAddressService.class);
     private final UserAddressRepository userAddressRepository;
     private final UserRepository userRepository;
 
@@ -35,7 +38,7 @@ public class UserAddressService {
         UserModel userToRefer = userRepository.findById(userAddressPayload.getUser_id()).orElseThrow(
                 ()-> new RuntimeException("user not found")
         );
-        System.out.println("existing user found");
+        log.info("existing user found");
         userAddressToSave.setUser(userToRefer);
 
         return userAddressRepository.save(userAddressToSave);

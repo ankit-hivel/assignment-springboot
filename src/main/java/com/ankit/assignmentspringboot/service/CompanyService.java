@@ -11,20 +11,21 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateCompanyRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetCompanyResponseDto;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 @Service
 public class CompanyService {
+    private static final Logger log = LoggerFactory.getLogger(CompanyService.class);
     private final CompanyRepository companyRepository;
-    private final CompanyAddressRepository companyAddressRepository;
     private final UserRepository userRepository;
 
     @Autowired
-    public CompanyService(CompanyRepository companyRepository, CompanyAddressRepository companyAddressRepository, UserRepository userRepository) {
+    public CompanyService(CompanyRepository companyRepository, UserRepository userRepository) {
         this.companyRepository = companyRepository;
-        this.companyAddressRepository = companyAddressRepository;
         this.userRepository = userRepository;
     }
 
@@ -39,8 +40,6 @@ public class CompanyService {
         cAddress.setLongitude(dto.getAddress().getLng());
         cAddress.setState(dto.getAddress().getState());
         cAddress.setStateCode(dto.getAddress().getStateCode());
-
-//        companyAddressRepository.save(cAddress);
 
         CompanyModel company = new CompanyModel();
 
@@ -62,7 +61,7 @@ public class CompanyService {
         CompanyModel company = companyRepository.findById(id).orElseThrow(
                 ()-> new RuntimeException("company doesn't exist")
         );
-        System.out.println(company);
+        log.info("got company data");
         return new GetCompanyResponseDto(company);
     }
     @Transactional
@@ -91,5 +90,6 @@ public class CompanyService {
                 () -> new RuntimeException("company not found")
         );
         companyRepository.deleteById(id);
+        log.info("company deleted successfully");
     }
 }

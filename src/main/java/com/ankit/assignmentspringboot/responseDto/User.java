@@ -8,7 +8,7 @@ import tools.jackson.databind.annotation.JsonDeserialize;
 import java.time.LocalDate;
 
 public class User {
-    private Integer id;
+    private String id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -42,11 +42,11 @@ public class User {
     // company
     private CompanyApiResponse company;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

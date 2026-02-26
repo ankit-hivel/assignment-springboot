@@ -24,7 +24,7 @@ public class JwtService {
         this.key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
     }
     // Generate JWT token
-    public String generateToken(Integer userId) {
+    public String generateToken(String userId) {
         return Jwts.builder()
                 .setSubject(String.valueOf(userId))
                 .setIssuedAt(new Date())
@@ -33,12 +33,12 @@ public class JwtService {
                 .compact();
     }
     // Get user id from JWT token
-    public Integer getUserIdFromToken(String token) {
-        return Integer.parseInt(Jwts.parserBuilder()
+    public String getUserIdFromToken(String token) {
+        return Jwts.parserBuilder()
                 .setSigningKey(key).build()
                 .parseClaimsJws(token)
                 .getBody()
-                .getSubject());
+                .getSubject();
     }
     // Validate JWT token
     public boolean validateJwtToken(String token) {

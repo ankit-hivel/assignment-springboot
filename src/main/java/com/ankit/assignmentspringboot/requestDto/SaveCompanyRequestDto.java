@@ -5,7 +5,7 @@ public class SaveCompanyRequestDto {
     private String name;
     private String title;
 
-    private Integer userid;
+    private String userid;
 
     private CompanyAddressDto address;
 
@@ -33,11 +33,11 @@ public class SaveCompanyRequestDto {
         this.address = address;
     }
 
-    public Integer getUserid() {
+    public String getUserid() {
         return userid;
     }
 
-    public void setUserid(Integer userid) {
+    public void setUserid(String userid) {
         this.userid = userid;
     }
 
