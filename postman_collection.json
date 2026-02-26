@@ -1,0 +1,575 @@
+{
+  "info": {
+    "_postman_id": "3cb25d28-ccd3-49cc-bdc0-4b119a29a527",
+    "name": "localhost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52462625",
+    "_collection_link": "https://go.postman.co/collection/52462625-3cb25d28-ccd3-49cc-bdc0-4b119a29a527?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "user api",
+      "item": [
+        {
+          "name": "save user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n      \"id\": 1011,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"Johnson\",\n      \"maidenName\": \"Smith\",\n      \"age\": 21,\n      \"gender\": \"female\",\n      \"email\": \"ankit@hivel.ai\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"ankit\",\n      \"password\": \"ankit\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getUserByIdOrEmail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/user?id=22",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "emily.johnson@x.dummyjson.com",
+                  "disabled": true
+                },
+                {
+                  "key": "id",
+                  "value": "22"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/all?page=1&count=3&sortby=username&ascending=false",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user",
+                "all"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "count",
+                  "value": "3"
+                },
+                {
+                  "key": "sortby",
+                  "value": "username"
+                },
+                {
+                  "key": "ascending",
+                  "value": "false"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update user data",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n      \"id\": 14,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"John\",\n      \"maidenName\": \"Smith\",\n\n      \"gender\": \"female\",\n      \"email\": \"emily.johnson@x.dummyjson.com\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"emilys\",\n      \"password\": \"emilyspass\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"address\": {\n        \"address\": \"626 Main Street\",\n        \"city\": \"Phoenix\",\n        \"state\": \"Mississippi\",\n        \"stateCode\": \"MS\",\n        \"postalCode\": \"29112\",\n        \"lattitude\": -77.16213,\n        \"longitude\": -92.084824,\n        \"country\": \"United States\"\n      },\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"bank\": {\n        \"cardExpire\": \"05/28\",\n        \"cardNumber\": \"3693233511855044\",\n        \"cardType\": \"Diners Club International\",\n        \"currency\": \"GBP\",\n        \"iban\": \"GB74MH2UZLR9TRPHYNU8F8\"\n      },\n      \"company\": {\n        \"department\": \"Engineering\",\n        \"name\": \"Dooley, Kozey and Cronin\",\n        \"title\": \"Sales Manager\",\n        \"address\": {\n          \"address\": \"263 Tenth Street\",\n          \"city\": \"San Francisco\",\n          \"state\": \"Wisconsin\",\n          \"stateCode\": \"WI\",\n          \"postalCode\": \"37657\",\n          \"coordinates\": {\n            \"lat\": 71.814525,\n            \"lng\": -161.150263\n          },\n          \"country\": \"United States\"\n        }\n      },\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"crypto\": {\n        \"coin\": \"Bitcoin\",\n        \"wallet\": \"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a\",\n        \"network\": \"Ethereum (ERC20)\"\n      }\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/user",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user data",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/user?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "restore user data (soft restore)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/restore?id=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user",
+                "restore"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user data (soft delete)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/user/delete?id=13",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "user",
+                "delete"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "13"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user address",
+      "item": [
+        {
+          "name": "save user address",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 13,\n    \"area\": \"Madhapur\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/address",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "address"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update user address",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"user_id\": 13,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/address",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "address"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user address by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/address?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "address"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user address by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/address?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "address"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user company",
+      "item": [
+        {
+          "name": "save company details",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"userid\": 13,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/company",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "company"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get company details by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/company?id=44",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "company"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "44"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get company details by userid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/company?userid=44",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "company"
+              ],
+              "query": [
+                {
+                  "key": "userid",
+                  "value": "44"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update company details",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 44,\n    \"userid\": 12,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/company",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "company"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete company details",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/company?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "company"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "authenticate",
+      "item": [
+        {
+          "name": "login user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMzEyIiwiaWF0IjoxNzcyMDE3ODc2LCJleHAiOjE3NzIwMTc4NzZ9.m3KYnVP8703KrOx-xDsU-27q4qBRPRimTnZ8AX0ycd4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"ankit@hivel.ai\",\n    \"password\": \"ankit\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "metrics",
+      "item": [
+        {
+          "name": "health check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "export to csv",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "csv"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get metrics",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
