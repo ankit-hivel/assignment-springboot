@@ -1,8 +1,8 @@
 package com.ankit.assignmentspringboot.component;
 
 import com.ankit.assignmentspringboot.utility.ApiResponse;
-import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
+import io.github.bucket4j.ConsumptionProbe;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class RateLimitingFilter implements Filter {
@@ -40,13 +41,15 @@ public class RateLimitingFilter implements Filter {
 
         String clientIp = httpRequest.getRemoteAddr();
         Bucket bucket = getBucket(clientIp);
+        ConsumptionProbe probe = bucket.tryConsumeAndReturnRemaining(1);
 
-        if (bucket.tryConsume(1)) {
+        if (probe.isConsumed()) {
             chain.doFilter(request, response);
         } else {
-            log.info("limit exceeded for client: {}", clientIp);
+            log.error("limit exceeded for client: {}", clientIp);
             ObjectMapper objectMapper = new ObjectMapper();
             httpResponse.setStatus(429);
+            httpResponse.setHeader("Retry-After", "" + TimeUnit.NANOSECONDS.toSeconds(probe.getNanosToWaitForRefill()));
             httpResponse.setContentType("application/json;charset=UTF-8");
             httpResponse.getWriter().write(
                     objectMapper.writeValueAsString(
