@@ -3,9 +3,11 @@ package com.ankit.assignmentspringboot.model;
 import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.utility.UserRole;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -81,6 +83,10 @@ public class UserModel {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    @Column(name = "is_deleted")
+    @ColumnDefault(value = "false")
+    private Boolean isDeleted;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private Instant createdAt;
@@ -94,6 +100,14 @@ public class UserModel {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private CompanyModel company;
+
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
+    }
 
     public UserAddressModel getUserAddress() {
         return userAddress;

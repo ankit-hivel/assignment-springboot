@@ -16,7 +16,7 @@ public class DateSerializer extends StdConverter<String, LocalDate> {
                 return "0" + val;
             }
             return val;
-        }).collect(Collectors.joining("-")).toString();
+        }).collect(Collectors.joining("-"));
 
         return LocalDate.parse(date);
     }

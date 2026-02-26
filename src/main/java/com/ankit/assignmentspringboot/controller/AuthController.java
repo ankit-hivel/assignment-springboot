@@ -1,6 +1,7 @@
 package com.ankit.assignmentspringboot.controller;
 
 import com.ankit.assignmentspringboot.model.UserModel;
+import com.ankit.assignmentspringboot.repository.UserRepository;
 import com.ankit.assignmentspringboot.requestDto.LoginRequestDto;
 import com.ankit.assignmentspringboot.responseDto.AuthResponseDto;
 import com.ankit.assignmentspringboot.service.AuthService;
@@ -9,6 +10,8 @@ import com.ankit.assignmentspringboot.utility.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
@@ -21,11 +24,13 @@ public class AuthController {
     private static final Logger log = LoggerFactory.getLogger(AuthController.class);
     private final AuthService authService;
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @Autowired
-    public AuthController(AuthService authService, UserService userService) {
+    public AuthController(AuthService authService, UserService userService, UserRepository userRepository) {
         this.authService = authService;
         this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     @PostMapping("/login")
@@ -33,7 +38,9 @@ public class AuthController {
         try {
             log.info("trying login with creds -> {} -> {}", dto.getEmail(), dto.getPassword());
             String token = authService.login(dto.getEmail(), dto.getPassword());
-            UserModel user = userService.getUserByEmail(dto.getEmail());
+            UserModel user = userRepository.findByEmailIgnoreCaseAndIsDeleted(dto.getEmail(), false)
+                    .orElseThrow(()-> new RuntimeException("user not found"));
+
             log.info("login success, setting cookies");
             ResponseCookie cookie = ResponseCookie.from("token").value(token)
                     .path("/")
@@ -54,7 +61,7 @@ public class AuthController {
         } catch (Exception e) {
             log.error("error while authenticating: ", e);
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(
-                    new ApiResponse<Void>(false, e.getMessage())
+                    new ApiResponse<Void>(false, "failed to validate")
             );
         }
     }

@@ -7,25 +7,33 @@ import com.ankit.assignmentspringboot.repository.UserRepository;
 import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateUserAddressRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetUserAddressResponseDto;
+import com.ankit.assignmentspringboot.utility.CONSTANTS;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tools.jackson.databind.ObjectMapper;
+
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserAddressService {
     private static final Logger log = LoggerFactory.getLogger(UserAddressService.class);
     private final UserAddressRepository userAddressRepository;
     private final UserRepository userRepository;
+    private final RedisService redis;
+    private final ObjectMapper objectMapper;
 
     @Autowired
-    public UserAddressService(UserAddressRepository userAddressRepository, UserRepository userRepository, UserService userService) {
+    public UserAddressService(UserAddressRepository userAddressRepository, UserRepository userRepository, RedisService redisService, ObjectMapper objectMapper) {
         this.userAddressRepository = userAddressRepository;
         this.userRepository = userRepository;
+        this.redis = redisService;
+        this.objectMapper = objectMapper;
     }
 
-    public UserAddressModel saveUserAddress(SaveUserAddressRequestDto userAddressPayload) {
+    public void saveUserAddress(SaveUserAddressRequestDto userAddressPayload) {
         UserAddressModel userAddressToSave = new UserAddressModel();
         userAddressToSave.setArea(userAddressPayload.getArea());
         userAddressToSave.setCity(userAddressPayload.getCity());
@@ -41,20 +49,31 @@ public class UserAddressService {
         log.info("existing user found");
         userAddressToSave.setUser(userToRefer);
 
-        return userAddressRepository.save(userAddressToSave);
+        userAddressRepository.save(userAddressToSave);
     }
 
     public GetUserAddressResponseDto getUserAddressById(int id){
+        String redisKey = "ua:" + id;
+        String redisValue = redis.get(redisKey);
+        if (redisValue != null) {
+            log.info("cache hit");
+            return objectMapper.readValue(redisValue, GetUserAddressResponseDto.class);
+        }
+        log.info("cache miss");
+
         UserAddressModel userAddress = userAddressRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("no associated address found")
         );
 
-        GetUserAddressResponseDto userAddressDto = new GetUserAddressResponseDto(userAddress);
-        return userAddressDto;
+        String jsonToStore = objectMapper.writeValueAsString(new GetUserAddressResponseDto(userAddress));
+        redis.saveWithTTL(redisKey, jsonToStore, 5, TimeUnit.MINUTES);
+
+        return new GetUserAddressResponseDto(userAddress);
     }
 
     @Transactional
     public void updateUserAddressData(UpdateUserAddressRequestDto dto) {
+        String redisKey = CONSTANTS.getUserAddressRedisKey(dto.getId());
 
         UserAddressModel userAddress = userAddressRepository.findById(dto.getId())
                 .orElseThrow(() -> new RuntimeException("Address not found"));
@@ -84,9 +103,12 @@ public class UserAddressService {
             userAddress.setLongitude(dto.getLongitude());
 
         userAddressRepository.save(userAddress);
+        String jsonToWrite = objectMapper.writeValueAsString(new GetUserAddressResponseDto(userAddress));
+        redis.saveWithTTL(redisKey, jsonToWrite, 5, TimeUnit.MINUTES);
     }
 
-    public void deleteUserAddress(int id){
+    public void deleteUserAddress(Integer id){
         userAddressRepository.deleteById(id);
+        redis.del(CONSTANTS.getUserAddressRedisKey(id));
     }
 }

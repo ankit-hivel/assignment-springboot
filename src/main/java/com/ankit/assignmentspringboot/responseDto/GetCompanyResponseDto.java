@@ -19,6 +19,9 @@ public class GetCompanyResponseDto {
     private String country;
     private Float lat;
     private Float lng;
+    private String user_id;
+
+    public GetCompanyResponseDto() {}
 
     public GetCompanyResponseDto(
            CompanyModel company
@@ -37,6 +40,15 @@ public class GetCompanyResponseDto {
         this.country = company.getCompanyAddress().getCountry();
         this.lat = company.getCompanyAddress().getLattitude();
         this.lng = company.getCompanyAddress().getLongitude();
+        this.user_id = company.getUser().getId();
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
     public String getArea() {

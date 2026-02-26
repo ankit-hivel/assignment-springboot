@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,9 +42,6 @@ public class UserController {
             userService.saveUserData(user);
             ApiResponse<Void> resp = new ApiResponse<>(true, "saved user");
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
-        } catch(DataIntegrityViolationException dx) {
-            ApiResponse<Void> resp = new ApiResponse<>(false, "user already exists");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user");
@@ -58,7 +56,7 @@ public class UserController {
             GetUserResponseDto user = new GetUserResponseDto(userService.getUserById(GetAuthUserId.getUserId()));
             ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", user);
             return ResponseEntity.status(HttpStatus.OK).body(resp);
-        }catch (Exception e) {
+        } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
@@ -76,10 +74,6 @@ public class UserController {
             GetUserResponseDto user = new GetUserResponseDto(userService.getUserById(id));
             ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", user);
             return ResponseEntity.status(HttpStatus.OK).body(resp);
-        } catch (RuntimeException rx) {
-            log.error("❌{}", String.valueOf(rx));
-            ApiResponse<Void> resp = new ApiResponse<>(false, rx.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
@@ -99,10 +93,6 @@ public class UserController {
             ApiResponse<GetUserResponseDto> resp = new ApiResponse<>(true, "user found", user);
             log.info(String.valueOf(resp.getData()));
             return ResponseEntity.ok(resp);
-        } catch (RuntimeException rx) {
-            log.error("❌{}", String.valueOf(rx));
-            ApiResponse<Void> resp = new ApiResponse<>(false, rx.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
@@ -111,19 +101,19 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<ApiResponse<?>> getAllUsers() {
+    public ResponseEntity<ApiResponse<?>> getAllUsers(
+            @RequestParam(defaultValue = "0") Integer page,
+            @RequestParam(defaultValue = "5") Integer count,
+            @RequestParam(defaultValue = "id") String sortby,
+            @RequestParam(defaultValue = "true") Boolean ascending
+    ) {
         try{
             if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
                 throw new RuntimeException("user is not admin or moderator");
             }
-            List<UserModel> allUsers = userService.getAllUsers();
-            List<GetUserResponseDto> users = allUsers.stream().map(GetUserResponseDto::new).toList();
+            List<GetUserResponseDto> users = userService.getAllUsers(page, count, sortby, ascending);
             ApiResponse<List<GetUserResponseDto>> resp = new ApiResponse<>(true, "all user", users);
             return ResponseEntity.ok(resp);
-        } catch (RuntimeException rx) {
-            log.error("❌{}", String.valueOf(rx));
-            ApiResponse<Void> resp = new ApiResponse<>(false, rx.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get users");
@@ -137,10 +127,6 @@ public class UserController {
             userService.updateExistingUserData(user);
             ApiResponse<Void> resp = new ApiResponse<>(true, "user data updated");
             return ResponseEntity.status(HttpStatus.OK).body(resp);
-        } catch (RuntimeException rx) {
-            log.error("❌{}", String.valueOf(rx));
-            ApiResponse<Void> resp = new ApiResponse<>(false, rx.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update user");
@@ -152,19 +138,56 @@ public class UserController {
     public ResponseEntity<ApiResponse<Void>> deleteUser(@RequestParam String id) {
         try{
             if (id == null) throw new NullPointerException();
-            if (!(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))) {
-                throw new RuntimeException("user should be admin to perform deletion");
+            if (
+                    !(Objects.equals(id, GetAuthUserId.getUserId())) &&
+                    !(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))
+            ) {
+                throw new RuntimeException("user needs required authorization to perform deletion");
             }
             userService.deleteUser(id);
             ApiResponse<Void> resp = new ApiResponse<>(true, "user data deleted");
             return ResponseEntity.status(HttpStatus.OK).body(resp);
-        } catch (RuntimeException rx) {
-            log.error("❌{}", String.valueOf(rx));
-            ApiResponse<Void> resp = new ApiResponse<>(false, rx.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+
+    @PutMapping("/restore")
+    public ResponseEntity<ApiResponse<Void>> restoreSoftDeletedUser(@RequestParam String id) {
+        try{
+            if (id == null) throw new NullPointerException();
+            if (
+                    !(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))
+            ) {
+                throw new RuntimeException("user needs required authorization to perform deletion");
+            }
+            userService.restoreSoftDeletedUserByUserId(id);
+            ApiResponse<Void> resp = new ApiResponse<>(true, "user data restored");
+            return ResponseEntity.status(HttpStatus.OK).body(resp);
+        } catch (Exception e) {
+            log.error("❌{}", String.valueOf(e));
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to restore user data");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+        }
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<ApiResponse<Void>> softDeleteUser(@RequestParam String id) {
+        try{
+            if (id == null) throw new NullPointerException();
+            if (
+                    !(Objects.equals(UserRole.ADMIN, getAuthUserRole.getUserRole()))
+            ) {
+                throw new RuntimeException("user needs required authorization to perform deletion");
+            }
+            userService.softDeleteUserByUserId(id);
+            ApiResponse<Void> resp = new ApiResponse<>(true, "user data deleted");
+            return ResponseEntity.status(HttpStatus.OK).body(resp);
+        } catch (Exception e) {
+            log.error("❌{}", String.valueOf(e));
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user data");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }

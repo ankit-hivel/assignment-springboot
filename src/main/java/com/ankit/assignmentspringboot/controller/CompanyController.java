@@ -36,15 +36,17 @@ public class CompanyController {
         }
     }
 
-    @GetMapping
+    @GetMapping(params = "id")
     public ResponseEntity<ApiResponse<?>> getCompanyById(@RequestParam Integer id) {
         try {
             if (id == null) throw new NullPointerException();
+            log.info("getting company data...");
             GetCompanyResponseDto company = companyService.getCompanyById(id);
             return ResponseEntity.status(HttpStatus.OK).body(
                     new ApiResponse<GetCompanyResponseDto>(true, "company found", company)
             );
         } catch(Exception ex) {
+            log.error("failed to get data -> {}", ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get company details", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
@@ -72,7 +74,7 @@ public class CompanyController {
                     new ApiResponse<Void>(true, "company deleted successfully")
             );
         } catch(Exception ex) {
-            System.out.println(ex);
+            log.error("failed to delete company details: ", ex);
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete company details", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }

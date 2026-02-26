@@ -7,23 +7,20 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetUserResponseDto;
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
 import com.ankit.assignmentspringboot.utility.GetAuthUserId;
-import com.ankit.assignmentspringboot.utility.RedisClient;
 import com.ankit.assignmentspringboot.utility.UserRole;
 import com.ankit.assignmentspringboot.utility.security.GetAuthUserRole;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.params.SetParams;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserService {
@@ -33,10 +30,16 @@ public class UserService {
 
     private final GetAuthUserRole getAuthUserRole;
 
+    private final RedisService redis;
+
+    private final ObjectMapper objectMapper;
+
     @Autowired
-    public UserService(UserRepository userRepository, GetAuthUserRole getAuthUserRole){
+    public UserService(UserRepository userRepository, GetAuthUserRole getAuthUserRole, RedisService redis, ObjectMapper objectMapper){
         this.userRepository = userRepository;
         this.getAuthUserRole = getAuthUserRole;
+        this.redis = redis;
+        this.objectMapper = objectMapper;
     }
 
     public UserModel saveUserData(SaveUserRequestDto userPayload){
@@ -50,83 +53,62 @@ public class UserService {
     }
 
     public UserModel getUserById(String id) {
-        Jedis redis = RedisClient.getInstance();
-        ObjectMapper objectMapper = new ObjectMapper();
-        if (redis != null){
-            String user = redis.get(id);
-            log.info("user from redis{}", user);
-            if (user != null) {
-                log.info("cache hit");
-                return objectMapper.readValue(user, UserModel.class);
-            }
+        String redisKey = CONSTANTS.getUserRedisKey(id);
+        String redisValue = redis.get(redisKey);
+        log.info("user from redis: {}", redisValue);
+        if (redisValue != null) {
+            log.info("cache hit");
+            return objectMapper.readValue(redisValue, UserModel.class);
         }
         log.info("cache miss");
-        UserModel user1 = userRepository.findById(id).orElseThrow(()-> new RuntimeException("user not found"));
-        if (redis != null) {
-            String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(user1));
-            redis.set(id, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
-        }
+        UserModel user1 = userRepository.findByIdAndIsDeleted(id, false).orElseThrow(()-> new RuntimeException("user not found"));
+        String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(user1));
+        redis.saveWithTTL(id, userJsonToStore,5, TimeUnit.MINUTES);
         return user1;
     }
 
     public UserModel getUserByEmail(String email){
-        ObjectMapper objectMapper = new ObjectMapper();
-        Jedis redis = RedisClient.getInstance();
-        if (redis != null) {
-            String user = redis.get(email);
-            if (user != null) {
-                log.info("cache hit");
-                return objectMapper.readValue(user, UserModel.class);
-            }
+        String redisKey = CONSTANTS.getUserRedisKey(email);
+        String redisValue = redis.get(redisKey);
+        if (redisValue != null) {
+            log.info("cache hit");
+            return objectMapper.readValue(redisValue, UserModel.class);
         }
-        UserModel user = new UserModel();
-        user.setEmail(email);
-        UserModel existingUser = userRepository.findOne(
-                Example.of(user, ExampleMatcher.matchingAny()
-                        .withMatcher(
-                                "email",
-                                ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()
-                        )
-                )
-        ).orElseThrow(()-> new RuntimeException("user not found"));
+        UserModel existingUser = userRepository.findByEmailIgnoreCaseAndIsDeleted(email, false)
+                .orElseThrow(()-> new RuntimeException("user not found"));
         log.info("existing user: {}", existingUser);
-        if (redis != null) {
-            String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(existingUser));
-            redis.set(email, userJsonToStore, new SetParams().ex(CONSTANTS.RedisValueExpiry));
-        }
+        String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(existingUser));
+        redis.saveWithTTL(redisKey, userJsonToStore, 5, TimeUnit.MINUTES);
         return existingUser;
     }
 
-    public List<UserModel> getAllUsers() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Jedis redis = RedisClient.getInstance();
-        if (redis != null) {
-            String allUsers = redis.get(CONSTANTS.GetAllUsersKey);
-            if(allUsers != null) {
-                log.info("cache hit");
-                return objectMapper.readValue(allUsers, new TypeReference<List<UserModel>>() {
-                });
-            }
-        }
-        log.info("cache miss");
-        List<UserModel> allUsers = userRepository.findAll();
+    public List<GetUserResponseDto> getAllUsers(
+            Integer page, Integer count, String sortby, Boolean ascending
+    ) {
+        log.info("=================================== -> {}" ,ascending.toString());
+        Sort sortingParams = ascending ? Sort.by(sortby).ascending() : Sort.by(sortby).descending();
+        Pageable pageable = PageRequest.of(page, count, sortingParams);
+        Page<UserModel> allUsers = userRepository.findAllByIsDeleted(false, pageable);
         List<GetUserResponseDto> users = allUsers.stream().map(GetUserResponseDto::new).toList();
-        String allUsersJsonToWrite = objectMapper.writeValueAsString(users);
-        if (redis != null) {
-            redis.set(CONSTANTS.GetAllUsersKey, allUsersJsonToWrite, new SetParams().ex(CONSTANTS.RedisValueExpiry));
-        }
-        return allUsers;
+        return users;
     }
 
+    @Transactional
     public void updateExistingUserData(SaveUserRequestDto user) {
+        log.info("updating user...");
         if (
-                !Objects.equals(user.getId(), GetAuthUserId.getUserId())
-                || (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())))
+                !(Objects.equals(user.getId(), GetAuthUserId.getUserId()))
+                && (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())))
         ) {
+            log.info(user.getId());
+            log.info(GetAuthUserId.getUserId());
+            log.info(getAuthUserRole.getUserRole().toString());
             throw new RuntimeException("unauthorized user");
         }
 
-        UserModel userToUpdate = getUserByEmail(user.getEmail());
+        UserModel userToUpdate = userRepository.findByIdAndIsDeleted(user.getId(), false).orElseThrow(
+                () -> new RuntimeException("user not found")
+        );
 
         if (user.getFirstName() != null)
             userToUpdate.setFirstName(user.getFirstName());
@@ -203,14 +185,9 @@ public class UserService {
         if (user.getRole() != null)
             userToUpdate.setRole(user.getRole());
 
-        userRepository.save(userToUpdate);
-
         // invalidate cache
-        Jedis redis = RedisClient.getInstance();
-        if (redis != null) {
-            redis.del(String.valueOf(userToUpdate.getId()));
-            redis.del(userToUpdate.getEmail());
-        }
+        redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getId()));
+        redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getEmail()));
     }
 
     @Transactional
@@ -218,11 +195,24 @@ public class UserService {
         UserModel user = userRepository.findById(id).orElseThrow();
 
         // invalidate cache
-        Jedis redis = RedisClient.getInstance();
-        if (redis != null) {
-            redis.del(String.valueOf(user.getId()));
-            redis.del(user.getEmail());
-        }
+        redis.del(CONSTANTS.getUserRedisKey(id));
+        redis.del(CONSTANTS.getUserRedisKey(user.getEmail()));
         userRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void softDeleteUserByUserId(String id) {
+        UserModel user = userRepository.findById(id).orElseThrow();
+
+        // invalidate cache
+        redis.del(CONSTANTS.getUserRedisKey(id));
+        redis.del(CONSTANTS.getUserRedisKey(user.getEmail()));
+        user.setDeleted(true);
+    }
+
+    @Transactional
+    public void restoreSoftDeletedUserByUserId(String id) {
+        UserModel user = userRepository.findById(id).orElseThrow();
+        user.setDeleted(false);
     }
 }
