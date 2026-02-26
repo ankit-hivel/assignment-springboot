@@ -60,6 +60,7 @@ public class CompanyController {
                     new ApiResponse<Void>(true, "company updated")
             );
         } catch(Exception ex) {
+            log.error(ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update company details", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }

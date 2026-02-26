@@ -45,6 +45,7 @@ public class UserAddressController {
             ApiResponse<Void> resp = new ApiResponse<>(true, "saved user address");
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
         } catch(Exception ex) {
+            log.error(ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to saved user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
@@ -62,6 +63,7 @@ public class UserAddressController {
             ApiResponse<GetUserAddressResponseDto> resp = new ApiResponse<>(true, "user address for id: " + id, existingUserAddress);
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch(Exception ex) {
+            log.error(ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
@@ -79,6 +81,7 @@ public class UserAddressController {
             ApiResponse<Void> resp = new ApiResponse<>(true, "updated user address");
             return ResponseEntity.ok(resp);
         } catch(Exception ex) {
+            log.error(ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
@@ -97,6 +100,7 @@ public class UserAddressController {
             ApiResponse<Void> resp = new ApiResponse<>(true, "user address deleted");
             return ResponseEntity.ok(resp);
         } catch(Exception ex) {
+            log.error(ex.getMessage());
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }

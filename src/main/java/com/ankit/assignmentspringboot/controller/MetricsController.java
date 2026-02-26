@@ -45,7 +45,7 @@ public class MetricsController {
         );
     }
 
-    @GetMapping(value = "/csv", produces = "text/csv")
+    @GetMapping(value = "/csv")
     public ResponseEntity<ApiResponse<?>> exportUsersToCsv() {
         try {
             // get all users data
@@ -100,7 +100,7 @@ public class MetricsController {
             metrics.setCacheMiss(cacheMissValue);
 
             return ResponseEntity.status(HttpStatus.OK).body(
-                    new ApiResponse<MetricsResponseDto>(true, "system metrics",
+                    new ApiResponse<>(true, "system metrics",
                             metrics
                     )
             );

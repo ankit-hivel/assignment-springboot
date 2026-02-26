@@ -7160,3 +7160,866 @@ This generated password is for development use only. Your security configuration
 2026-02-26 17:14:34 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-02-26 17:14:34 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2026-02-26 17:14:34 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:18:01 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/127.0.0.1:6379
+2026-02-26 17:18:08 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.AdaptivePoolingAllocator$AdaptiveByteBuf.setBytes(AdaptivePoolingAllocator.java:1935)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1139)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:161)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.handle(AbstractNioChannel.java:445)
+	at io.netty.channel.nio.NioIoHandler$DefaultNioRegistration.handle(NioIoHandler.java:388)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKey(NioIoHandler.java:596)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeysOptimized(NioIoHandler.java:571)
+	at io.netty.channel.nio.NioIoHandler.processSelectedKeys(NioIoHandler.java:512)
+	at io.netty.channel.nio.NioIoHandler.run(NioIoHandler.java:484)
+	at io.netty.channel.SingleThreadIoEventLoop.runIo(SingleThreadIoEventLoop.java:225)
+	at io.netty.channel.SingleThreadIoEventLoop.run(SingleThreadIoEventLoop.java:196)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:1195)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-26 17:18:08 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:18:08 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:18:10 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@30c3fd4e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:18:12 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@46a97805 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:18:17 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:18:17 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:18:20 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7c749d0f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:18:23 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1e647015 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:18:25 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:18:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:18:42 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:18:42 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:19:12 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:19:12 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:19:21 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5fa6b42c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:19:28 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4560b0aa (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:19:31 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@12544834 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:19:37 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3165f1a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:19:42 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:19:42 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:22:32 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@77989153 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:22:34 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@76620b1e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-02-26 17:22:38 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (97821232-3bc4-4f83-8645-4838b907e538)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-02-26 17:22:43 - WARN - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m13s227ms).
+2026-02-26 17:22:55 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:22:55 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:23:26 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:23:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:23:43 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (7c3520e4-8e27-44e0-9fd8-7bc75f672c99)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-02-26 17:23:56 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:23:56 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:24:26 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:24:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:24:49 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (2dcab0d5-3971-4bf4-9621-0deaf8b75537)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-02-26 17:24:56 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:24:56 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:25:26 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:25:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:25:54 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (620b5bc5-9366-47c3-8ba5-434eb1ab64af)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-02-26 17:25:56 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:25:56 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:26:26 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:26:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:26:56 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:26:56 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:26:59 - WARN - com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (82effa39-39ba-4c4a-bc23-8d67b9049148)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 14 common frames omitted
+2026-02-26 17:27:26 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:27:26 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:27:56 - INFO - i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/<unresolved>:6379
+2026-02-26 17:27:56 - WARN - i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: localhost/127.0.0.1:6379
+2026-02-26 17:27:59 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:27:59 - WARN - org.hibernate.orm.core - HHH000502: The [createdAt] property of the [com.ankit.assignmentspringboot.model.UserModel] entity was modified, but it won't be updated because the property is immutable.
+2026-02-26 17:27:59 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?
+2026-02-26 17:28:20 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 17:28:20 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 17:28:20 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:28:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 17:28:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 17:28:21 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 53445 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 17:28:21 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 17:28:21 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:28:22 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 17:28:22 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 17:28:22 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 17:28:22 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 17:28:22 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 605 ms
+2026-02-26 17:28:22 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 17:28:22 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 17:28:22 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 17:28:22 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 17:28:22 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 17:28:22 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6843fdc4
+2026-02-26 17:28:22 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 17:28:22 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 17:28:23 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 17:28:23 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:28:23 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 17:28:23 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 17:28:23 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 17:28:23 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 17:28:23 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 17:28:23 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9a2b9477-9201-4a10-b022-a2518e346f98
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 17:28:23 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 17:28:23 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 17:28:23 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.324 seconds (process running for 2.787)
+2026-02-26 17:28:23 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 17:28:24 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 17:28:24 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 17:28:26 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 17:28:26 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 17:28:26 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:28:27 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:27 - WARN - org.hibernate.orm.core - HHH000502: The [createdAt] property of the [com.ankit.assignmentspringboot.model.UserModel] entity was modified, but it won't be updated because the property is immutable.
+2026-02-26 17:28:27 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?
+2026-02-26 17:28:33 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:28:33 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:28:33 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:33 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:33 - INFO - c.a.a.controller.UserController - user role: ADMIN
+2026-02-26 17:28:33 - INFO - c.a.a.service.UserService - user from redis: null
+2026-02-26 17:28:33 - INFO - c.a.a.service.UserService - cache miss
+2026-02-26 17:28:33 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=? and um1_0.is_deleted=?
+2026-02-26 17:28:33 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:28:33 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:28:41 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:28:41 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:41 - INFO - c.a.a.service.UserService - =================================== -> false
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.is_deleted=? order by um1_0.username desc offset ? rows fetch first ? rows only
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:28:41 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:28:42 - DEBUG - org.hibernate.SQL - select count(um1_0.id) from users um1_0 where um1_0.is_deleted=?
+2026-02-26 17:28:44 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:28:44 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:28:44 - INFO - c.a.a.service.UserService - updating user...
+2026-02-26 17:28:44 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:44 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=? and um1_0.is_deleted=?
+2026-02-26 17:28:44 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:28:44 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:28:45 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?
+2026-02-26 17:28:45 - WARN - org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-02-26 17:28:45 - WARN - org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "uk6dotkott2kjsp8vw4d0m25fb7"
+  Detail: Key (email)=(emily.johnson@x.dummyjson.com) already exists.
+2026-02-26 17:28:45 - ERROR - c.a.a.controller.UserController - ❌org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "uk6dotkott2kjsp8vw4d0m25fb7"
+  Detail: Key (email)=(emily.johnson@x.dummyjson.com) already exists.] [update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?]; SQL [update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?]; constraint [uk6dotkott2kjsp8vw4d0m25fb7]
+2026-02-26 17:28:48 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:28:48 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - delete from company where id=?
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - delete from company_address where id=?
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - delete from user_address where id=?
+2026-02-26 17:28:48 - DEBUG - org.hibernate.SQL - delete from users where id=?
+2026-02-26 17:29:09 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:09 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:09 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:09 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:13 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:13 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:13 - INFO - c.a.a.service.UserService - updating user...
+2026-02-26 17:29:13 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:13 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=? and um1_0.is_deleted=?
+2026-02-26 17:29:13 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:29:13 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:29:14 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?
+2026-02-26 17:29:21 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:21 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - delete from company where id=?
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - delete from company_address where id=?
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - delete from user_address where id=?
+2026-02-26 17:29:21 - DEBUG - org.hibernate.SQL - delete from users where id=?
+2026-02-26 17:29:25 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:25 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:25 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:25 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:25 - ERROR - c.a.a.controller.UserController - ❌java.util.NoSuchElementException: No value present
+2026-02-26 17:29:33 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:33 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:33 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:33 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:44 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:29:44 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:29:44 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:29:44 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:31:17 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 17:31:17 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 17:31:17 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:31:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 17:31:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 17:31:19 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 53536 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 17:31:19 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 17:31:19 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:31:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 17:31:19 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 17:31:19 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 17:31:19 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 17:31:19 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 565 ms
+2026-02-26 17:31:19 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 17:31:20 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 17:31:20 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 17:31:20 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 17:31:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 17:31:20 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7131d668
+2026-02-26 17:31:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 17:31:20 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 17:31:20 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 17:31:20 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:31:20 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 17:31:20 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 17:31:21 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 17:31:21 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 17:31:21 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 17:31:21 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2c45b013-c77b-430c-943c-b1989343b4d4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 17:31:21 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 17:31:21 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 17:31:21 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.155 seconds (process running for 2.408)
+2026-02-26 17:31:21 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 17:31:21 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 17:31:21 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 17:31:24 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 17:31:24 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 17:31:24 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:31:24 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:31:24 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:31:24 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:31:24 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:31:24 - ERROR - c.a.a.c.UserAddressController - user not found
+2026-02-26 17:31:34 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:31:34 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:31:34 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:31:34 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:31:34 - ERROR - c.a.a.controller.UserController - ❌java.util.NoSuchElementException: No value present
+2026-02-26 17:32:19 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:32:19 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:32:19 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:32:19 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:32:19 - INFO - c.a.a.service.UserAddressService - existing user found
+2026-02-26 17:32:19 - DEBUG - org.hibernate.SQL - select null,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=?
+2026-02-26 17:32:19 - DEBUG - org.hibernate.SQL - insert into user_address (area,city,country,created_at,latitude,longitude,postal_code,state,state_code,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+2026-02-26 17:32:19 - WARN - org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-02-26 17:32:19 - WARN - org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "ukkfu0161nvirkey6fwd6orucv7"
+  Detail: Key (user_id)=(13) already exists.
+2026-02-26 17:32:19 - ERROR - c.a.a.c.UserAddressController - could not execute statement [ERROR: duplicate key value violates unique constraint "ukkfu0161nvirkey6fwd6orucv7"
+  Detail: Key (user_id)=(13) already exists.] [insert into user_address (area,city,country,created_at,latitude,longitude,postal_code,state,state_code,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into user_address (area,city,country,created_at,latitude,longitude,postal_code,state,state_code,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [ukkfu0161nvirkey6fwd6orucv7]
+2026-02-26 17:32:53 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:32:53 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:32:53 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:32:53 - INFO - c.a.a.service.UserAddressService - existing user found
+2026-02-26 17:32:53 - DEBUG - org.hibernate.SQL - select null,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=?
+2026-02-26 17:32:53 - DEBUG - org.hibernate.SQL - insert into user_address (area,city,country,created_at,latitude,longitude,postal_code,state,state_code,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?)
+2026-02-26 17:32:58 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:32:58 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:32:58 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:32:58 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.id=?
+2026-02-26 17:33:22 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 17:33:22 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 17:33:22 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:33:22 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 17:33:22 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 17:33:24 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 53645 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 17:33:24 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 17:33:24 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:33:24 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 17:33:25 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 17:33:25 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 17:33:25 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 17:33:25 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 588 ms
+2026-02-26 17:33:25 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 17:33:25 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 17:33:25 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 17:33:25 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 17:33:25 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 17:33:25 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7131d668
+2026-02-26 17:33:25 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 17:33:25 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 17:33:25 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 17:33:25 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:33:25 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 17:33:26 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 17:33:26 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 17:33:26 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 17:33:26 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 17:33:26 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 74f60bb2-e575-4763-ba5f-61fcf68309f0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 17:33:26 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 17:33:26 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 17:33:26 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.144 seconds (process running for 2.414)
+2026-02-26 17:33:26 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 17:33:26 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 17:33:26 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 17:33:28 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 17:33:28 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 17:33:28 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:33:28 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:33:28 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:33:28 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:33:28 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.id=?
+2026-02-26 17:33:28 - ERROR - c.a.a.c.UserAddressController - Address not found
+2026-02-26 17:33:52 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:33:52 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:33:52 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:33:52 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.id=?
+2026-02-26 17:33:52 - DEBUG - org.hibernate.SQL - update user_address set area=?,city=?,country=?,latitude=?,longitude=?,postal_code=?,state=?,state_code=?,updated_at=?,user_id=? where id=?
+2026-02-26 17:34:03 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:03 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:03 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:03 - INFO - c.a.a.service.UserAddressService - cache miss
+2026-02-26 17:34:03 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.id=?
+2026-02-26 17:34:12 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:12 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:12 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:12 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.id=?
+2026-02-26 17:34:12 - DEBUG - org.hibernate.SQL - delete from user_address where id=?
+2026-02-26 17:34:18 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:18 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:18 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:18 - DEBUG - org.hibernate.SQL - insert into company_address (area,city,country,lattitude,longitude,postal_code,state,state_code) values (?,?,?,?,?,?,?,?)
+2026-02-26 17:34:18 - DEBUG - org.hibernate.SQL - select null,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=?
+2026-02-26 17:34:18 - DEBUG - org.hibernate.SQL - insert into company (company_address_id,created_at,department,name,title,updated_at,user_id) values (?,?,?,?,?,?,?)
+2026-02-26 17:34:18 - WARN - org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-02-26 17:34:18 - WARN - org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "ukg82ixrst2tc542u5s214ggpdf"
+  Detail: Key (user_id)=(13) already exists.
+2026-02-26 17:34:24 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:24 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:24 - INFO - c.a.a.service.UserService - =================================== -> false
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.is_deleted=? order by um1_0.username desc offset ? rows fetch first ? rows only
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:34:24 - DEBUG - org.hibernate.SQL - select count(um1_0.id) from users um1_0 where um1_0.is_deleted=?
+2026-02-26 17:34:39 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:39 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:39 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:39 - DEBUG - org.hibernate.SQL - insert into company_address (area,city,country,lattitude,longitude,postal_code,state,state_code) values (?,?,?,?,?,?,?,?)
+2026-02-26 17:34:39 - DEBUG - org.hibernate.SQL - select null,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=?
+2026-02-26 17:34:39 - DEBUG - org.hibernate.SQL - insert into company (company_address_id,created_at,department,name,title,updated_at,user_id) values (?,?,?,?,?,?,?)
+2026-02-26 17:34:39 - WARN - org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23505
+2026-02-26 17:34:39 - WARN - org.hibernate.orm.jdbc.error - ERROR: duplicate key value violates unique constraint "ukg82ixrst2tc542u5s214ggpdf"
+  Detail: Key (user_id)=(13) already exists.
+2026-02-26 17:34:46 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:46 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:46 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:34:46 - DEBUG - org.hibernate.SQL - insert into company_address (area,city,country,lattitude,longitude,postal_code,state,state_code) values (?,?,?,?,?,?,?,?)
+2026-02-26 17:34:46 - DEBUG - org.hibernate.SQL - select null,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.id=?
+2026-02-26 17:34:46 - DEBUG - org.hibernate.SQL - insert into company (company_address_id,created_at,department,name,title,updated_at,user_id) values (?,?,?,?,?,?,?)
+2026-02-26 17:34:53 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:34:53 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:34:53 - INFO - c.a.a.controller.CompanyController - getting company data...
+2026-02-26 17:34:53 - INFO - c.a.a.service.CompanyService - got redis value -> null
+2026-02-26 17:34:53 - INFO - c.a.a.service.CompanyService - cache miss
+2026-02-26 17:34:53 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:34:53 - ERROR - c.a.a.controller.CompanyController - failed to get data -> company doesn't exist
+2026-02-26 17:35:16 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:35:16 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:35:16 - INFO - c.a.a.controller.CompanyController - getting company data...
+2026-02-26 17:35:16 - INFO - c.a.a.service.CompanyService - got redis value -> null
+2026-02-26 17:35:16 - INFO - c.a.a.service.CompanyService - cache miss
+2026-02-26 17:35:16 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:35:16 - INFO - c.a.a.service.CompanyService - got company data
+2026-02-26 17:35:23 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:35:23 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:35:23 - ERROR - c.a.a.utility.RestExceptionHandler - Got Exception ❌❌❌:org.springframework.web.bind.UnsatisfiedServletRequestParameterException: Parameter conditions "id" not met for actual request parameters: userid={1011}
+2026-02-26 17:36:34 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:36:34 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:36:34 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:05 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:37:05 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:37:05 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:23 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 17:37:23 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 17:37:23 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:37:23 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 17:37:23 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 17:37:25 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 53796 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 17:37:25 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 17:37:25 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:37:25 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-02-26 17:37:25 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 17:37:25 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 17:37:25 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 17:37:25 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 559 ms
+2026-02-26 17:37:25 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 17:37:25 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 17:37:25 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 17:37:25 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 17:37:25 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 17:37:25 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@771afdd5
+2026-02-26 17:37:25 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 17:37:26 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 17:37:26 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 17:37:26 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:37:26 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 17:37:26 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 17:37:26 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 17:37:26 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 17:37:26 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 17:37:26 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 370ac813-8a25-4281-a7d4-ee441cde44f9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 17:37:26 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 17:37:27 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 17:37:27 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.12 seconds (process running for 2.385)
+2026-02-26 17:37:27 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 17:37:27 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 17:37:27 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 17:37:28 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 17:37:28 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 17:37:28 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:37:28 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:37:28 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:37:28 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:28 - ERROR - c.a.a.controller.CompanyController - company not found
+2026-02-26 17:37:37 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:37:37 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:37:37 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:37 - INFO - c.a.a.service.CompanyService - company user id -> 15
+2026-02-26 17:37:37 - INFO - c.a.a.service.CompanyService - cache updated
+2026-02-26 17:37:37 - DEBUG - org.hibernate.SQL - update company_address set area=?,city=?,country=?,lattitude=?,longitude=?,postal_code=?,state=?,state_code=? where id=?
+2026-02-26 17:37:37 - DEBUG - org.hibernate.SQL - update company set company_address_id=?,department=?,name=?,title=?,updated_at=?,user_id=? where id=?
+2026-02-26 17:37:51 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA1NzU1LCJleHAiOjE3NzIxMDkzNTV9.oIhf9jeeFS3Ye1_Vhm3T52qRt1t8N7cIAvW5OtScVIA
+2026-02-26 17:37:51 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:37:51 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:51 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.id=?
+2026-02-26 17:37:51 - DEBUG - org.hibernate.SQL - delete from company where id=?
+2026-02-26 17:37:51 - DEBUG - org.hibernate.SQL - delete from company_address where id=?
+2026-02-26 17:37:51 - INFO - c.a.a.service.CompanyService - company deleted successfully
+2026-02-26 17:37:56 - INFO - c.a.a.controller.AuthController - trying login with creds -> ankit@hivel.ai -> ankit
+2026-02-26 17:37:56 - INFO - c.a.a.service.AuthService - logging....
+2026-02-26 17:37:56 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.weight=? or um1_0.age=? or um1_0.height=? or lower(um1_0.email) like ? escape '\' fetch first ? rows only
+2026-02-26 17:37:56 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:37:56 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:37:56 - INFO - c.a.a.service.AuthService - user found: $2a$12$hqFH6UjN1A1fnW10vv2ag.88f.zjLlmuCj9W7OQMcVQ.pYTKB2R/e
+2026-02-26 17:37:57 - INFO - c.a.a.service.AuthService - result verifiedResult{details=HashData{cost=12, version=$2a$, rawSalt=8ec1c9f1694fdc2de1a58df6c71e1c88, rawHash=fbe840d65367a30125fd8f5048e797480ada54c0f84c18}, validFormat=true, verified=true, formatErrorMessage='null'}
+2026-02-26 17:37:57 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where upper(um1_0.email)=upper(?) and um1_0.is_deleted=?
+2026-02-26 17:37:57 - ERROR - c.a.a.controller.AuthController - error while authenticating: 
+java.lang.RuntimeException: user not found
+	at com.ankit.assignmentspringboot.controller.AuthController.lambda$loginUser$0(AuthController.java:42)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.ankit.assignmentspringboot.controller.AuthController.loginUser(AuthController.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.ankit.assignmentspringboot.component.RateLimitingFilter.doFilter(RateLimitingFilter.java:47)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-26 17:38:29 - INFO - c.a.a.controller.AuthController - trying login with creds -> ankit@hivel.ai -> ankit
+2026-02-26 17:38:29 - INFO - c.a.a.service.AuthService - logging....
+2026-02-26 17:38:29 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where um1_0.weight=? or um1_0.age=? or um1_0.height=? or lower(um1_0.email) like ? escape '\' fetch first ? rows only
+2026-02-26 17:38:29 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:38:29 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:38:29 - INFO - c.a.a.service.AuthService - user found: $2a$12$hqFH6UjN1A1fnW10vv2ag.88f.zjLlmuCj9W7OQMcVQ.pYTKB2R/e
+2026-02-26 17:38:30 - INFO - c.a.a.service.AuthService - result verifiedResult{details=HashData{cost=12, version=$2a$, rawSalt=8ec1c9f1694fdc2de1a58df6c71e1c88, rawHash=fbe840d65367a30125fd8f5048e797480ada54c0f84c18}, validFormat=true, verified=true, formatErrorMessage='null'}
+2026-02-26 17:38:30 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 where upper(um1_0.email)=upper(?) and um1_0.is_deleted=?
+2026-02-26 17:38:30 - DEBUG - org.hibernate.SQL - select cm1_0.id,cm1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,cm1_0.created_at,cm1_0.department,cm1_0.name,cm1_0.title,cm1_0.updated_at,cm1_0.user_id from company cm1_0 join company_address ca1_0 on ca1_0.id=cm1_0.company_address_id where cm1_0.user_id=?
+2026-02-26 17:38:30 - DEBUG - org.hibernate.SQL - select uam1_0.id,uam1_0.area,uam1_0.city,uam1_0.country,uam1_0.created_at,uam1_0.latitude,uam1_0.longitude,uam1_0.postal_code,uam1_0.state,uam1_0.state_code,uam1_0.updated_at,uam1_0.user_id from user_address uam1_0 where uam1_0.user_id=?
+2026-02-26 17:38:30 - INFO - c.a.a.controller.AuthController - login success, setting cookies
+2026-02-26 17:38:55 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id
+2026-02-26 17:38:55 - ERROR - c.a.a.utility.RestExceptionHandler - Got Exception ❌❌❌:org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.ankit.assignmentspringboot.utility.ApiResponse] with preset Content-Type 'null'
+2026-02-26 17:46:34 - WARN - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m7s856ms).
+2026-02-26 17:47:08 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id
+2026-02-26 17:47:08 - ERROR - c.a.a.utility.RestExceptionHandler - Got Exception ❌❌❌:org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.ankit.assignmentspringboot.utility.ApiResponse] with preset Content-Type 'null'
+2026-02-26 17:53:02 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id
+2026-02-26 17:53:02 - ERROR - c.a.a.utility.RestExceptionHandler - Got Exception ❌❌❌:org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.ankit.assignmentspringboot.utility.ApiResponse] with preset Content-Type 'null'
+2026-02-26 17:53:17 - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-26 17:53:17 - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-26 17:53:17 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:53:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-26 17:53:17 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-26 17:53:19 - INFO - c.a.a.AssignmentSpringBootApplication - Starting AssignmentSpringBootApplication using Java 21.0.10 with PID 54209 (/Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot/target/classes started by ankityadav in /Users/ankityadav/Desktop/workspace/hivel/AssignmentSpringBoot)
+2026-02-26 17:53:19 - DEBUG - c.a.a.AssignmentSpringBootApplication - Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-02-26 17:53:19 - INFO - c.a.a.AssignmentSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserAddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ankit.assignmentspringboot.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 17:53:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-02-26 17:53:19 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-26 17:53:19 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-26 17:53:19 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26 17:53:19 - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 569 ms
+2026-02-26 17:53:19 - DEBUG - c.a.a.c.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-26 17:53:19 - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26 17:53:19 - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26 17:53:20 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26 17:53:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-26 17:53:20 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@119f072c
+2026-02-26 17:53:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-26 17:53:20 - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hivel]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.2
+	Default catalog/schema: hivel/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-26 17:53:20 - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26 17:53:20 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26 17:53:20 - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26 17:53:20 - WARN - i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-02-26 17:53:20 - INFO - c.a.a.controller.CompanyController - inside company controller constructor
+2026-02-26 17:53:20 - INFO - c.a.a.c.UserAddressController - inside user address controller constructor
+2026-02-26 17:53:20 - INFO - c.a.a.controller.UserController - inside user controller constructor
+2026-02-26 17:53:20 - WARN - o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 11ff70c4-ed20-41bc-b05f-83e202973a8d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-26 17:53:20 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-26 17:53:21 - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-26 17:53:21 - INFO - c.a.a.AssignmentSpringBootApplication - Started AssignmentSpringBootApplication in 2.139 seconds (process running for 2.488)
+2026-02-26 17:53:21 - INFO - c.a.a.component.StartupRunner - ping to redis
+2026-02-26 17:53:21 - INFO - c.a.a.component.StartupRunner - <PONG> received from redis
+2026-02-26 17:53:21 - INFO - c.a.a.component.StartupRunner - CONNECTED TO REDIS...
+2026-02-26 17:53:22 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 17:53:22 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-26 17:53:22 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-26 17:53:22 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,ca1_0.id,ca1_0.area,ca1_0.city,ca1_0.country,ca1_0.lattitude,ca1_0.longitude,ca1_0.postal_code,ca1_0.state,ca1_0.state_code,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join company_address ca1_0 on ca1_0.id=c1_0.company_address_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id
+2026-02-26 17:54:16 - INFO - c.a.a.c.JwtAuthenticationFilter - token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA3NzEwLCJleHAiOjE3NzIxMTEzMTB9.pc0LhbvMkuMRtiuR_HL3A35g_olp2kH1MbwzH0NOqoY
+2026-02-26 17:54:16 - INFO - c.a.a.c.JwtAuthenticationFilter - got userid: 1011
+2026-02-26 17:54:16 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:54:16 - DEBUG - org.hibernate.SQL - select um1_0.id,um1_0.age,um1_0.birth_date,um1_0.blood_group,c1_0.id,c1_0.company_address_id,c1_0.created_at,c1_0.department,c1_0.name,c1_0.title,c1_0.updated_at,c1_0.user_id,um1_0.created_at,um1_0.ein,um1_0.email,um1_0.eye_color,um1_0.first_name,um1_0.gender,um1_0.hair_color,um1_0.hair_type,um1_0.height,um1_0.image_url,um1_0.ip_address,um1_0.is_deleted,um1_0.last_name,um1_0.mac_address,um1_0.maiden_name,um1_0.password,um1_0.phone,um1_0.role,um1_0.ssn,um1_0.university,um1_0.updated_at,ua1_0.id,ua1_0.area,ua1_0.city,ua1_0.country,ua1_0.created_at,ua1_0.latitude,ua1_0.longitude,ua1_0.postal_code,ua1_0.state,ua1_0.state_code,ua1_0.updated_at,ua1_0.user_id,um1_0.user_agent,um1_0.username,um1_0.weight from users um1_0 left join company c1_0 on um1_0.id=c1_0.user_id left join user_address ua1_0 on um1_0.id=ua1_0.user_id where um1_0.id=?
+2026-02-26 17:54:16 - DEBUG - org.hibernate.SQL - update users set age=?,birth_date=?,blood_group=?,ein=?,email=?,eye_color=lower(?),first_name=?,gender=?,hair_color=lower(?),hair_type=lower(?),height=?,image_url=?,ip_address=?,is_deleted=?,last_name=?,mac_address=?,maiden_name=?,password=?,phone=?,role=?,ssn=?,university=?,updated_at=?,user_agent=?,username=?,weight=? where id=?

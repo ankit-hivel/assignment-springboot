@@ -37,7 +37,87 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "save user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n      \"id\": 1011,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"Johnson\",\n      \"maidenName\": \"Smith\",\n      \"age\": 21,\n      \"gender\": \"female\",\n      \"email\": \"ankit@hivel.ai\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"ankit\",\n      \"password\": \"ankit\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"role\": \"admin\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user",
+                    "save"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 11:58:27 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"saved user\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "getUserByIdOrEmail",
@@ -67,7 +147,88 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "getUserByIdOrEmail",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/user?id=22",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "emily.johnson@x.dummyjson.com",
+                      "disabled": true
+                    },
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 11:58:33 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"age\": 34,\n        \"birthDate\": \"1991-10-22\",\n        \"bloodGroup\": \"A-\",\n        \"ein\": \"520-394\",\n        \"email\": \"elijah.stewart@x.dummyjson.com\",\n        \"eyeColor\": \"blue\",\n        \"firstName\": \"Elijah\",\n        \"gender\": \"male\",\n        \"haircolor\": \"purple\",\n        \"hairtype\": \"straight\",\n        \"height\": 195.33,\n        \"id\": \"22\",\n        \"image\": \"https://dummyjson.com/icon/elijahs/128\",\n        \"ip\": \"23.87.135.62\",\n        \"lastName\": \"Stewart\",\n        \"macAddress\": \"75:17:c6:35:fc:6d\",\n        \"maidenName\": \"\",\n        \"phone\": \"+44 468-357-7872\",\n        \"role\": \"USER\",\n        \"ssn\": \"287-380-801\",\n        \"university\": \"Georgetown University\",\n        \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n        \"username\": \"elijahs\",\n        \"weight\": 81.64\n    },\n    \"message\": \"user found\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "get all users",
@@ -112,7 +273,100 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "get all users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user/all?page=1&count=3&sortby=username&ascending=false",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user",
+                    "all"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "count",
+                      "value": "3"
+                    },
+                    {
+                      "key": "sortby",
+                      "value": "username"
+                    },
+                    {
+                      "key": "ascending",
+                      "value": "false"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:04:24 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"age\": 36,\n            \"birthDate\": \"1989-08-10\",\n            \"bloodGroup\": \"B+\",\n            \"ein\": \"912-602\",\n            \"email\": \"michael.williams@x.dummyjson.com\",\n            \"eyeColor\": \"red\",\n            \"firstName\": \"Michael\",\n            \"gender\": \"male\",\n            \"haircolor\": \"green\",\n            \"hairtype\": \"straight\",\n            \"height\": 186.22,\n            \"id\": \"2\",\n            \"image\": \"https://dummyjson.com/icon/michaelw/128\",\n            \"ip\": \"12.13.116.142\",\n            \"lastName\": \"Williams\",\n            \"macAddress\": \"79:15:78:99:60:aa\",\n            \"maidenName\": \"\",\n            \"phone\": \"+49 258-627-6644\",\n            \"role\": \"ADMIN\",\n            \"ssn\": \"108-953-962\",\n            \"university\": \"Ohio State University\",\n            \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/97.0.1072.76 Safari/537.36\",\n            \"username\": \"michaelw\",\n            \"weight\": 76.32\n        },\n        {\n            \"age\": 31,\n            \"birthDate\": \"1994-06-02\",\n            \"bloodGroup\": \"O+\",\n            \"ein\": \"229-249\",\n            \"email\": \"mateo.nguyen@x.dummyjson.com\",\n            \"eyeColor\": \"red\",\n            \"firstName\": \"Mateo\",\n            \"gender\": \"male\",\n            \"haircolor\": \"purple\",\n            \"hairtype\": \"wavy\",\n            \"height\": 174.29,\n            \"id\": \"24\",\n            \"image\": \"https://dummyjson.com/icon/mateon/128\",\n            \"ip\": \"192.57.144.7\",\n            \"lastName\": \"Nguyen\",\n            \"macAddress\": \"a7:26:10:7a:36:29\",\n            \"maidenName\": \"\",\n            \"phone\": \"+1 341-597-6694\",\n            \"role\": \"USER\",\n            \"ssn\": \"416-877-230\",\n            \"university\": \"Columbia University\",\n            \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36\",\n            \"username\": \"mateon\",\n            \"weight\": 59.98\n        },\n        {\n            \"age\": 27,\n            \"birthDate\": \"1998-03-07\",\n            \"bloodGroup\": \"B-\",\n            \"ein\": \"716-166\",\n            \"email\": \"madison.collins@x.dummyjson.com\",\n            \"eyeColor\": \"red\",\n            \"firstName\": \"Madison\",\n            \"gender\": \"female\",\n            \"haircolor\": \"gray\",\n            \"hairtype\": \"curly\",\n            \"height\": 189.28,\n            \"id\": \"21\",\n            \"image\": \"https://dummyjson.com/icon/madisonc/128\",\n            \"ip\": \"85.34.1.204\",\n            \"lastName\": \"Collins\",\n            \"macAddress\": \"13:b0:d0:23:4d:26\",\n            \"maidenName\": \"\",\n            \"phone\": \"+81 259-957-5711\",\n            \"role\": \"USER\",\n            \"ssn\": \"457-258-950\",\n            \"university\": \"University of Pennsylvania\",\n            \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36\",\n            \"username\": \"madisonc\",\n            \"weight\": 56.96\n        }\n    ],\n    \"message\": \"all user\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "update user data",
@@ -140,7 +394,86 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "update user data",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n      \"id\": 14,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"John\",\n      \"maidenName\": \"Smith\",\n\n      \"gender\": \"female\",\n      \"email\": \"emily.johnson@x.dummyjson.com\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"emilys\",\n      \"password\": \"emilyspass\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"address\": {\n        \"address\": \"626 Main Street\",\n        \"city\": \"Phoenix\",\n        \"state\": \"Mississippi\",\n        \"stateCode\": \"MS\",\n        \"postalCode\": \"29112\",\n        \"lattitude\": -77.16213,\n        \"longitude\": -92.084824,\n        \"country\": \"United States\"\n      },\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"bank\": {\n        \"cardExpire\": \"05/28\",\n        \"cardNumber\": \"3693233511855044\",\n        \"cardType\": \"Diners Club International\",\n        \"currency\": \"GBP\",\n        \"iban\": \"GB74MH2UZLR9TRPHYNU8F8\"\n      },\n      \"company\": {\n        \"department\": \"Engineering\",\n        \"name\": \"Dooley, Kozey and Cronin\",\n        \"title\": \"Sales Manager\",\n        \"address\": {\n          \"address\": \"263 Tenth Street\",\n          \"city\": \"San Francisco\",\n          \"state\": \"Wisconsin\",\n          \"stateCode\": \"WI\",\n          \"postalCode\": \"37657\",\n          \"coordinates\": {\n            \"lat\": 71.814525,\n            \"lng\": -161.150263\n          },\n          \"country\": \"United States\"\n        }\n      },\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"crypto\": {\n        \"coin\": \"Bitcoin\",\n        \"wallet\": \"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a\",\n        \"network\": \"Ethereum (ERC20)\"\n      }\n    }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 11:59:14 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"user data updated\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "delete user data",
@@ -152,7 +485,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user?id=1",
+              "raw": "http://localhost:8080/user?id=14",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -164,12 +497,92 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "1"
+                  "value": "14"
                 }
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "delete user data",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user?id=14",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "14"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 11:59:21 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"user data deleted\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "restore user data (soft restore)",
@@ -181,7 +594,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user/restore?id=2",
+              "raw": "http://localhost:8080/user/restore?id=13",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -194,12 +607,93 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "2"
+                  "value": "13"
                 }
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "restore user data (soft restore)",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user/restore?id=13",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user",
+                    "restore"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "13"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:24:16 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"user data restored\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "delete user data (soft delete)",
@@ -229,7 +723,88 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "delete user data (soft delete)",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/user/delete?id=13",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "13"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 11:59:33 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"user data deleted\",\n    \"status\": true\n}"
+            }
+          ]
         }
       ]
     },
@@ -243,7 +818,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"user_id\": 13,\n    \"area\": \"Madhapur\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+              "raw": "{\n    \"user_id\": 1011,\n    \"area\": \"Madhapur\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -262,7 +837,86 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "save user address",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 1011,\n    \"area\": \"Madhapur\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/address",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "address"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:02:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"saved user address\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "update user address",
@@ -271,7 +925,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 1,\n    \"user_id\": 13,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+              "raw": "{\n    \"id\": 62,\n    \"user_id\": 13,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -290,7 +944,86 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "update user address",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 62,\n    \"user_id\": 13,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/address",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "address"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:03:52 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"updated user address\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "get user address by id",
@@ -298,7 +1031,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/address?id=1",
+              "raw": "http://localhost:8080/address?id=55",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -310,12 +1043,88 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "1"
+                  "value": "55"
                 }
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "get user address by id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/address?id=55",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "address"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "55"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:04:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"area\": \"1591 Adams Street\",\n        \"city\": \"Philadelphia\",\n        \"country\": \"United States\",\n        \"latitude\": -26.832912,\n        \"longitude\": -75.445015,\n        \"postalCode\": \"69521\",\n        \"state\": \"New York\",\n        \"stateCode\": \"NY\"\n    },\n    \"message\": \"user address for id: 55\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "delete user address by id",
@@ -323,7 +1132,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/address?id=1",
+              "raw": "http://localhost:8080/address?id=54",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -335,12 +1144,88 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "1"
+                  "value": "54"
                 }
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "delete user address by id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/address?id=54",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "address"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "54"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:04:12 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"user address deleted\",\n    \"status\": true\n}"
+            }
+          ]
         }
       ]
     },
@@ -354,7 +1239,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 1,\n    \"userid\": 13,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
+              "raw": "{\n    \"id\": 1,\n    \"userid\": 1011,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -373,7 +1258,86 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "save company details",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 1,\n    \"userid\": 1011,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/company",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "company"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:04:46 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"company saved\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "get company details by id",
@@ -381,7 +1345,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/company?id=44",
+              "raw": "http://localhost:8080/company?id=43",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -393,37 +1357,88 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "44"
+                  "value": "43"
                 }
               ]
             }
           },
-          "response": []
-        },
-        {
-          "name": "get company details by userid",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:8080/company?userid=44",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "company"
-              ],
-              "query": [
+          "response": [
+            {
+              "name": "get company details by id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/company?id=43",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "company"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "43"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
                 {
-                  "key": "userid",
-                  "value": "44"
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:05:16 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
                 }
-              ]
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"area\": \"62 Third Street\",\n        \"city\": \"Seattle\",\n        \"country\": \"United States\",\n        \"createdAt\": \"2026-02-26T05:45:05.550981Z\",\n        \"department\": \"Engineering\",\n        \"id\": 43,\n        \"lat\": 19.490446,\n        \"lng\": -13.173207,\n        \"name\": \"Botsford, Marquardt and Roberts\",\n        \"postalCode\": \"83474\",\n        \"state\": \"Oregon\",\n        \"stateCode\": \"OR\",\n        \"title\": \"Database Administrator\",\n        \"updatedAt\": \"2026-02-26T05:45:05.550984Z\",\n        \"user_id\": \"13\"\n    },\n    \"message\": \"company found\",\n    \"status\": true\n}"
             }
-          },
-          "response": []
+          ]
         },
         {
           "name": "update company details",
@@ -432,7 +1447,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 44,\n    \"userid\": 12,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
+              "raw": "{\n    \"id\": 45,\n    \"userid\": 12,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -451,7 +1466,86 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "update company details",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 45,\n    \"userid\": 12,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/company",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "company"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:07:37 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"company updated\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "delete company details",
@@ -459,7 +1553,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/company?id=1",
+              "raw": "http://localhost:8080/company?id=43",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -471,12 +1565,88 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "1"
+                  "value": "43"
                 }
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "delete company details",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/company?id=43",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "company"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "43"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:07:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"company deleted successfully\",\n    \"status\": true\n}"
+            }
+          ]
         }
       ]
     },
@@ -516,7 +1686,97 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "login user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMzEyIiwiaWF0IjoxNzcyMDE3ODc2LCJleHAiOjE3NzIwMTc4NzZ9.m3KYnVP8703KrOx-xDsU-27q4qBRPRimTnZ8AX0ycd4",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"ankit@hivel.ai\",\n    \"password\": \"ankit\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Set-Cookie",
+                  "value": "token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDExIiwiaWF0IjoxNzcyMTA3NzEwLCJleHAiOjE3NzIxMTEzMTB9.pc0LhbvMkuMRtiuR_HL3A35g_olp2kH1MbwzH0NOqoY; Path=/; Max-Age=3600; Expires=Thu, 26 Feb 2026 13:08:30 GMT; Secure; HttpOnly; SameSite=Strict"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:08:30 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"role\": \"ADMIN\"\n    },\n    \"message\": \"user logged in\",\n    \"status\": true\n}"
+            }
+          ]
         }
       ]
     },
@@ -540,7 +1800,77 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "health check",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/health",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "health"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:08:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"system is running...\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "export to csv",
@@ -559,15 +1889,166 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "export to csv",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/csv",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "csv"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:23:22 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"data exported\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "get metrics",
           "request": {
             "method": "GET",
-            "header": []
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/metrics",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "metrics"
+              ]
+            }
           },
-          "response": []
+          "response": [
+            {
+              "name": "get metrics",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/metrics",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "metrics"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:23:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"cacheHit\": \"8\",\n        \"cacheMiss\": \"7\"\n    },\n    \"message\": \"system metrics\",\n    \"status\": true\n}"
+            }
+          ]
         }
       ]
     }
