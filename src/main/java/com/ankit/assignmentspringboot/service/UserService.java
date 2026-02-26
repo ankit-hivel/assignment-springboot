@@ -63,7 +63,7 @@ public class UserService {
         log.info("cache miss");
         UserModel user1 = userRepository.findByIdAndIsDeleted(id, false).orElseThrow(()-> new RuntimeException("user not found"));
         String userJsonToStore = objectMapper.writeValueAsString(new GetUserResponseDto(user1));
-        redis.saveWithTTL(id, userJsonToStore,5, TimeUnit.MINUTES);
+        redis.saveWithTTL(redisKey, userJsonToStore,5, TimeUnit.MINUTES);
         return user1;
     }
 

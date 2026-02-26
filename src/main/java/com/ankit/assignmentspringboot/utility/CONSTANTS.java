@@ -4,6 +4,9 @@ public class CONSTANTS {
     public static final String GetAllUsersKey = "allUsers";
     public static Enum UserRole;
 
+    public static final String CacheMissCountKey = "cache:miss";
+    public static final String CacheHitCountKey = "cache:hit";
+
     public static String getUserRedisKey(String id) {
         // user:101
         return "user:" + id;

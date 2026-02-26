@@ -1,5 +1,6 @@
 package com.ankit.assignmentspringboot.service;
 
+import com.ankit.assignmentspringboot.utility.CONSTANTS;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,15 @@ public class RedisService {
     }
 
     public String get(String key) {
-        return redisTemplate.opsForValue().get(key);
+        String value = redisTemplate.opsForValue().get(key);
+        if (value == null) {
+            // cache miss
+            redisTemplate.opsForValue().increment(CONSTANTS.CacheMissCountKey);
+        } else {
+            // cache hit
+            redisTemplate.opsForValue().increment(CONSTANTS.CacheHitCountKey);
+        }
+        return value;
     }
 
     public boolean del(String key) {
