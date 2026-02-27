@@ -570,6 +570,12 @@ paths:
               example: keep-alive
       tags:
         - user api
+  /user/details:
+    get:
+      summary: get logged in user details
+      responses: {}
+      tags:
+        - user api
   /user/restore:
     put:
       summary: restore user data (soft restore)
@@ -1273,8 +1279,9 @@ paths:
       parameters:
         - name: Authorization
           in: header
-          schema:
-            type: string
+          required: false
+          deprecated: false
+          schema: {}
           example: >-
             Bearer
             eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMzEyIiwiaWF0IjoxNzcyMDE3ODc2LCJleHAiOjE3NzIwMTc4NzZ9.m3KYnVP8703KrOx-xDsU-27q4qBRPRimTnZ8AX0ycd4
@@ -1343,8 +1350,8 @@ paths:
                 password:
                   type: string
             example:
-              email: ankit@hivel.ai
-              password: ankit
+              email: mia.rodriguez@x.dummyjson.com
+              password: miarpass
   /health:
     get:
       summary: health check
@@ -1482,6 +1489,63 @@ paths:
               schema:
                 type: string
               example: Thu, 26 Feb 2026 12:23:53 GMT
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=60
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+      tags:
+        - metrics
+  /files/data.csv:
+    get:
+      summary: download csv file
+      responses:
+        '200':
+          description: download csv file
+          headers:
+            Last-Modified:
+              schema:
+                type: string
+              example: Fri, 27 Feb 2026 06:39:26 GMT
+            Accept-Ranges:
+              schema:
+                type: string
+              example: bytes
+            X-Content-Type-Options:
+              schema:
+                type: string
+              example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: integer
+              example: '0'
+            Cache-Control:
+              schema:
+                type: string
+              example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+              example: no-cache
+            Expires:
+              schema:
+                type: integer
+              example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+              example: DENY
+            Content-Length:
+              schema:
+                type: integer
+              example: '21222'
+            Date:
+              schema:
+                type: string
+              example: Fri, 27 Feb 2026 06:40:57 GMT
             Keep-Alive:
               schema:
                 type: string
