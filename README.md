@@ -27,7 +27,7 @@ This is a Spring Boot 4 / Java 17 application that manages users, their addresse
   - **`UserAddressController` / `CompanyController`**: Manage addresses and company information linked to users (create/update/fetch using the corresponding services and DTOs).
   - **`MetricsController`**:
     - `GET /health`: Checks DB and Redis connectivity in parallel and returns a `HealthResponseDto`.
-    - `GET /csv`: Exports all user data (with related address and company) to `./static/data.csv` using OpenCSV.
+    - `GET /csv`: Exports all user data (with related address and company) to `./static/files/csv_filename.csv` using OpenCSV.
     - `GET /metrics`: Returns cache hit/miss counts stored in Redis as `MetricsResponseDto`.
 
 - **Services (`com.ankit.assignmentspringboot.service`)**
