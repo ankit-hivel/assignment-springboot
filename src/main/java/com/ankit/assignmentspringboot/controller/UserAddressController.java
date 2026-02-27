@@ -46,7 +46,7 @@ public class UserAddressController {
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
         } catch(Exception ex) {
             log.error(ex.getMessage());
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to saved user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user address", null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }

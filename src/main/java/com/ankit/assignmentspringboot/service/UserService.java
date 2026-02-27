@@ -44,8 +44,13 @@ public class UserService {
 
     public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
+        System.out.println("user email: " + user.getEmail());
+        System.out.println("user password: " + user.getPassword());
+        System.out.println("user password from payload: " + userPayload.getPassword());
+        System.out.println();
+
         // hash password
-        String hashedPassword = BCrypt.withDefaults().hashToString(12, userPayload.getPassword().toCharArray());
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
         user.setPassword(hashedPassword);
 
         // save user

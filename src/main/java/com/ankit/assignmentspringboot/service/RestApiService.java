@@ -103,7 +103,7 @@ public class RestApiService {
         userToSave.setIp(user.getIp());
         userToSave.setMacAddress(user.getMacAddress());
         userToSave.setMaidenName(user.getMaidenName());
-        userToSave.setPassword(user.getBloodGroup());
+        userToSave.setPassword(user.getPassword());
         userToSave.setPhone(user.getPhone());
         userToSave.setRole(user.getRole());
         userToSave.setSsn(user.getSsn());

@@ -25,17 +25,11 @@ public class AuthService {
         UserModel userToMatch = new UserModel();
         userToMatch.setEmail(email);
         log.info("logging....");
-        UserModel user = userRepository.findOne(
-                Example.of(userToMatch, ExampleMatcher.matchingAny()
-                        .withMatcher(
-                                "email",
-                                ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()
-                        )
-                )
-        ).orElseThrow(()-> new RuntimeException("user not found"));
-        log.info("user found: {}", user.getPassword());
+        UserModel user = userRepository.findByEmailIgnoreCaseAndIsDeleted(email, false)
+                .orElseThrow(()-> new RuntimeException("user not found"));
+        log.info("user found with password: {}", user.getPassword());
         BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
-        log.info("result verified{}", result);
+        log.info("result verified -> {}", result);
         if (result.verified){
             return jwtService.generateToken(user.getId());
         }else{

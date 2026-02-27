@@ -17,6 +17,7 @@ public class User {
     private String email;
     private String phone;
     private String username;
+    private String password;
     @JsonDeserialize(converter = DateSerializer.class)
     private LocalDate birthDate;
     private String image;
@@ -41,6 +42,14 @@ public class User {
 
     // company
     private CompanyApiResponse company;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getId() {
         return id;

@@ -83,9 +83,8 @@ public class UserModel {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @Column(name = "is_deleted")
-    @ColumnDefault(value = "false")
-    private Boolean isDeleted;
+    @Column(name = "is_deleted", nullable = false)
+    private boolean isDeleted = false;;
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -106,7 +105,7 @@ public class UserModel {
     }
 
     public void setDeleted(Boolean deleted) {
-        isDeleted = deleted;
+        this.isDeleted = deleted;
     }
 
     public UserAddressModel getUserAddress() {
