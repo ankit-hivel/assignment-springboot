@@ -8,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class StartupRunner implements CommandLineRunner {
     private static final Logger log = LoggerFactory.getLogger(StartupRunner.class);
@@ -25,8 +27,12 @@ public class StartupRunner implements CommandLineRunner {
         try {
             log.info("ping to redis");
             String redisConn = redisService.ping();
-            log.info("<{}> received from redis", redisConn);
-            log.info("CONNECTED TO REDIS...");
+            if (Objects.equals(redisConn, "PONG")){
+                log.info("<{}> received from redis", redisConn);
+                log.info("CONNECTED TO REDIS...");
+            } else {
+                throw new RedisConnectionFailureException("check configuration");
+            }
         } catch (RedisConnectionFailureException rx) {
             log.error("redis connection failed, check configuration");
             log.error(rx.getMessage());

@@ -1390,7 +1390,7 @@ paths:
             Date:
               schema:
                 type: string
-              example: Thu, 26 Feb 2026 12:08:51 GMT
+              example: Fri, 27 Feb 2026 07:30:49 GMT
             Keep-Alive:
               schema:
                 type: string

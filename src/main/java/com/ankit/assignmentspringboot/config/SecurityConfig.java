@@ -23,11 +23,14 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers("/user/save").permitAll()
-                        .requestMatchers("/health").permitAll()
-                        .requestMatchers("/csv").permitAll()
-                        .requestMatchers("/metrics").permitAll()
+                        .requestMatchers(
+                                "/auth/login",
+                                "/user/save",
+                                "/health",
+                                "/csv",
+                                "/metrics",
+                                "/files/*"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter,

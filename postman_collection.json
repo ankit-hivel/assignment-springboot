@@ -1876,7 +1876,7 @@
                 },
                 {
                   "key": "Date",
-                  "value": "Thu, 26 Feb 2026 12:08:51 GMT"
+                  "value": "Fri, 27 Feb 2026 07:30:49 GMT"
                 },
                 {
                   "key": "Keep-Alive",
@@ -1888,7 +1888,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"data\": null,\n    \"message\": \"system is running...\",\n    \"status\": true\n}"
+              "body": "{\n    \"data\": {\n        \"db\": true,\n        \"redis\": true\n    },\n    \"message\": \"fetched system status\",\n    \"status\": true\n}"
             }
           ]
         },

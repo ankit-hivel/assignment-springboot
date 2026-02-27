@@ -28,7 +28,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/user/save",
             "/health",
             "/csv",
-            "/metrics"
+            "/metrics",
+            "/files/data.csv"
     );
     private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private final JwtService jwtService;
@@ -92,6 +93,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
+        log.info("request path: {}", request.getServletPath());
         return EXCLUDED_PATHS.contains(request.getServletPath());
     }
 }

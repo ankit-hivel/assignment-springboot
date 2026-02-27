@@ -1,6 +1,8 @@
 package com.ankit.assignmentspringboot.service;
 
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisService {
 
+    private static final Logger log = LoggerFactory.getLogger(RedisService.class);
     private final StringRedisTemplate redisTemplate;
 
     public RedisService(StringRedisTemplate redisTemplate) {
@@ -17,7 +20,12 @@ public class RedisService {
     }
 
     public String ping() {
-        return redisTemplate.getConnectionFactory().getConnection().ping();
+        try {
+            return redisTemplate.getConnectionFactory().getConnection().ping();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return "REDIS IS DOWN";
+        }
     }
 
     public void saveWithTTL(String key, String value, long duration, TimeUnit unit) {
