@@ -25,9 +25,10 @@ import java.util.List;
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final List<String> PROTECTED_PREFIXES = List.of(
-            "/user/",
-            "/company/",
-            "/address/"
+            "/user",
+            "/company",
+            "/address",
+            "/csv"
     );
     private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private final JwtService jwtService;

@@ -23,11 +23,6 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        // Protected routes
-                        .requestMatchers("/user/**", "/company/**", "/address/**")
-                        .authenticated()
-
-                        // Everything else is public
                         .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtAuthenticationFilter,

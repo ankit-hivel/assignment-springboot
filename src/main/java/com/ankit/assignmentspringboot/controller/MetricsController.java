@@ -4,6 +4,7 @@ import com.ankit.assignmentspringboot.model.CompanyAddressModel;
 import com.ankit.assignmentspringboot.model.CompanyModel;
 import com.ankit.assignmentspringboot.model.UserModel;
 import com.ankit.assignmentspringboot.repository.UserRepository;
+import com.ankit.assignmentspringboot.responseDto.CsvFileLinkResponseDto;
 import com.ankit.assignmentspringboot.responseDto.HealthResponseDto;
 import com.ankit.assignmentspringboot.responseDto.MetricsResponseDto;
 import com.ankit.assignmentspringboot.responseDto.UserExportDataToCsvDto;
@@ -11,6 +12,7 @@ import com.ankit.assignmentspringboot.service.RedisService;
 import com.ankit.assignmentspringboot.utility.ApiResponse;
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
 import com.ankit.assignmentspringboot.utility.FutureResults;
+import com.ankit.assignmentspringboot.utility.GetAuthUserId;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
@@ -27,11 +29,13 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Connection;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class MetricsController {
@@ -98,15 +102,22 @@ public class MetricsController {
             // get all users data
             List<UserModel> users = userRepository.findAll();
 
-            String CSV_FILE_PATH = "./static/data.csv";
-            Path pathToCsv = Path.of(CSV_FILE_PATH);
+            String CSV_FILE_NAME = GetAuthUserId.getUserId() + LocalTime.now().toNanoOfDay() + ".csv";
+            Path CSV_FILE_DIRECTORY = Path.of("./static/files/");
+            Path pathToCsv = Path.of(CSV_FILE_DIRECTORY + "/" + CSV_FILE_NAME);
+            if(!Files.exists(CSV_FILE_DIRECTORY)) {
+                log.info("creating directory: /static/files");
+//                Files.createDirectory(Path.of("./static"));
+//                Files.createDirectory(Path.of("./static/files"));
+                Files.createDirectories(Path.of("./static/files"));
+            }
             log.info("deleting csv file if exists");
             Files.deleteIfExists(pathToCsv);
             log.info("existing file deleted, creating new csv file");
             Files.createFile(pathToCsv);
             log.info("csv file created, writing data into file");
 
-            Writer writer = new FileWriter(CSV_FILE_PATH);
+            Writer writer = new FileWriter(pathToCsv.toFile());
             StatefulBeanToCsv<UserExportDataToCsvDto> beanToCsv = new StatefulBeanToCsvBuilder<UserExportDataToCsvDto>(writer)
                     .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
                     .build();
@@ -130,8 +141,14 @@ public class MetricsController {
                     }
             ).toList();
             beanToCsv.write(allUsersData);
+            CsvFileLinkResponseDto csvFileLinkResponseDto = new CsvFileLinkResponseDto();
+            csvFileLinkResponseDto.setLink(pathToCsv.toString());
             return ResponseEntity.status(HttpStatus.OK).body(
-                    new ApiResponse<>(true, "data exported to file: " + pathToCsv)
+                    new ApiResponse<>(
+                            true,
+                            "data exported to file: " + pathToCsv,
+                            csvFileLinkResponseDto
+                    )
             );
         } catch (Exception e) {
             log.error("e: ", e);
