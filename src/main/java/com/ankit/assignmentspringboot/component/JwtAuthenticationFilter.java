@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
@@ -23,13 +24,10 @@ import java.util.List;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private static final List<String> EXCLUDED_PATHS = List.of(
-            "/auth/login",
-            "/user/save",
-            "/health",
-            "/csv",
-            "/metrics",
-            "/files/data.csv"
+    private static final List<String> PROTECTED_PREFIXES = List.of(
+            "/user/",
+            "/company/",
+            "/address/"
     );
     private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private final JwtService jwtService;
@@ -59,7 +57,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     new UsernamePasswordAuthenticationToken(
                             userId,
                             null,
-                            Collections.emptyList()
+                            Collections.singletonList(
+                                    new SimpleGrantedAuthority("ROLE_USER")
+                            )
                     );
 
             authentication.setDetails(
@@ -93,7 +93,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        log.info("request path: {}", request.getServletPath());
-        return EXCLUDED_PATHS.contains(request.getServletPath());
+        String path = request.getServletPath();
+        return PROTECTED_PREFIXES.stream()
+                .noneMatch(prefix -> path.equals(prefix.replace("/", ""))
+                        || path.startsWith(prefix));
     }
 }

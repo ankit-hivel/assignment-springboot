@@ -23,20 +23,16 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/auth/login",
-                                "/user/save",
-                                "/health",
-                                "/csv",
-                                "/metrics",
-                                "/files/*"
-                        ).permitAll()
-                        .anyRequest().authenticated()
+                        // Protected routes
+                        .requestMatchers("/user/**", "/company/**", "/address/**")
+                        .authenticated()
+
+                        // Everything else is public
+                        .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
-
 }
