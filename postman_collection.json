@@ -386,7 +386,78 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "get logged in user details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/user/details",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "user",
+                    "details"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 09:06:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"age\": 25,\n        \"birthDate\": \"2000-08-04\",\n        \"bloodGroup\": \"O-\",\n        \"ein\": \"754-660\",\n        \"email\": \"mia.rodriguez@x.dummyjson.com\",\n        \"eyeColor\": \"blue\",\n        \"firstName\": \"Mia\",\n        \"gender\": \"female\",\n        \"haircolor\": \"purple\",\n        \"hairtype\": \"wavy\",\n        \"height\": 188.08,\n        \"id\": \"12\",\n        \"image\": \"https://dummyjson.com/icon/miar/128\",\n        \"ip\": \"11.72.253.90\",\n        \"lastName\": \"Rodriguez\",\n        \"macAddress\": \"53:d7:a4:6:1e:58\",\n        \"maidenName\": \"\",\n        \"phone\": \"+49 989-461-8403\",\n        \"role\": \"MODERATOR\",\n        \"ssn\": \"749-524-124\",\n        \"university\": \"William & Mary\",\n        \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36\",\n        \"username\": \"miar\",\n        \"weight\": 56.03\n    },\n    \"message\": \"user found\",\n    \"status\": true\n}"
+            }
+          ]
         },
         {
           "name": "update user data",

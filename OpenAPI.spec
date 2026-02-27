@@ -573,7 +573,50 @@ paths:
   /user/details:
     get:
       summary: get logged in user details
-      responses: {}
+      responses:
+        '200':
+          description: get logged in user details
+          headers:
+            X-Content-Type-Options:
+              schema:
+                type: string
+              example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: integer
+              example: '0'
+            Cache-Control:
+              schema:
+                type: string
+              example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+              example: no-cache
+            Expires:
+              schema:
+                type: integer
+              example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+              example: DENY
+            Transfer-Encoding:
+              schema:
+                type: string
+              example: chunked
+            Date:
+              schema:
+                type: string
+              example: Fri, 27 Feb 2026 09:06:29 GMT
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=60
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
       tags:
         - user api
   /user/restore:
