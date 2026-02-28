@@ -10,7 +10,6 @@ public class UpdateUserAddressRequestDto {
     private String country;
     private Float latitude;
     private Float longitude;
-    private String user_id;
 
     public Integer getId() {
         return id;
@@ -82,13 +81,5 @@ public class UpdateUserAddressRequestDto {
 
     public void setLongitude(Float longitude) {
         this.longitude = longitude;
-    }
-
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
     }
 }

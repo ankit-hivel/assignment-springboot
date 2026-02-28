@@ -30,6 +30,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/address",
             "/csv"
     );
+
+    private static final List<String> EXPLICIT_UNPROTECTED_ROUTES = List.of(
+            "/user/save"
+    );
+
     private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private final JwtService jwtService;
 
@@ -95,8 +100,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();
-        return PROTECTED_PREFIXES.stream()
+        boolean isNotProtected = PROTECTED_PREFIXES.stream()
                 .noneMatch(prefix -> path.equals(prefix.replace("/", ""))
                         || path.startsWith(prefix));
+        boolean isUnprotected = EXPLICIT_UNPROTECTED_ROUTES.stream()
+                        .anyMatch(
+                            prefix -> path.equals(prefix.replace("/", ""))
+                                || path.startsWith(prefix)
+                        );
+        log.info("path: {}", path);
+        log.info("isNotProtected: {}", isNotProtected);
+        log.info("isUnprotected: {}", isUnprotected);
+        return isNotProtected || isUnprotected;
     }
 }

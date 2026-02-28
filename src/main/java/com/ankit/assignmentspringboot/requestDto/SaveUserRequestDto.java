@@ -7,7 +7,7 @@ import tools.jackson.databind.annotation.JsonDeserialize;
 import java.time.LocalDate;
 
 public class SaveUserRequestDto {
-    private String id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -35,11 +35,11 @@ public class SaveUserRequestDto {
     private String userAgent;
     private UserRole role;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

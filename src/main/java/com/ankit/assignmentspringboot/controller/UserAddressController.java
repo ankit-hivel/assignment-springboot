@@ -46,7 +46,7 @@ public class UserAddressController {
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
         } catch(Exception ex) {
             log.error(ex.getMessage());
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user address", null);
+            ApiResponse<Void> resp = new ApiResponse<>(false, ex.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -55,7 +55,7 @@ public class UserAddressController {
     public ResponseEntity<ApiResponse<?>> getUserAddressById(@RequestParam Integer id){
         try {
             if (
-                    !(Objects.equals(id.toString(), GetAuthUserId.getUserId())) &&
+                    !(Objects.equals(id.toString(), GetAuthUserId.getUserId().toString())) &&
                             !(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
                 throw new RuntimeException("operation is not allowed");
             }
@@ -72,9 +72,9 @@ public class UserAddressController {
     @PutMapping
     public ResponseEntity<ApiResponse<Void>> updateUserAddress(@RequestBody UpdateUserAddressRequestDto userAddressRequestDto){
         try {
-            if (
-                    !(Objects.equals(userAddressRequestDto.getUser_id(), GetAuthUserId.getUserId())) &&
-                            !(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
+            if(
+                    !(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))
+            ) {
                 throw new RuntimeException("operation is not allowed");
             }
             userAddressService.updateUserAddressData(userAddressRequestDto);
@@ -92,8 +92,8 @@ public class UserAddressController {
         try {
             if (id == null) throw new NullPointerException();
             if (
-                    !(Objects.equals(id.toString(), GetAuthUserId.getUserId())) &&
-                            !(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
+                !(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))
+            ) {
                 throw new RuntimeException("operation is not allowed");
             }
             userAddressService.deleteUserAddress(id);

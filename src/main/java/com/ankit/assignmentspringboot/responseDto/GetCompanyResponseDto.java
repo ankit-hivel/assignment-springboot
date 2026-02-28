@@ -19,7 +19,7 @@ public class GetCompanyResponseDto {
     private String country;
     private Float lat;
     private Float lng;
-    private String user_id;
+    private Integer user_id;
 
     public GetCompanyResponseDto() {}
 
@@ -43,11 +43,11 @@ public class GetCompanyResponseDto {
         this.user_id = company.getUser().getId();
     }
 
-    public String getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 

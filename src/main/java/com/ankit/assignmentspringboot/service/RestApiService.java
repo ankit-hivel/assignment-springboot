@@ -72,7 +72,7 @@ public class RestApiService {
                 companyToSave.setName(user.getCompany().getName());
                 companyToSave.setDepartment(user.getCompany().getDepartment());
                 companyToSave.setTitle(user.getCompany().getTitle());
-                companyToSave.setUserid(user.getId());
+                companyToSave.setUserid(savedUser.getId());
                 companyToSave.setAddress(cAddressToSave);
 
                 companyService.saveCompany(companyToSave);
@@ -85,7 +85,6 @@ public class RestApiService {
 
     private static @NonNull SaveUserRequestDto getSaveUserRequestDto(User user) {
         SaveUserRequestDto userToSave = new SaveUserRequestDto();
-        userToSave.setId(user.getId());
         userToSave.setAge(user.getAge());
         userToSave.setEin(user.getEin());
         userToSave.setEmail(user.getEmail());
@@ -98,7 +97,6 @@ public class RestApiService {
         userToSave.setHaircolor(user.getHair().getColor());
         userToSave.setHairtype(user.getHair().getType());
         userToSave.setHeight(user.getHeight());
-        userToSave.setId(user.getId());
         userToSave.setImage(user.getImage());
         userToSave.setIp(user.getIp());
         userToSave.setMacAddress(user.getMacAddress());

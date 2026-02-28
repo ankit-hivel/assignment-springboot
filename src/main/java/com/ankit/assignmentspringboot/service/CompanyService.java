@@ -118,6 +118,10 @@ public class CompanyService {
                 () -> new RuntimeException("company not found")
         );
         companyRepository.deleteById(id);
+
+        // invalidate cache
+        String redisKey = CONSTANTS.getCompanyRedisKey(id);
+        redis.del(redisKey);
         log.info("company deleted successfully");
     }
 }

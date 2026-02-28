@@ -27,7 +27,7 @@ public class RateLimitingFilter implements Filter {
         return buckets.computeIfAbsent(clientId, k ->
                 Bucket.builder()
                         .addLimit(limit -> limit.capacity(10)
-                                .refillIntervally(1, Duration.ofMinutes(1))
+                                .refillIntervally(10, Duration.ofMinutes(1))
                         ).build()
         );
     }
@@ -40,7 +40,11 @@ public class RateLimitingFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
         String clientIp = httpRequest.getRemoteAddr();
-        Bucket bucket = getBucket(clientIp);
+        String clientId = clientIp + ((HttpServletRequest) request).getRequestURI();
+        log.info("request uri: {}", ((HttpServletRequest) request).getRequestURI());
+        log.info("clientIp: {}", clientIp);
+        log.info("clientId: {}", clientId);
+        Bucket bucket = getBucket(clientId);
         ConsumptionProbe probe = bucket.tryConsumeAndReturnRemaining(1);
 
         if (probe.isConsumed()) {
@@ -55,7 +59,9 @@ public class RateLimitingFilter implements Filter {
                     objectMapper.writeValueAsString(
                             new ApiResponse<>(
                                     false,
-                                    "api limit exceeded, please try again after sometime"
+                                    "api limit exceeded, please try again after "
+                                            + TimeUnit.NANOSECONDS.toSeconds(probe.getNanosToWaitForRefill())
+                                            + " seconds"
                             )
                     )
             );

@@ -28,7 +28,7 @@ public class CompanyController {
         try {
             companyService.saveCompany(dto);
             return ResponseEntity.status(HttpStatus.CREATED).body(
-                    new ApiResponse<Void>(true, "company saved")
+                    new ApiResponse<>(true, "company saved")
             );
         } catch(Exception ex) {
             ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save company details", null);
@@ -43,7 +43,7 @@ public class CompanyController {
             log.info("getting company data...");
             GetCompanyResponseDto company = companyService.getCompanyById(id);
             return ResponseEntity.status(HttpStatus.OK).body(
-                    new ApiResponse<GetCompanyResponseDto>(true, "company found", company)
+                    new ApiResponse<>(true, "company found", company)
             );
         } catch(Exception ex) {
             log.error("failed to get data -> {}", ex.getMessage());
@@ -57,7 +57,7 @@ public class CompanyController {
         try {
             companyService.updateCompanyById(dto);
             return ResponseEntity.status(HttpStatus.OK).body(
-                    new ApiResponse<Void>(true, "company updated")
+                    new ApiResponse<>(true, "company updated")
             );
         } catch(Exception ex) {
             log.error(ex.getMessage());
@@ -72,7 +72,7 @@ public class CompanyController {
             if (id == null) throw new NullPointerException();
             companyService.deleteCompanyById(id);
             return ResponseEntity.status(HttpStatus.OK).body(
-                    new ApiResponse<Void>(true, "company deleted successfully")
+                    new ApiResponse<>(true, "company deleted successfully")
             );
         } catch(Exception ex) {
             log.error("failed to delete company details: ", ex);

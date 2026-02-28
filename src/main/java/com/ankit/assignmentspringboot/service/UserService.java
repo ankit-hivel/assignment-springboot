@@ -44,21 +44,20 @@ public class UserService {
 
     public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
-        System.out.println("user email: " + user.getEmail());
-        System.out.println("user password: " + user.getPassword());
-        System.out.println("user password from payload: " + userPayload.getPassword());
-        System.out.println();
 
         // hash password
-        String hashedPassword = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray()); // b-crypt lib
         user.setPassword(hashedPassword);
+
+        // explicitly set user role: USER
+        user.setRole(UserRole.USER);
 
         // save user
         return userRepository.save(user);
     }
 
-    public UserModel getUserById(String id) {
-        String redisKey = CONSTANTS.getUserRedisKey(id);
+    public UserModel getUserById(Integer id) {
+        String redisKey = CONSTANTS.getUserRedisKey(id.toString());
         String redisValue = redis.get(redisKey);
         log.info("user from redis: {}", redisValue);
         if (redisValue != null) {
@@ -94,20 +93,17 @@ public class UserService {
         Sort sortingParams = ascending ? Sort.by(sortby).ascending() : Sort.by(sortby).descending();
         Pageable pageable = PageRequest.of(page, count, sortingParams);
         Page<UserModel> allUsers = userRepository.findAllByIsDeleted(false, pageable);
-        List<GetUserResponseDto> users = allUsers.stream().map(GetUserResponseDto::new).toList();
-        return users;
+        return allUsers.stream().map(GetUserResponseDto::new).toList();
     }
 
     @Transactional
     public void updateExistingUserData(SaveUserRequestDto user) {
-        log.info("updating user...");
+        log.info("updating user... {}, {}", GetAuthUserId.getUserId(), user.getId());
+        log.info(String.valueOf((Objects.equals(GetAuthUserId.getUserId(), user.getId()))));
         if (
-                !(Objects.equals(user.getId(), GetAuthUserId.getUserId()))
-                && (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())))
+                !(Objects.equals(GetAuthUserId.getUserId(), user.getId())) &&
+                !List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())
         ) {
-            log.info(user.getId());
-            log.info(GetAuthUserId.getUserId());
-            log.info(getAuthUserRole.getUserRole().toString());
             throw new RuntimeException("unauthorized user");
         }
 
@@ -187,26 +183,38 @@ public class UserService {
         if (user.getUserAgent() != null)
             userToUpdate.setUserAgent(user.getUserAgent());
 
-        if (user.getRole() != null)
+        if (user.getRole() != null
+                && List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))
             userToUpdate.setRole(user.getRole());
 
         // invalidate cache
-        redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getId()));
+        redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getId().toString()));
         redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getEmail()));
     }
 
     @Transactional
-    public void deleteUser(String id) {
+    public void deleteUser(Integer id) {
+        if (
+                !Objects.equals(GetAuthUserId.getUserId(), id) &&
+                !List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())
+        ) {
+            throw new RuntimeException("unauthorized user");
+        }
         UserModel user = userRepository.findById(id).orElseThrow();
 
         // invalidate cache
-        redis.del(CONSTANTS.getUserRedisKey(id));
+        redis.del(CONSTANTS.getUserRedisKey(id.toString()));
         redis.del(CONSTANTS.getUserRedisKey(user.getEmail()));
         userRepository.deleteById(id);
     }
 
     @Transactional
     public void softDeleteUserByUserId(String id) {
+        if (
+                !List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())
+        ) {
+            throw new RuntimeException("unauthorized user");
+        }
         UserModel user = userRepository.findById(id).orElseThrow();
 
         // invalidate cache
@@ -217,6 +225,11 @@ public class UserService {
 
     @Transactional
     public void restoreSoftDeletedUserByUserId(String id) {
+        if (
+                !List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole())
+        ) {
+            throw new RuntimeException("unauthorized user");
+        }
         UserModel user = userRepository.findById(id).orElseThrow();
         user.setDeleted(false);
     }

@@ -10,6 +10,7 @@ import com.ankit.assignmentspringboot.utility.security.GetAuthUserRole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,9 +40,13 @@ public class UserController {
             userService.saveUserData(user);
             ApiResponse<Void> resp = new ApiResponse<>(true, "saved user");
             return ResponseEntity.status(HttpStatus.CREATED).body(resp);
+        } catch (DataIntegrityViolationException dx) {
+            log.error("❌{}", String.valueOf(dx));
+            ApiResponse<Void> resp = new ApiResponse<>(false, "email or username already exists");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to save user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -55,13 +60,13 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
 
     @GetMapping(params = "id")
-    public ResponseEntity<ApiResponse<?>> getUserById(@RequestParam String id) {
+    public ResponseEntity<ApiResponse<?>> getUserById(@RequestParam Integer id) {
         try{
             if (id == null) throw new NullPointerException();
             if (!(List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))){
@@ -73,7 +78,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -92,7 +97,7 @@ public class UserController {
             return ResponseEntity.ok(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -113,7 +118,7 @@ public class UserController {
             return ResponseEntity.ok(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to get users");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -124,15 +129,19 @@ public class UserController {
             userService.updateExistingUserData(user);
             ApiResponse<Void> resp = new ApiResponse<>(true, "user data updated");
             return ResponseEntity.status(HttpStatus.OK).body(resp);
+        } catch (DataIntegrityViolationException e) {
+            log.error("❌duplicate values error: {}", String.valueOf(e));
+            ApiResponse<Void> resp = new ApiResponse<>(false, "email or username already exists");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to update user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
 
     @DeleteMapping
-    public ResponseEntity<ApiResponse<Void>> deleteUser(@RequestParam String id) {
+    public ResponseEntity<ApiResponse<Void>> deleteUser(@RequestParam Integer id) {
         try{
             if (id == null) throw new NullPointerException();
             if (
@@ -146,7 +155,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -165,7 +174,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to restore user data");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }
@@ -184,7 +193,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(resp);
         } catch (Exception e) {
             log.error("❌{}", String.valueOf(e));
-            ApiResponse<Void> resp = new ApiResponse<>(false, "failed to delete user data");
+            ApiResponse<Void> resp = new ApiResponse<>(false, e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
         }
     }

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, String> {
+public interface UserRepository extends JpaRepository<UserModel, Integer> {
     @EntityGraph(attributePaths = {"company", "userAddress"})
     @NonNull Optional<UserModel> findById(String id);
 
@@ -21,7 +21,7 @@ public interface UserRepository extends JpaRepository<UserModel, String> {
 
     Optional<UserModel> findByEmailIgnoreCaseAndIsDeleted(String email, boolean isDeleted);
 
-    Optional<UserModel> findByIdAndIsDeleted(String id, boolean isDeleted);
+    Optional<UserModel> findByIdAndIsDeleted(Integer id, boolean isDeleted);
 
     Page<UserModel> findAllByIsDeleted(boolean isDeleted, Pageable pageable);
 }

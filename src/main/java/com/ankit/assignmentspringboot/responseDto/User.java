@@ -8,7 +8,6 @@ import tools.jackson.databind.annotation.JsonDeserialize;
 import java.time.LocalDate;
 
 public class User {
-    private String id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -25,8 +24,6 @@ public class User {
     private Float height;
     private Float weight;
     private String eyeColor;
-//    private String haircolor;
-//    private String hairtype;
     private String ip;
     private String macAddress;
     private String university;
@@ -49,14 +46,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getFirstName() {

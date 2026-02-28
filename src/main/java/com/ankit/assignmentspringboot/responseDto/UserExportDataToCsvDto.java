@@ -9,7 +9,7 @@ import com.ankit.assignmentspringboot.utility.UserRole;
 import java.time.LocalDate;
 
 public class UserExportDataToCsvDto {
-    private String id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String maidenName;
@@ -128,11 +128,11 @@ public class UserExportDataToCsvDto {
         }
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

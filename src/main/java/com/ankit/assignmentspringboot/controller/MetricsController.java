@@ -35,7 +35,6 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 @RestController
 public class MetricsController {
@@ -53,8 +52,8 @@ public class MetricsController {
     @GetMapping("/health")
     public ResponseEntity<ApiResponse<?>> healthCheck() {
         try {
-            boolean dbStatus = false;
-            boolean redisStatus = false;
+            boolean dbStatus;
+            boolean redisStatus;
 
             // check db connection
             ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -66,13 +65,9 @@ public class MetricsController {
             });
 
             Future<Boolean> redisFuture = executor.submit(() -> {
-                try {
-                    String redisValue = redisService.ping();
-                    log.info("<{}> received from redis", redisValue);
-                    return Objects.equals(redisValue, "PONG");
-                } catch (Exception ex) {
-                    throw ex;
-                }
+                String redisValue = redisService.ping();
+                log.info("<{}> received from redis", redisValue);
+                return Objects.equals(redisValue, "PONG");
             });
 
             dbStatus = FutureResults.getFutureResult(dbFuture, "database");
@@ -107,8 +102,6 @@ public class MetricsController {
             Path pathToCsv = Path.of(CSV_FILE_DIRECTORY + "/" + CSV_FILE_NAME);
             if(!Files.exists(CSV_FILE_DIRECTORY)) {
                 log.info("creating directory: /static/files");
-//                Files.createDirectory(Path.of("./static"));
-//                Files.createDirectory(Path.of("./static/files"));
                 Files.createDirectories(Path.of("./static/files"));
             }
             log.info("deleting csv file if exists");
