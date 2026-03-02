@@ -2241,6 +2241,229 @@
           ]
         }
       ]
+    },
+    {
+      "name": "bulk operations",
+      "item": [
+        {
+          "name": "bulk insertion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"user\": {\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Johnson\",\n            \"maidenName\": \"Smith\",\n            \"age\": 21,\n            \"gender\": \"male\",\n            \"email\": \"ankit@hivel.aihh\",\n            \"phone\": \"+81 965-431-3024\",\n            \"username\": \"ankithh\",\n            \"password\": \"ankit\",\n            \"birthDate\": \"1996-5-30\",\n            \"image\": \"https://dummyjson.com/icon/emilys/128\",\n            \"bloodGroup\": \"O-\",\n            \"height\": 193.24,\n            \"weight\": 63.16,\n            \"eyeColor\": \"Green\",\n            \"haircolor\": \"Brown\",\n            \"hairtype\": \"Curly\",\n            \"ip\": \"42.48.100.32\",\n            \"macAddress\": \"47:fa:41:18:ec:eb\",\n            \"university\": \"University of Wisconsin--Madison\",\n            \"ein\": \"977-175\",\n            \"ssn\": \"900-590-289\",\n            \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n        },\n        \"address\": {\n            \"area\": \"Madhapur\",\n            \"city\": \"Hyderabad\",\n            \"state\": \"Telangana\",\n            \"stateCode\": \"TG\",\n            \"postalCode\": \"500052\",\n            \"lattitude\": -77.16213,\n            \"longitude\": -92.084824,\n            \"country\": \"United States\"\n        },\n        \"company\": {\n            \"department\": \"Engineering\",\n            \"name\": \"Dooley, Kozey and Cronin\",\n            \"title\": \"Sales Manager\",\n            \"address\": {\n                \"area\": \"263 Tenth Street\",\n                \"city\": \"San Francisco\",\n                \"state\": \"Wisconsin\",\n                \"stateCode\": \"WI\",\n                \"postalCode\": \"37657\",\n                \"lat\": 71.814525,\n                \"lng\": -161.150263,\n                \"country\": \"United States\"\n            }\n        }\n    },\n    {\n        \"user\": {\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Johnson\",\n            \"maidenName\": \"Smith\",\n            \"age\": 21,\n            \"gender\": \"male\",\n            \"email\": \"ankit@hivel.aihah\",\n            \"phone\": \"+81 965-431-3024\",\n            \"username\": \"ankithsh\",\n            \"password\": \"ankit\",\n            \"birthDate\": \"1996-5-30\",\n            \"image\": \"https://dummyjson.com/icon/emilys/128\",\n            \"bloodGroup\": \"O-\",\n            \"height\": 193.24,\n            \"weight\": 63.16,\n            \"eyeColor\": \"Green\",\n            \"haircolor\": \"Brown\",\n            \"hairtype\": \"Curly\",\n            \"ip\": \"42.48.100.32\",\n            \"macAddress\": \"47:fa:41:18:ec:eb\",\n            \"university\": \"University of Wisconsin--Madison\",\n            \"ein\": \"977-175\",\n            \"ssn\": \"900-590-289\",\n            \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n        },\n        \"address\": {\n            \"area\": \"Madhapur\",\n            \"city\": \"Hyderabad\",\n            \"state\": \"Telangana\",\n            \"stateCode\": \"TG\",\n            \"postalCode\": \"500052\",\n            \"lattitude\": -77.16213,\n            \"longitude\": -92.084824,\n            \"country\": \"United States\"\n        },\n        \"company\": {\n            \"department\": \"Engineering\",\n            \"name\": \"Dooley, Kozey and Cronin\",\n            \"title\": \"Sales Manager\",\n            \"address\": {\n                \"area\": \"263 Tenth Street\",\n                \"city\": \"San Francisco\",\n                \"state\": \"Wisconsin\",\n                \"stateCode\": \"WI\",\n                \"postalCode\": \"37657\",\n                \"lat\": 71.814525,\n                \"lng\": -161.150263,\n                \"country\": \"United States\"\n            }\n        }\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/bulk/insert",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "bulk",
+                "insert"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "bulk insertion",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n    {\n        \"user\": {\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Johnson\",\n            \"maidenName\": \"Smith\",\n            \"age\": 21,\n            \"gender\": \"male\",\n            \"email\": \"ankit@hivel.aihh\",\n            \"phone\": \"+81 965-431-3024\",\n            \"username\": \"ankithh\",\n            \"password\": \"ankit\",\n            \"birthDate\": \"1996-5-30\",\n            \"image\": \"https://dummyjson.com/icon/emilys/128\",\n            \"bloodGroup\": \"O-\",\n            \"height\": 193.24,\n            \"weight\": 63.16,\n            \"eyeColor\": \"Green\",\n            \"haircolor\": \"Brown\",\n            \"hairtype\": \"Curly\",\n            \"ip\": \"42.48.100.32\",\n            \"macAddress\": \"47:fa:41:18:ec:eb\",\n            \"university\": \"University of Wisconsin--Madison\",\n            \"ein\": \"977-175\",\n            \"ssn\": \"900-590-289\",\n            \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n        },\n        \"address\": {\n            \"area\": \"Madhapur\",\n            \"city\": \"Hyderabad\",\n            \"state\": \"Telangana\",\n            \"stateCode\": \"TG\",\n            \"postalCode\": \"500052\",\n            \"lattitude\": -77.16213,\n            \"longitude\": -92.084824,\n            \"country\": \"United States\"\n        },\n        \"company\": {\n            \"department\": \"Engineering\",\n            \"name\": \"Dooley, Kozey and Cronin\",\n            \"title\": \"Sales Manager\",\n            \"address\": {\n                \"area\": \"263 Tenth Street\",\n                \"city\": \"San Francisco\",\n                \"state\": \"Wisconsin\",\n                \"stateCode\": \"WI\",\n                \"postalCode\": \"37657\",\n                \"lat\": 71.814525,\n                \"lng\": -161.150263,\n                \"country\": \"United States\"\n            }\n        }\n    },\n    {\n        \"user\": {\n            \"firstName\": \"Emily\",\n            \"lastName\": \"Johnson\",\n            \"maidenName\": \"Smith\",\n            \"age\": 21,\n            \"gender\": \"male\",\n            \"email\": \"ankit@hivel.aihah\",\n            \"phone\": \"+81 965-431-3024\",\n            \"username\": \"ankithsh\",\n            \"password\": \"ankit\",\n            \"birthDate\": \"1996-5-30\",\n            \"image\": \"https://dummyjson.com/icon/emilys/128\",\n            \"bloodGroup\": \"O-\",\n            \"height\": 193.24,\n            \"weight\": 63.16,\n            \"eyeColor\": \"Green\",\n            \"haircolor\": \"Brown\",\n            \"hairtype\": \"Curly\",\n            \"ip\": \"42.48.100.32\",\n            \"macAddress\": \"47:fa:41:18:ec:eb\",\n            \"university\": \"University of Wisconsin--Madison\",\n            \"ein\": \"977-175\",\n            \"ssn\": \"900-590-289\",\n            \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n        },\n        \"address\": {\n            \"area\": \"Madhapur\",\n            \"city\": \"Hyderabad\",\n            \"state\": \"Telangana\",\n            \"stateCode\": \"TG\",\n            \"postalCode\": \"500052\",\n            \"lattitude\": -77.16213,\n            \"longitude\": -92.084824,\n            \"country\": \"United States\"\n        },\n        \"company\": {\n            \"department\": \"Engineering\",\n            \"name\": \"Dooley, Kozey and Cronin\",\n            \"title\": \"Sales Manager\",\n            \"address\": {\n                \"area\": \"263 Tenth Street\",\n                \"city\": \"San Francisco\",\n                \"state\": \"Wisconsin\",\n                \"stateCode\": \"WI\",\n                \"postalCode\": \"37657\",\n                \"lat\": 71.814525,\n                \"lng\": -161.150263,\n                \"country\": \"United States\"\n            }\n        }\n    }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/bulk/insert",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "bulk",
+                    "insert"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 07:03:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"bulk insertion complete\",\n    \"status\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "bulk deletion",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [1, 2, 3, 4]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/bulk/delete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "bulk",
+                "delete"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "bulk deletion",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [1, 2, 3, 4]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/bulk/delete",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "bulk",
+                    "delete"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 07:03:01 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": null,\n    \"message\": \"bulk deletion complete\",\n    \"status\": true\n}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

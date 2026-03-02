@@ -1479,3 +1479,326 @@ paths:
               example: keep-alive
       tags:
         - metrics
+  /bulk/insert:
+    post:
+      summary: bulk insertion
+      responses:
+        '201':
+          description: bulk insertion
+          headers:
+            X-Content-Type-Options:
+              schema:
+                type: string
+              example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: integer
+              example: '0'
+            Cache-Control:
+              schema:
+                type: string
+              example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+              example: no-cache
+            Expires:
+              schema:
+                type: integer
+              example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+              example: DENY
+            Transfer-Encoding:
+              schema:
+                type: string
+              example: chunked
+            Date:
+              schema:
+                type: string
+              example: Mon, 02 Mar 2026 07:03:04 GMT
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=60
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+      tags:
+        - bulk operations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      firstName:
+                        type: string
+                      lastName:
+                        type: string
+                      maidenName:
+                        type: string
+                      age:
+                        type: integer
+                      gender:
+                        type: string
+                      email:
+                        type: string
+                        format: email
+                      phone:
+                        type: string
+                      username:
+                        type: string
+                      password:
+                        type: string
+                      birthDate:
+                        type: string
+                      image:
+                        type: string
+                        format: uri
+                      bloodGroup:
+                        type: string
+                      height:
+                        type: number
+                      weight:
+                        type: number
+                      eyeColor:
+                        type: string
+                      haircolor:
+                        type: string
+                      hairtype:
+                        type: string
+                      ip:
+                        type: string
+                        format: ip-address
+                      macAddress:
+                        type: string
+                        format: style
+                      university:
+                        type: string
+                      ein:
+                        type: string
+                      ssn:
+                        type: string
+                      userAgent:
+                        type: string
+                  address:
+                    type: object
+                    properties:
+                      area:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      stateCode:
+                        type: string
+                      postalCode:
+                        type: string
+                        format: color
+                      lattitude:
+                        type: number
+                      longitude:
+                        type: number
+                      country:
+                        type: string
+                  company:
+                    type: object
+                    properties:
+                      department:
+                        type: string
+                      name:
+                        type: string
+                      title:
+                        type: string
+                      address:
+                        type: object
+                        properties:
+                          area:
+                            type: string
+                          city:
+                            type: string
+                          state:
+                            type: string
+                          stateCode:
+                            type: string
+                          postalCode:
+                            type: string
+                            format: utc-millisec
+                          lat:
+                            type: number
+                          lng:
+                            type: number
+                          country:
+                            type: string
+            example:
+              - user:
+                  firstName: Emily
+                  lastName: Johnson
+                  maidenName: Smith
+                  age: 21
+                  gender: male
+                  email: ankit@hivel.aihh
+                  phone: +81 965-431-3024
+                  username: ankithh
+                  password: ankit
+                  birthDate: 1996-5-30
+                  image: https://dummyjson.com/icon/emilys/128
+                  bloodGroup: O-
+                  height: 193.24
+                  weight: 63.16
+                  eyeColor: Green
+                  haircolor: Brown
+                  hairtype: Curly
+                  ip: 42.48.100.32
+                  macAddress: 47:fa:41:18:ec:eb
+                  university: University of Wisconsin--Madison
+                  ein: 977-175
+                  ssn: 900-590-289
+                  userAgent: >-
+                    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+                    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93
+                    Safari/537.36
+                address:
+                  area: Madhapur
+                  city: Hyderabad
+                  state: Telangana
+                  stateCode: TG
+                  postalCode: '500052'
+                  lattitude: -77.16213
+                  longitude: -92.084824
+                  country: United States
+                company:
+                  department: Engineering
+                  name: Dooley, Kozey and Cronin
+                  title: Sales Manager
+                  address:
+                    area: 263 Tenth Street
+                    city: San Francisco
+                    state: Wisconsin
+                    stateCode: WI
+                    postalCode: '37657'
+                    lat: 71.814525
+                    lng: -161.150263
+                    country: United States
+              - user:
+                  firstName: Emily
+                  lastName: Johnson
+                  maidenName: Smith
+                  age: 21
+                  gender: male
+                  email: ankit@hivel.aihah
+                  phone: +81 965-431-3024
+                  username: ankithsh
+                  password: ankit
+                  birthDate: 1996-5-30
+                  image: https://dummyjson.com/icon/emilys/128
+                  bloodGroup: O-
+                  height: 193.24
+                  weight: 63.16
+                  eyeColor: Green
+                  haircolor: Brown
+                  hairtype: Curly
+                  ip: 42.48.100.32
+                  macAddress: 47:fa:41:18:ec:eb
+                  university: University of Wisconsin--Madison
+                  ein: 977-175
+                  ssn: 900-590-289
+                  userAgent: >-
+                    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+                    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93
+                    Safari/537.36
+                address:
+                  area: Madhapur
+                  city: Hyderabad
+                  state: Telangana
+                  stateCode: TG
+                  postalCode: '500052'
+                  lattitude: -77.16213
+                  longitude: -92.084824
+                  country: United States
+                company:
+                  department: Engineering
+                  name: Dooley, Kozey and Cronin
+                  title: Sales Manager
+                  address:
+                    area: 263 Tenth Street
+                    city: San Francisco
+                    state: Wisconsin
+                    stateCode: WI
+                    postalCode: '37657'
+                    lat: 71.814525
+                    lng: -161.150263
+                    country: United States
+  /bulk/delete:
+    delete:
+      summary: bulk deletion
+      responses:
+        '201':
+          description: bulk deletion
+          headers:
+            X-Content-Type-Options:
+              schema:
+                type: string
+              example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: integer
+              example: '0'
+            Cache-Control:
+              schema:
+                type: string
+              example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+              example: no-cache
+            Expires:
+              schema:
+                type: integer
+              example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+              example: DENY
+            Transfer-Encoding:
+              schema:
+                type: string
+              example: chunked
+            Date:
+              schema:
+                type: string
+              example: Mon, 02 Mar 2026 07:03:01 GMT
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=60
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+      tags:
+        - bulk operations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+            example:
+              ids:
+                - 1
+                - 2
+                - 3
+                - 4
