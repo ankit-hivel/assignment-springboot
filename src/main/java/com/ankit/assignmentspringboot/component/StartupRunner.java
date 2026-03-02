@@ -23,7 +23,7 @@ public class StartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        restApiService.getAllUsers();
+//        restApiService.getAllUsers();
         try {
             log.info("ping to redis");
             String redisConn = redisService.ping();

@@ -1,5 +1,6 @@
 package com.ankit.assignmentspringboot.model;
 
+import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -152,5 +153,18 @@ public class UserAddressModel {
 
     public void setUpdatedBy(Integer updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public UserAddressModel() {}
+
+    public UserAddressModel(SaveUserAddressRequestDto dto) {
+        this.area = dto.getArea();
+        this.city = dto.getCity();
+        this.state = dto.getState();
+        this.stateCode = dto.getStateCode();
+        this.postalCode = dto.getPostalCode();
+        this.country = dto.getCountry();
+        this.latitude = dto.getLatitude();
+        this.longitude = dto.getLongitude();
     }
 }

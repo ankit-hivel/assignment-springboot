@@ -28,7 +28,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/user",
             "/company",
             "/address",
-            "/csv"
+            "/csv",
+            "/bulk"
     );
 
     private static final List<String> EXPLICIT_UNPROTECTED_ROUTES = List.of(
