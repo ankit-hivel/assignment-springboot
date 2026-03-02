@@ -24,6 +24,12 @@ public class CompanyModel {
     @UpdateTimestamp
     private Instant updatedAt;
 
+    @Column(name = "created_by")
+    private Integer createdBy;
+
+    @Column(name = "updated_by")
+    private Integer updatedBy;
+
     @OneToOne(
             fetch = FetchType.LAZY,
             optional = false
@@ -103,5 +109,21 @@ public class CompanyModel {
 
     public void setCompanyAddress(CompanyAddressModel companyAddress) {
         this.companyAddress = companyAddress;
+    }
+
+    public Integer getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Integer createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Integer getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(Integer updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

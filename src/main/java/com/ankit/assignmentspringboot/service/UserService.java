@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
-import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
@@ -42,6 +41,7 @@ public class UserService {
         this.objectMapper = objectMapper;
     }
 
+    @Transactional
     public UserModel saveUserData(SaveUserRequestDto userPayload){
         UserModel user = new UserModel(userPayload);
 
@@ -53,7 +53,11 @@ public class UserService {
         user.setRole(UserRole.USER);
 
         // save user
-        return userRepository.save(user);
+        userRepository.save(user);
+
+        user.setCreatedBy(user.getId());
+        user.setUpdatedBy(user.getId());
+        return user;
     }
 
     public UserModel getUserById(Integer id) {
@@ -187,6 +191,8 @@ public class UserService {
                 && List.of(UserRole.ADMIN, UserRole.MODERATOR).contains(getAuthUserRole.getUserRole()))
             userToUpdate.setRole(user.getRole());
 
+        userToUpdate.setUpdatedBy(GetAuthUserId.getUserId());
+
         // invalidate cache
         redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getId().toString()));
         redis.del(CONSTANTS.getUserRedisKey(userToUpdate.getEmail()));
@@ -221,6 +227,7 @@ public class UserService {
         redis.del(CONSTANTS.getUserRedisKey(id));
         redis.del(CONSTANTS.getUserRedisKey(user.getEmail()));
         user.setDeleted(true);
+        user.setUpdatedBy(GetAuthUserId.getUserId());
     }
 
     @Transactional
@@ -232,5 +239,6 @@ public class UserService {
         }
         UserModel user = userRepository.findById(id).orElseThrow();
         user.setDeleted(false);
+        user.setUpdatedBy(GetAuthUserId.getUserId());
     }
 }

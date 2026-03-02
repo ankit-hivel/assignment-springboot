@@ -11,6 +11,7 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateCompanyRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetCompanyResponseDto;
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
+import com.ankit.assignmentspringboot.utility.GetAuthUserId;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,6 +66,8 @@ public class CompanyService {
         company.setUser(userToRefer);
         company.setCompanyAddress(cAddress);
         cAddress.setCompany(company);
+        company.setCreatedBy(GetAuthUserId.getUserId() != null ? GetAuthUserId.getUserId() : userToRefer.getId());
+        company.setUpdatedBy(GetAuthUserId.getUserId() != null ? GetAuthUserId.getUserId() : userToRefer.getId());
         companyRepository.save(company);
     }
 
@@ -106,6 +109,7 @@ public class CompanyService {
         address.setCountry(dto.getAddress().getCountry());
         address.setArea(dto.getAddress().getArea());
         address.setPostalCode(dto.getAddress().getPostalCode());
+        company.setUpdatedBy(GetAuthUserId.getUserId());
 
         String redisKey = CONSTANTS.getCompanyRedisKey(dto.getId());
         String jsonToWrite = objectMapper.writeValueAsString(new GetCompanyResponseDto(company));

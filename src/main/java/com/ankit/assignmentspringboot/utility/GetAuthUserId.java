@@ -6,8 +6,18 @@ import java.util.Objects;
 
 public class GetAuthUserId {
     public static Integer getUserId(){
-        return Integer.parseInt(Objects.requireNonNull(SecurityContextHolder.getContext()
-                        .getAuthentication())
-                .getName());
+        var authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return null;
+        }
+
+        try {
+            return Integer.parseInt(authentication.getName());
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }

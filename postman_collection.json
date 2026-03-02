@@ -17,7 +17,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n      \"id\": 1011,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"Johnson\",\n      \"maidenName\": \"Smith\",\n      \"age\": 21,\n      \"gender\": \"female\",\n      \"email\": \"ankit@hivel.ai\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"ankit\",\n      \"password\": \"ankit\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"role\": \"admin\"\n}",
+              "raw": "{\n      \"firstName\": \"Emily\",\n      \"lastName\": \"Johnson\",\n      \"maidenName\": \"Smith\",\n      \"age\": 21,\n      \"gender\": \"male\",\n      \"email\": \"ankit@hivel.ai\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"ankit\",\n      \"password\": \"ankit\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -125,7 +125,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/user?id=22",
+              "raw": "http://localhost:8080/user?email=ankit@hivel.ai",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -137,12 +137,12 @@
               "query": [
                 {
                   "key": "email",
-                  "value": "emily.johnson@x.dummyjson.com",
-                  "disabled": true
+                  "value": "ankit@hivel.ai"
                 },
                 {
                   "key": "id",
-                  "value": "22"
+                  "value": "10",
+                  "disabled": true
                 }
               ]
             }
@@ -243,7 +243,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user/all?page=1&count=3&sortby=username&ascending=false",
+              "raw": "http://localhost:8080/user/all?page=0&count=300&sortby=username&ascending=true",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -256,11 +256,11 @@
               "query": [
                 {
                   "key": "page",
-                  "value": "1"
+                  "value": "0"
                 },
                 {
                   "key": "count",
-                  "value": "3"
+                  "value": "300"
                 },
                 {
                   "key": "sortby",
@@ -268,7 +268,7 @@
                 },
                 {
                   "key": "ascending",
-                  "value": "false"
+                  "value": "true"
                 }
               ]
             }
@@ -466,7 +466,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n      \"id\": 14,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"John\",\n      \"maidenName\": \"Smith\",\n\n      \"gender\": \"female\",\n      \"email\": \"emily.johnson@x.dummyjson.com\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"emilys\",\n      \"password\": \"emilyspass\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"address\": {\n        \"address\": \"626 Main Street\",\n        \"city\": \"Phoenix\",\n        \"state\": \"Mississippi\",\n        \"stateCode\": \"MS\",\n        \"postalCode\": \"29112\",\n        \"lattitude\": -77.16213,\n        \"longitude\": -92.084824,\n        \"country\": \"United States\"\n      },\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"bank\": {\n        \"cardExpire\": \"05/28\",\n        \"cardNumber\": \"3693233511855044\",\n        \"cardType\": \"Diners Club International\",\n        \"currency\": \"GBP\",\n        \"iban\": \"GB74MH2UZLR9TRPHYNU8F8\"\n      },\n      \"company\": {\n        \"department\": \"Engineering\",\n        \"name\": \"Dooley, Kozey and Cronin\",\n        \"title\": \"Sales Manager\",\n        \"address\": {\n          \"address\": \"263 Tenth Street\",\n          \"city\": \"San Francisco\",\n          \"state\": \"Wisconsin\",\n          \"stateCode\": \"WI\",\n          \"postalCode\": \"37657\",\n          \"coordinates\": {\n            \"lat\": 71.814525,\n            \"lng\": -161.150263\n          },\n          \"country\": \"United States\"\n        }\n      },\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\",\n      \"crypto\": {\n        \"coin\": \"Bitcoin\",\n        \"wallet\": \"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a\",\n        \"network\": \"Ethereum (ERC20)\"\n      }\n    }",
+              "raw": "{\n      \"id\": 33,\n      \"firstName\": \"Emily\",\n      \"lastName\": \"John\",\n      \"maidenName\": \"Smith\",\n      \"gender\": \"male\",\n      \"email\": \"ankit@hivel.ai\",\n      \"phone\": \"+81 965-431-3024\",\n      \"username\": \"ankit\",\n      \"password\": \"ankit\",\n      \"birthDate\": \"1996-5-30\",\n      \"image\": \"https://dummyjson.com/icon/emilys/128\",\n      \"bloodGroup\": \"O-\",\n      \"height\": 193.24,\n      \"weight\": 63.16,\n      \"eyeColor\": \"Green\",\n      \"haircolor\": \"Brown\",\n      \"hairtype\": \"Curly\",\n      \"ip\": \"42.48.100.32\",\n      \"macAddress\": \"47:fa:41:18:ec:eb\",\n      \"university\": \"University of Wisconsin--Madison\",\n      \"ein\": \"977-175\",\n      \"ssn\": \"900-590-289\",\n      \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36\"\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -576,7 +576,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user?id=14",
+              "raw": "http://localhost:8080/user?id=10",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -588,7 +588,7 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "14"
+                  "value": "10"
                 }
               ]
             }
@@ -685,7 +685,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user/restore?id=13",
+              "raw": "http://localhost:8080/user/restore?id=11",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -698,7 +698,7 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "13"
+                  "value": "11"
                 }
               ]
             }
@@ -796,7 +796,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "http://localhost:8080/user/delete?id=13",
+              "raw": "http://localhost:8080/user/delete?id=11",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -809,7 +809,7 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "13"
+                  "value": "11"
                 }
               ]
             }
@@ -1010,13 +1010,114 @@
           ]
         },
         {
+          "name": "get user address by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/address?id=26",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "address"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "26"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get user address by id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/address?id=55",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "address"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "55"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 12:04:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"area\": \"1591 Adams Street\",\n        \"city\": \"Philadelphia\",\n        \"country\": \"United States\",\n        \"latitude\": -26.832912,\n        \"longitude\": -75.445015,\n        \"postalCode\": \"69521\",\n        \"state\": \"New York\",\n        \"stateCode\": \"NY\"\n    },\n    \"message\": \"user address for id: 55\",\n    \"status\": true\n}"
+            }
+          ]
+        },
+        {
           "name": "update user address",
           "request": {
             "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 62,\n    \"user_id\": 13,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
+              "raw": "{\n    \"id\": 62,\n    \"area\": \"City\",\n    \"city\": \"Hyderabad\",\n    \"state\": \"Telangana\",\n    \"stateCode\": \"TG\",\n    \"postalCode\": \"500052\",\n    \"lattitude\": -77.16213,\n    \"longitude\": -92.084824,\n    \"country\": \"United States\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1113,107 +1214,6 @@
               ],
               "cookie": [],
               "body": "{\n    \"data\": null,\n    \"message\": \"updated user address\",\n    \"status\": true\n}"
-            }
-          ]
-        },
-        {
-          "name": "get user address by id",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:8080/address?id=55",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "address"
-              ],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "55"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "get user address by id",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:8080/address?id=55",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "8080",
-                  "path": [
-                    "address"
-                  ],
-                  "query": [
-                    {
-                      "key": "id",
-                      "value": "55"
-                    }
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff"
-                },
-                {
-                  "key": "X-XSS-Protection",
-                  "value": "0"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "no-cache, no-store, max-age=0, must-revalidate"
-                },
-                {
-                  "key": "Pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "Expires",
-                  "value": "0"
-                },
-                {
-                  "key": "X-Frame-Options",
-                  "value": "DENY"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Date",
-                  "value": "Thu, 26 Feb 2026 12:04:03 GMT"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=60"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": {\n        \"area\": \"1591 Adams Street\",\n        \"city\": \"Philadelphia\",\n        \"country\": \"United States\",\n        \"latitude\": -26.832912,\n        \"longitude\": -75.445015,\n        \"postalCode\": \"69521\",\n        \"state\": \"New York\",\n        \"stateCode\": \"NY\"\n    },\n    \"message\": \"user address for id: 55\",\n    \"status\": true\n}"
             }
           ]
         },
@@ -1330,7 +1330,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 1,\n    \"userid\": 1011,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
+              "raw": "{\n    \"userid\": 1011,\n    \"department\": \"Engineering\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"263 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"United States\"\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1436,7 +1436,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/company?id=43",
+              "raw": "http://localhost:8080/company?id=31",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -1448,7 +1448,7 @@
               "query": [
                 {
                   "key": "id",
-                  "value": "43"
+                  "value": "31"
                 }
               ]
             }
@@ -1538,7 +1538,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": 45,\n    \"userid\": 12,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
+              "raw": "{\n    \"id\": 45,\n    \"department\": \"Sales\",\n    \"name\": \"Dooley, Kozey and Cronin\",\n    \"title\": \"Sales Manager\",\n    \"address\": {\n        \"area\": \"26 Tenth Street\",\n        \"city\": \"San Francisco\",\n        \"state\": \"Wisconsin\",\n        \"stateCode\": \"WI\",\n        \"postalCode\": \"37657\",\n        \"lat\": 71.814525,\n        \"lng\": -161.150263,\n        \"country\": \"India\"\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1757,7 +1757,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"email\": \"mia.rodriguez@x.dummyjson.com\",\n    \"password\": \"miarpass\"\n}",
+              "raw": "{\n    \"email\": \"ankit@hivel.ai\",\n    \"password\": \"ankit\"\n}\n// {\n//     \"email\": \"emily.johnson@x.dummyjson.com\",\n//     \"password\": \"emilyspass\"\n// }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2147,7 +2147,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/files/data.csv",
+              "raw": "http://localhost:8080/files/101260088436081000.csv",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -2155,7 +2155,7 @@
               "port": "8080",
               "path": [
                 "files",
-                "data.csv"
+                "101260088436081000.csv"
               ]
             }
           },

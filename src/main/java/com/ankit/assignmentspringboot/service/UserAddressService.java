@@ -8,6 +8,7 @@ import com.ankit.assignmentspringboot.requestDto.SaveUserAddressRequestDto;
 import com.ankit.assignmentspringboot.requestDto.UpdateUserAddressRequestDto;
 import com.ankit.assignmentspringboot.responseDto.GetUserAddressResponseDto;
 import com.ankit.assignmentspringboot.utility.CONSTANTS;
+import com.ankit.assignmentspringboot.utility.GetAuthUserId;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,6 +49,8 @@ public class UserAddressService {
         );
         log.info("existing user found");
         userAddressToSave.setUser(userToRefer);
+        userAddressToSave.setCreatedBy(GetAuthUserId.getUserId() != null ? GetAuthUserId.getUserId() : userToRefer.getId());
+        userAddressToSave.setUpdatedBy(GetAuthUserId.getUserId() != null ? GetAuthUserId.getUserId() : userToRefer.getId());
 
         userAddressRepository.save(userAddressToSave);
     }
@@ -102,6 +105,7 @@ public class UserAddressService {
         if (dto.getLongitude() != null)
             userAddress.setLongitude(dto.getLongitude());
 
+        userAddress.setUpdatedBy(GetAuthUserId.getUserId());
         userAddressRepository.save(userAddress);
         String jsonToWrite = objectMapper.writeValueAsString(new GetUserAddressResponseDto(userAddress));
         redis.saveWithTTL(redisKey, jsonToWrite, 5, TimeUnit.MINUTES);

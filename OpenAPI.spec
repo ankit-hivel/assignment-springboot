@@ -61,8 +61,6 @@ paths:
             schema:
               type: object
               properties:
-                id:
-                  type: integer
                 firstName:
                   type: string
                 lastName:
@@ -113,15 +111,12 @@ paths:
                   type: string
                 userAgent:
                   type: string
-                role:
-                  type: string
             example:
-              id: 1011
               firstName: Emily
               lastName: Johnson
               maidenName: Smith
               age: 21
-              gender: female
+              gender: male
               email: ankit@hivel.ai
               phone: +81 965-431-3024
               username: ankit
@@ -143,7 +138,6 @@ paths:
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
                 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93
                 Safari/537.36
-              role: admin
   /user:
     get:
       summary: getUserByIdOrEmail
@@ -153,13 +147,13 @@ paths:
           required: false
           deprecated: false
           schema: {}
-          example: emily.johnson@x.dummyjson.com
+          example: ankit@hivel.ai
         - name: id
           in: query
           required: false
           deprecated: false
           schema: {}
-          example: '22'
+          example: '10'
       responses:
         '200':
           description: getUserByIdOrEmail
@@ -299,103 +293,27 @@ paths:
                 ip:
                   type: string
                   format: ip-address
-                address:
-                  type: object
-                  properties:
-                    address:
-                      type: string
-                    city:
-                      type: string
-                    state:
-                      type: string
-                    stateCode:
-                      type: string
-                    postalCode:
-                      type: string
-                      format: utc-millisec
-                    lattitude:
-                      type: number
-                    longitude:
-                      type: number
-                    country:
-                      type: string
                 macAddress:
                   type: string
                   format: style
                 university:
                   type: string
-                bank:
-                  type: object
-                  properties:
-                    cardExpire:
-                      type: string
-                    cardNumber:
-                      type: string
-                      format: utc-millisec
-                    cardType:
-                      type: string
-                    currency:
-                      type: string
-                    iban:
-                      type: string
-                company:
-                  type: object
-                  properties:
-                    department:
-                      type: string
-                    name:
-                      type: string
-                    title:
-                      type: string
-                    address:
-                      type: object
-                      properties:
-                        address:
-                          type: string
-                        city:
-                          type: string
-                        state:
-                          type: string
-                        stateCode:
-                          type: string
-                        postalCode:
-                          type: string
-                          format: utc-millisec
-                        coordinates:
-                          type: object
-                          properties:
-                            lat:
-                              type: number
-                            lng:
-                              type: number
-                        country:
-                          type: string
                 ein:
                   type: string
                 ssn:
                   type: string
                 userAgent:
                   type: string
-                crypto:
-                  type: object
-                  properties:
-                    coin:
-                      type: string
-                    wallet:
-                      type: string
-                      format: utc-millisec
-                    network:
-                      type: string
             example:
-              id: 14
+              id: 33
               firstName: Emily
               lastName: John
               maidenName: Smith
-              gender: female
-              email: emily.johnson@x.dummyjson.com
+              gender: male
+              email: ankit@hivel.ai
               phone: +81 965-431-3024
-              username: emilys
-              password: emilyspass
+              username: ankit
+              password: ankit
               birthDate: 1996-5-30
               image: https://dummyjson.com/icon/emilys/128
               bloodGroup: O-
@@ -405,47 +323,14 @@ paths:
               haircolor: Brown
               hairtype: Curly
               ip: 42.48.100.32
-              address:
-                address: 626 Main Street
-                city: Phoenix
-                state: Mississippi
-                stateCode: MS
-                postalCode: '29112'
-                lattitude: -77.16213
-                longitude: -92.084824
-                country: United States
               macAddress: 47:fa:41:18:ec:eb
               university: University of Wisconsin--Madison
-              bank:
-                cardExpire: 05/28
-                cardNumber: '3693233511855044'
-                cardType: Diners Club International
-                currency: GBP
-                iban: GB74MH2UZLR9TRPHYNU8F8
-              company:
-                department: Engineering
-                name: Dooley, Kozey and Cronin
-                title: Sales Manager
-                address:
-                  address: 263 Tenth Street
-                  city: San Francisco
-                  state: Wisconsin
-                  stateCode: WI
-                  postalCode: '37657'
-                  coordinates:
-                    lat: 71.814525
-                    lng: -161.150263
-                  country: United States
               ein: 977-175
               ssn: 900-590-289
               userAgent: >-
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
                 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93
                 Safari/537.36
-              crypto:
-                coin: Bitcoin
-                wallet: '0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a'
-                network: Ethereum (ERC20)
     delete:
       summary: delete user data
       parameters:
@@ -453,7 +338,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '14'
+          example: '10'
       responses:
         '200':
           description: delete user data
@@ -506,24 +391,28 @@ paths:
       parameters:
         - name: page
           in: query
-          schema:
-            type: integer
-          example: '1'
+          required: false
+          deprecated: false
+          schema: {}
+          example: '0'
         - name: count
           in: query
-          schema:
-            type: integer
-          example: '3'
+          required: false
+          deprecated: false
+          schema: {}
+          example: '300'
         - name: sortby
           in: query
-          schema:
-            type: string
+          required: false
+          deprecated: false
+          schema: {}
           example: username
         - name: ascending
           in: query
-          schema:
-            type: boolean
-          example: 'false'
+          required: false
+          deprecated: false
+          schema: {}
+          example: 'true'
       responses:
         '200':
           description: get all users
@@ -627,7 +516,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '13'
+          example: '11'
       responses:
         '200':
           description: restore user data (soft restore)
@@ -682,7 +571,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '13'
+          example: '11'
       responses:
         '200':
           description: delete user data (soft delete)
@@ -813,6 +702,61 @@ paths:
               lattitude: -77.16213
               longitude: -92.084824
               country: United States
+    get:
+      summary: get user address by id
+      parameters:
+        - name: id
+          in: query
+          required: false
+          deprecated: false
+          schema: {}
+          example: '26'
+      responses:
+        '200':
+          description: get user address by id
+          headers:
+            X-Content-Type-Options:
+              schema:
+                type: string
+              example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: integer
+              example: '0'
+            Cache-Control:
+              schema:
+                type: string
+              example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+              example: no-cache
+            Expires:
+              schema:
+                type: integer
+              example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+              example: DENY
+            Transfer-Encoding:
+              schema:
+                type: string
+              example: chunked
+            Date:
+              schema:
+                type: string
+              example: Thu, 26 Feb 2026 12:04:03 GMT
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=60
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+      tags:
+        - user address
     put:
       summary: update user address
       responses:
@@ -869,8 +813,6 @@ paths:
               properties:
                 id:
                   type: integer
-                user_id:
-                  type: integer
                 area:
                   type: string
                 city:
@@ -890,7 +832,6 @@ paths:
                   type: string
             example:
               id: 62
-              user_id: 13
               area: City
               city: Hyderabad
               state: Telangana
@@ -899,61 +840,6 @@ paths:
               lattitude: -77.16213
               longitude: -92.084824
               country: United States
-    get:
-      summary: get user address by id
-      parameters:
-        - name: id
-          in: query
-          required: false
-          deprecated: false
-          schema: {}
-          example: '55'
-      responses:
-        '200':
-          description: get user address by id
-          headers:
-            X-Content-Type-Options:
-              schema:
-                type: string
-              example: nosniff
-            X-XSS-Protection:
-              schema:
-                type: integer
-              example: '0'
-            Cache-Control:
-              schema:
-                type: string
-              example: no-cache, no-store, max-age=0, must-revalidate
-            Pragma:
-              schema:
-                type: string
-              example: no-cache
-            Expires:
-              schema:
-                type: integer
-              example: '0'
-            X-Frame-Options:
-              schema:
-                type: string
-              example: DENY
-            Transfer-Encoding:
-              schema:
-                type: string
-              example: chunked
-            Date:
-              schema:
-                type: string
-              example: Thu, 26 Feb 2026 12:04:03 GMT
-            Keep-Alive:
-              schema:
-                type: string
-              example: timeout=60
-            Connection:
-              schema:
-                type: string
-              example: keep-alive
-      tags:
-        - user address
     delete:
       summary: delete user address by id
       parameters:
@@ -1063,8 +949,6 @@ paths:
             schema:
               type: object
               properties:
-                id:
-                  type: integer
                 userid:
                   type: integer
                 department:
@@ -1094,7 +978,6 @@ paths:
                     country:
                       type: string
             example:
-              id: 1
               userid: 1011
               department: Engineering
               name: Dooley, Kozey and Cronin
@@ -1115,7 +998,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '43'
+          example: '31'
       responses:
         '200':
           description: get company details by id
@@ -1218,8 +1101,6 @@ paths:
               properties:
                 id:
                   type: integer
-                userid:
-                  type: integer
                 department:
                   type: string
                 name:
@@ -1248,7 +1129,6 @@ paths:
                       type: string
             example:
               id: 45
-              userid: 12
               department: Sales
               name: Dooley, Kozey and Cronin
               title: Sales Manager
@@ -1386,15 +1266,15 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                email:
-                  type: string
-                  format: email
-                password:
-                  type: string
-            example:
-              email: mia.rodriguez@x.dummyjson.com
-              password: miarpass
+            example: |-
+              {
+                  "email": "ankit@hivel.ai",
+                  "password": "ankit"
+              }
+              // {
+              //     "email": "emily.johnson@x.dummyjson.com",
+              //     "password": "emilyspass"
+              // }
   /health:
     get:
       summary: health check
@@ -1542,7 +1422,7 @@ paths:
               example: keep-alive
       tags:
         - metrics
-  /files/data.csv:
+  /files/101260088436081000.csv:
     get:
       summary: download csv file
       responses:
